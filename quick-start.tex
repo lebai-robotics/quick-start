@@ -1,0 +1,79 @@
+\documentclass[UTF8, hyperref]{ctexrep}
+% 中文排版设置
+\ctexset{space=true, punct=kaiming}
+\zihao{6}
+
+% 页面设置
+\usepackage[papersize={13cm,18.4cm},hmargin=1.91cm,vmargin=2.54cm]{geometry}
+
+% 页眉和页脚
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\leftmark}
+\renewcommand{\headrulewidth}{0pt} % 注意不用 \setlength
+\renewcommand{\footrulewidth}{0pt}
+
+% 交叉引用
+\usepackage{nameref}
+\usepackage{prettyref}
+\newrefformat{app}{附录\ref{#1} \nameref{#1}}
+\newrefformat{fig}{图\ref{#1}}
+
+% 索引
+\usepackage{makeidx}
+\makeindex
+
+% 图片
+\usepackage{graphicx}
+
+% 表格
+\usepackage{tabularx}
+\usepackage{multirow}
+
+% 参考文献
+% \bibliographystyle{...}
+
+% 自定义指令
+\newcommand{\LM}{~{\sf L MASTER™}~}
+\newcommand{\innerinfo}[3]{
+    \includegraphics[width=2cm]{#1}
+    \begin{minipage}{7cm}
+        {\bf #2}\\ #3
+    \end{minipage}\par
+    }
+\newcommand{\info}[1]{\innerinfo{image/info.png}{注意：}{#1}}
+\newcommand{\danger}[1]{\innerinfo{image/danger.png}{危险：}{#1}}
+
+% 单位
+\newcommand{\Nm}{\,\mathrm{N\cdot m}}
+
+\begin{document}
+% \frontmatter
+\title{乐白机器人\\
+用户手册
+}
+\author{乐白机器人用户手册 v1.0.0版本\\
+适用于LM3机器人及\LM v2.x 版本
+}
+\date{\today}
+\maketitle % 标题页
+\include{copyright} % 版权声明
+\tableofcontents
+% \mainmatter
+\include{preface} % 前言
+\include{prepare} % 1	准备工作
+% \include{chapter2} % 第二章 chapter2.tex
+\appendix
+\include{standard} % 附录 A 参照标准
+% \backmatter
+%\include{prologue} % 后记 prologue.tex
+\listoftables % 表格列表
+\listoffigures % 图片列表
+\printindex % 索引 makeindex
+%\bibliography{...} % 参考文献 bibtex
+\end{document}
