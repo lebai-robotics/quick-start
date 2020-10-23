@@ -1,15 +1,22 @@
 % !TEX program = xelatex
 \documentclass[UTF8, hyperref]{ctexrep}
 % 中文排版设置
-\ctexset{space=true, punct=kaiming}
+\ctexset{space=true, punct=quanjiao}
 \zihao{6}
+
+% 字体
+\usepackage{fontspec}
+\setmainfont[BoldFont={SourceHanSansSC-Medium}]{SourceHanSerifSC-Light}
+\setCJKmainfont[BoldFont={SourceHanSansSC-Medium}]{SourceHanSerifSC-Light}
+\setsansfont[BoldFont={SourceHanSansSC-Bold}]{SourceHanSansSC-Light}
+\setCJKsansfont[BoldFont={SourceHanSansSC-Bold}]{SourceHanSansSC-Light}
+% \setCJKmonofont[BoldFont={Kaiti SC Bold}]{Kaiti SC Regular}
 
 % 页面设置
 \usepackage[papersize={13cm,18.4cm},hmargin=1.91cm,vmargin=2.54cm]{geometry}
 
 % 页眉和页脚
 \usepackage{fancyhdr}
-\pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
 \fancyhf{}
@@ -33,8 +40,21 @@
 \usepackage{graphicx}
 
 % 表格
+\usepackage{array}
 \usepackage{tabularx}
 \usepackage{multirow}
+\newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
+
+% 列表
+\usepackage{enumitem}
+\setlist{partopsep=2pt, itemsep=1pt, parsep=0pt}
+\setlist[itemize, 1]{align=left, labelindent*=1em, topsep={1pt plus 1pt minus 1pt}, itemsep={3pt plus 1pt minus 2pt}}
+\setlist[itemize, 2]{leftmargin=0em, topsep={2pt plus 2pt minus 1.5pt}, partopsep={3pt plus 2pt minus 3pt}, itemsep={1pt plus 1pt minus 1pt}, parsep={1pt plus 1pt minus 1pt}}
+\setlist[enumerate, 1]{leftmargin=0em, labelindent*=.5em}
+\setlist[enumerate, 2]{leftmargin=0em, labelindent*=.5em, topsep=0pt}
+
+% 行和段落
+\linespread{1.4}
 
 % 参考文献
 % \bibliographystyle{...}
@@ -51,10 +71,13 @@
 \newcommand{\danger}[1]{\innerinfo{image/danger.png}{危险：}{#1}}
 
 % 单位
+\newcommand{\unit}[1]{\,\mathrm{#1}}
 \newcommand{\Nm}{\,\mathrm{N\cdot m}}
 
 \begin{document}
 % \frontmatter
+\pagestyle{empty}
+
 \title{乐白机器人\\
 用户手册
 }
@@ -66,6 +89,8 @@
 \include{copyright} % 版权声明
 \tableofcontents
 % \mainmatter
+\pagestyle{fancy}
+
 \include{preface} % 前言
 \include{prepare} % 1	准备工作
 % \include{chapter2} % 第二章 chapter2.tex
