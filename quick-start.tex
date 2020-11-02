@@ -1,19 +1,24 @@
 % !TEX program = xelatex
-\documentclass[UTF8, hyperref]{ctexrep}
+\documentclass[UTF8, 10pt]{ctexrep}
 % 中文排版设置
 \ctexset{space=true, punct=quanjiao}
-\zihao{6}
+
+% 编程
+\usepackage{ifthen}
+
+% 颜色
+\usepackage[dvipsnames]{xcolor}
 
 % 字体
 \usepackage{fontspec}
-\setmainfont[BoldFont={SourceHanSansSC-Medium}]{SourceHanSerifSC-Light}
-\setCJKmainfont[BoldFont={SourceHanSansSC-Medium}]{SourceHanSerifSC-Light}
-\setsansfont[BoldFont={SourceHanSansSC-Bold}]{SourceHanSansSC-Light}
-\setCJKsansfont[BoldFont={SourceHanSansSC-Bold}]{SourceHanSansSC-Light}
+% \setmainfont[BoldFont={SourceHanSansSC-Medium}]{Source Han Serif SC}
+\setCJKmainfont{Source Han Serif SC}
+% \setsansfont[BoldFont={SourceHanSansSC-Bold}]{Source Han Sans SC}
+\setCJKsansfont{Source Han Sans SC}
 % \setCJKmonofont[BoldFont={Kaiti SC Bold}]{Kaiti SC Regular}
 
 % 页面设置
-\usepackage[papersize={13cm,18.4cm},hmargin=1.91cm,vmargin=2.54cm]{geometry}
+\usepackage[papersize={13cm,18.4cm},hmargin=1.91cm,vmargin=2.24cm]{geometry}
 
 % 页眉和页脚
 \usepackage{fancyhdr}
@@ -26,11 +31,42 @@
 \renewcommand{\headrulewidth}{0pt} % 注意不用 \setlength
 \renewcommand{\footrulewidth}{0pt}
 
+% 章节样式
+\usepackage{titlesec}
+\titleformat{\chapter}
+[hang]
+{\sffamily\centering}
+{\zihao{4} 第{\thechapter}章\enspace}
+{0pt}
+{\zihao{4} \bfseries}
+[\vbox{\color{Melon}\titlerule \vspace{1pt} \titlerule}]
+\titlespacing{\chapter}{0pt}{*0.2}{*0.3}
+
+\titleformat{\section}[block]{\zihao{-4}\bfseries}{\S\thechapter.\arabic{section}}{1em}{}[]
+% \titleformat{\subsection}[block]{\Large\itshape\mdseries}{\arabic{section}.\arabic{subsection}}{1em}{}[]
+% \titleformat{\subsubsection}[block]{\normalsize\bfseries}{\arabic{subsection}-\alph{subsubsection}}{1em}{}[]
+% \titleformat{\paragraph}[block]{\small\bfseries}{[\arabic{paragraph}]}{1em}{}[]
+
+% 超链接
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+% linkcolor [red]
+% anchorcolor [black]
+% citecolor [green]
+% filecolor [cyan]
+% menucolor [red]
+% runcolor [cyan - same as file color]
+% urlcolor [magenta]
+% allcolors -- use this if you want to set all links to the same color
+}
 % 交叉引用
 \usepackage{nameref}
 \usepackage{prettyref}
-\newrefformat{app}{附录\ref{#1} \nameref{#1}}
 \newrefformat{fig}{图\ref{#1}}
+\newrefformat{tab}{表\ref{#1}}
+\newrefformat{cha}{第\ref{#1}章 \nameref{#1}}
+\newrefformat{app}{附录\ref{#1} \nameref{#1}}
 
 % 索引
 \usepackage{makeidx}
@@ -47,11 +83,11 @@
 
 % 列表
 \usepackage{enumitem}
-\setlist{partopsep=2pt, itemsep=1pt, parsep=0pt}
-\setlist[itemize, 1]{align=left, labelindent*=1em, topsep={1pt plus 1pt minus 1pt}, itemsep={3pt plus 1pt minus 2pt}}
-\setlist[itemize, 2]{leftmargin=0em, topsep={2pt plus 2pt minus 1.5pt}, partopsep={3pt plus 2pt minus 3pt}, itemsep={1pt plus 1pt minus 1pt}, parsep={1pt plus 1pt minus 1pt}}
-\setlist[enumerate, 1]{leftmargin=0em, labelindent*=.5em}
-\setlist[enumerate, 2]{leftmargin=0em, labelindent*=.5em, topsep=0pt}
+% \setlist{partopsep=2pt, itemsep=1pt, parsep=0pt}
+% \setlist[itemize, 1]{align=left, labelindent*=1em, topsep={1pt plus 1pt minus 1pt}, itemsep={3pt plus 1pt minus 2pt}}
+% \setlist[itemize, 2]{leftmargin=0em, topsep={2pt plus 2pt minus 1.5pt}, partopsep={3pt plus 2pt minus 3pt}, itemsep={1pt plus 1pt minus 1pt}, parsep={1pt plus 1pt minus 1pt}}
+% \setlist[enumerate, 1]{leftmargin=0em, labelindent*=.5em}
+% \setlist[enumerate, 2]{leftmargin=0em, labelindent*=.5em, topsep=0pt}
 
 % 行和段落
 \linespread{1.4}
@@ -60,46 +96,44 @@
 % \bibliographystyle{...}
 
 % 自定义指令
-\newcommand{\LM}{~{\sf L MASTER™}~}
-\newcommand{\innerinfo}[3]{
-    \includegraphics[width=2cm]{#1}
-    \begin{minipage}{7cm}
-        {\bf #2}\\ #3
-    \end{minipage}\par
-    }
-\newcommand{\info}[1]{\innerinfo{image/info.png}{注意：}{#1}}
-\newcommand{\danger}[1]{\innerinfo{image/danger.png}{危险：}{#1}}
+\newcommand{\LM}{{\sf L~MASTER™}}
+\newcommand{\innerinfo}[3]{\par\vspace{0.4em}\noindent
+    {\begin{minipage}[t]{0.2\textwidth}
+    \vspace{0pt}
+    \includegraphics[width=1.8cm]{#1}
+    \end{minipage}}
+    {\begin{minipage}[t]{0.8\textwidth}
+    \vspace{0pt}
+    {\sffamily\bfseries #2}\par\kaishu #3
+    \end{minipage}}
+}
+\newcommand{\info}[1]{\innerinfo{image/18.pdf}{注意：}{#1}}
+\newcommand{\dange}[1]{\innerinfo{image/19.pdf}{有电危险：}{#1}}
+\newcommand{\danger}[2][危险]{\innerinfo{image/20.pdf}{#1：}{#2}}
 
 % 单位
 \newcommand{\unit}[1]{\,\mathrm{#1}}
-\newcommand{\Nm}{\,\mathrm{N\cdot m}}
+\newcommand{\Nm}{\unit{N\cdot m}}
+\newcommand{\kg}{\unit{kg}}
+\newcommand{\cm}{\unit{cm}}
+\newcommand{\mm}{\unit{mm}}
 
 \begin{document}
-% \frontmatter
+% \zihao{6}
 \pagestyle{empty}
-
-\title{乐白机器人\\
-用户手册
-}
-\author{乐白机器人用户手册 v1.0.0版本\\
-适用于LM3机器人及\LM v2.x 版本
-}
-\date{\today}
-\maketitle % 标题页
+\include{title}
 \include{copyright} % 版权声明
 \tableofcontents
-% \mainmatter
 \pagestyle{fancy}
 
 \include{preface} % 前言
-\include{prepare} % 1	准备工作
-% \include{chapter2} % 第二章 chapter2.tex
+\include{prepare} % 2	准备工作
+\include{basic} % 3	基础操作
 \appendix
 \include{standard} % 附录 A 参照标准
-% \backmatter
-%\include{prologue} % 后记 prologue.tex
 \listoftables % 表格列表
 \listoffigures % 图片列表
 \printindex % 索引 makeindex
 %\bibliography{...} % 参考文献 bibtex
+\include{pdfs}
 \end{document}

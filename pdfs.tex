@@ -1,0 +1,9 @@
+\newcounter{int}
+\setcounter{int}{2}
+\begin{itemize}
+\loop
+\item[{\theint}.pdf] \includegraphics[height=2cm]{image/{\theint}.pdf}
+\addtocounter{int}{1}
+\ifnum \value{int}<45
+\repeat
+\end{itemize}
