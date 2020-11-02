@@ -71,11 +71,11 @@
 % 交叉引用
 \usepackage{nameref}
 \usepackage{prettyref}
-\newrefformat{fig}{图\ref{#1}}
-\newrefformat{tab}{表\ref{#1}}
-\newrefformat{cha}{第\ref{#1}章 \nameref{#1}}
-\newrefformat{app}{附录\ref{#1} \nameref{#1}}
-\newrefformat{sec}{第\ref{#1}节 \nameref{#1}}
+\newrefformat{fig}{ 图\ref{#1} }
+\newrefformat{tab}{ 表\ref{#1} }
+\newrefformat{cha}{ 第\ref{#1}章 \nameref{#1} }
+\newrefformat{app}{ 附录\ref{#1} \nameref{#1} }
+\newrefformat{sec}{ 第\ref{#1}节 \nameref{#1} }
 
 % 索引
 \usepackage{makeidx}
@@ -121,7 +121,7 @@
 \newcommand{\danger}[2][危险]{\innerinfo{image/20.pdf}{#1：}{#2}}
 
 \newcommand{\btn}[1]{\fbox{#1}}
-\newcommand{\icn}[1]{{\includegraphics[height=1em]{#1}}}
+\newcommand{\icn}[2][White]{\colorbox{#1}{\includegraphics[height=1em]{#2}}}
 
 % 单位
 \newcommand{\unit}[1]{\,\mathrm{#1}}
@@ -152,6 +152,6 @@
 \printindex % 索引 makeindex
 %\bibliography{...} % 参考文献 bibtex
 \pagestyle{empty}
-\include{pdfs}
+% \include{pdfs}
 \include{cover}
 \end{document}
