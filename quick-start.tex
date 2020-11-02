@@ -1,7 +1,5 @@
 % !TEX program = xelatex
 \documentclass[UTF8, 10pt]{ctexrep}
-% 中文排版设置
-\ctexset{space=true, punct=quanjiao}
 
 % 编程
 \usepackage{ifthen}
@@ -16,6 +14,16 @@
 % \setsansfont[BoldFont={SourceHanSansSC-Bold}]{Source Han Sans SC}
 \setCJKsansfont{Source Han Sans SC}
 % \setCJKmonofont[BoldFont={Kaiti SC Bold}]{Kaiti SC Regular}
+
+% 中文排版设置
+\ctexset{
+    space=true,
+    punct=quanjiao,
+    chapter/number = \arabic{chapter},
+    chapter/numberformat = \color{blue}\zihao{0}\itshape,
+    chapter/beforeskip = 0pt,
+    chapter/afterskip = 20pt plus 40pt minus 10pt,
+}
 
 % 页面设置
 \usepackage[papersize={13cm,18.4cm},hmargin=1.91cm,vmargin=2.24cm]{geometry}
@@ -32,17 +40,17 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % 章节样式
-\usepackage{titlesec}
-\titleformat{\chapter}
-[hang]
-{\sffamily\centering}
-{\zihao{4} 第{\thechapter}章\enspace}
-{0pt}
-{\zihao{4} \bfseries}
-[\vbox{\color{Melon}\titlerule \vspace{1pt} \titlerule}]
-\titlespacing{\chapter}{0pt}{*0.2}{*0.3}
+% \usepackage{titlesec}
+% \titleformat{\chapter}
+% [hang]
+% {\sffamily\centering}
+% {\zihao{4} 第{\thechapter}章\enspace}
+% {0pt}
+% {\zihao{4} \bfseries}
+% [\vbox{\color{Melon}\titlerule \vspace{1pt} \titlerule}]
+% \titlespacing{\chapter}{0pt}{*0.2}{*0.3}
 
-\titleformat{\section}[block]{\zihao{-4}\bfseries}{\S\thechapter.\arabic{section}}{1em}{}[]
+% \titleformat{\section}[block]{\zihao{-4}\bfseries}{\S\thechapter.\arabic{section}}{1em}{}[]
 % \titleformat{\subsection}[block]{\Large\itshape\mdseries}{\arabic{section}.\arabic{subsection}}{1em}{}[]
 % \titleformat{\subsubsection}[block]{\normalsize\bfseries}{\arabic{subsection}-\alph{subsubsection}}{1em}{}[]
 % \titleformat{\paragraph}[block]{\small\bfseries}{[\arabic{paragraph}]}{1em}{}[]
@@ -67,6 +75,7 @@
 \newrefformat{tab}{表\ref{#1}}
 \newrefformat{cha}{第\ref{#1}章 \nameref{#1}}
 \newrefformat{app}{附录\ref{#1} \nameref{#1}}
+\newrefformat{sec}{第\ref{#1}节 \nameref{#1}}
 
 % 索引
 \usepackage{makeidx}
@@ -122,18 +131,24 @@
 % \zihao{6}
 \pagestyle{empty}
 \include{title}
-\include{copyright} % 版权声明
+\include{copyright}
 \tableofcontents
 \pagestyle{fancy}
 
-\include{preface} % 前言
-\include{prepare} % 2	准备工作
-\include{basic} % 3	基础操作
+\include{preface}
+\include{prepare}
+\include{basic}
+\include{using}
+\include{reset}
+\include{repair}
+\include{support}
 \appendix
-\include{standard} % 附录 A 参照标准
-\listoftables % 表格列表
-\listoffigures % 图片列表
+\include{standard}
+\listoftables 
+\listoffigures
 \printindex % 索引 makeindex
 %\bibliography{...} % 参考文献 bibtex
+\pagestyle{empty}
 \include{pdfs}
+\include{cover}
 \end{document}
