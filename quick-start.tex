@@ -92,11 +92,11 @@
 
 % 列表
 \usepackage{enumitem}
+\setlist[enumerate, 1]{label=(\arabic*)}
+\setlist[enumerate, 2]{label=(\alpa*)}
 % \setlist{partopsep=2pt, itemsep=1pt, parsep=0pt}
 % \setlist[itemize, 1]{align=left, labelindent*=1em, topsep={1pt plus 1pt minus 1pt}, itemsep={3pt plus 1pt minus 2pt}}
 % \setlist[itemize, 2]{leftmargin=0em, topsep={2pt plus 2pt minus 1.5pt}, partopsep={3pt plus 2pt minus 3pt}, itemsep={1pt plus 1pt minus 1pt}, parsep={1pt plus 1pt minus 1pt}}
-% \setlist[enumerate, 1]{leftmargin=0em, labelindent*=.5em}
-% \setlist[enumerate, 2]{leftmargin=0em, labelindent*=.5em, topsep=0pt}
 
 % 行和段落
 \linespread{1.4}
@@ -135,7 +135,7 @@
 \pagestyle{empty}
 \include{title}
 \include{copyright}
-\tableofcontents
+{\small\tableofcontents}
 \pagestyle{fancy}
 
 \include{preface}
