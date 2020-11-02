@@ -59,7 +59,7 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-% linkcolor [red]
+    linkcolor=Blue,
 % anchorcolor [black]
 % citecolor [green]
 % filecolor [cyan]
@@ -107,11 +107,11 @@
 % 自定义指令
 \newcommand{\LM}{{\sf L~MASTER™}}
 \newcommand{\innerinfo}[3]{\par\vspace{0.4em}\noindent
-    {\begin{minipage}[t]{0.2\textwidth}
+    {\begin{minipage}[t]{0.2\linewidth}
     \vspace{0pt}
     \includegraphics[width=1.8cm]{#1}
     \end{minipage}}
-    {\begin{minipage}[t]{0.8\textwidth}
+    {\begin{minipage}[t]{0.8\linewidth}
     \vspace{0pt}
     {\sffamily\bfseries #2}\par\kaishu #3
     \end{minipage}}
@@ -119,6 +119,9 @@
 \newcommand{\info}[1]{\innerinfo{image/18.pdf}{注意：}{#1}}
 \newcommand{\dange}[1]{\innerinfo{image/19.pdf}{有电危险：}{#1}}
 \newcommand{\danger}[2][危险]{\innerinfo{image/20.pdf}{#1：}{#2}}
+
+\newcommand{\btn}[1]{\fbox{#1}}
+\newcommand{\icn}[1]{{\includegraphics[height=1em]{#1}}}
 
 % 单位
 \newcommand{\unit}[1]{\,\mathrm{#1}}
@@ -144,7 +147,7 @@
 \include{support}
 \appendix
 \include{standard}
-\listoftables 
+\listoftables
 \listoffigures
 \printindex % 索引 makeindex
 %\bibliography{...} % 参考文献 bibtex
