@@ -10,7 +10,7 @@
 \everymath{\displaystyle}
 
 % 颜色
-\usepackage[dvipsnames, cmyk]{xcolor}
+\usepackage[dvipsnames, cmyk]{xcolor} % cmyk
 \definecolor{CarminePink}{HTML/cmyk}{E84746/0.01,0.83,0.71,0.01}
 \definecolor{SmrtSunglo}{HTML}{EB6160}
 \definecolor{LightCoral}{HTML}{EE7B7A}
@@ -19,13 +19,38 @@
 \definecolor{LightRose}{HTML}{F8CACA}
 \definecolor{MistyRose}{HTML}{FBE4E4}
 
-\definecolor{Primary}{HTML}{1E5AF0}
+\definecolor{Primary}{HTML/cmyk}{1E5AF0/0.58,0.35,0,0}
 \definecolor{Info}{HTML}{8296A6}
 \definecolor{Card}{HTML}{374148}
+
+\usepackage{tcolorbox}
 
 % 绘图
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds}
+
+% 交叉引用
+\usepackage{nameref}
+\usepackage{prettyref}
+\newrefformat{fig}{{\color{SmrtSunglo}\underline{图\ref{#1}}}}
+\newrefformat{tab}{{\color{SmrtSunglo}\underline{表\ref{#1}}}}
+\newrefformat{cha}{{\color{SmrtSunglo}\underline{第\ref{#1}章}\nameref{#1}}}
+\newrefformat{app}{{\color{SmrtSunglo}\underline{附录\ref{#1}}\nameref{#1}}}
+\newrefformat{sec}{{\color{SmrtSunglo}\underline{第\ref{#1}节}\nameref{#1}}}
+
+% 索引
+\usepackage{makeidx}
+\makeindex
+
+% 图片
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+% 表格
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
 
 % 字体
 \usepackage{fontspec}
@@ -34,24 +59,6 @@
 % \setsansfont[BoldFont={SourceHanSansSC-Bold}]{Source Han Sans SC}
 \setCJKsansfont{Source Han Sans SC}
 % \setCJKmonofont[BoldFont={Kaiti SC Bold}]{Kaiti SC Regular}
-
-% 中文排版设置
-\ctexset{
-    space=true,
-    punct=quanjiao,
-    chapter = {
-        beforeskip = 0pt,
-        fixskip = true,
-        format = \Huge\bfseries\CTEXnoindent,
-        nameformat = {\color{lightgray}\rule{\linewidth}{1bp}}\par\chapternamebox,
-        number = \arabic{chapter},
-        numberformat = \color{CarminePink}\zihao{0}\itshape,
-        % aftername = \par\medskip,
-        aftertitle = \par\bigskip\nointerlineskip{\color{LightRose}\rule{\linewidth}{2bp}}\par
-    }
-}
-\newcommand\chapternamebox[1]{%
-\includegraphics[width=1cm]{image/title_label.pdf}{\zihao{2} #1}}
 
 % 页面设置
 \usepackage[papersize={13cm,18.4cm},hmargin=1.60cm,vmargin=2.10cm]{geometry}
@@ -100,21 +107,35 @@
     \renewcommand{\headrulewidth}{0pt} % remove lines as well
     \renewcommand{\footrulewidth}{0pt}
 }
-% 章节样式
-% \usepackage{titlesec}
-% \titleformat{\chapter}
-% [hang]
-% {\sffamily\centering}
-% {\zihao{4} 第{\thechapter}章\enspace}
-% {0pt}
-% {\zihao{4} \bfseries}
-% [\vbox{\color{Melon}\titlerule \vspace{1pt} \titlerule}]
-% \titlespacing{\chapter}{0pt}{*0.2}{*0.3}
 
-% \titleformat{\section}[block]{\zihao{-4}\bfseries}{\S\thechapter.\arabic{section}}{1em}{}[]
-% \titleformat{\subsection}[block]{\Large\itshape\mdseries}{\arabic{section}.\arabic{subsection}}{1em}{}[]
-% \titleformat{\subsubsection}[block]{\normalsize\bfseries}{\arabic{subsection}-\alph{subsubsection}}{1em}{}[]
-% \titleformat{\paragraph}[block]{\small\bfseries}{[\arabic{paragraph}]}{1em}{}[]
+% 章节样式
+\ctexset{
+    space=true,
+    punct=quanjiao,
+    chapter = {
+        beforeskip = 0pt,
+        fixskip = true,
+        format = \Huge\bfseries\CTEXnoindent,
+        nameformat = {\color{gray!50!white}\rule{\linewidth}{1pt}}\par\chapternamebox,
+        number = \arabic{chapter},
+        numberformat = \color{CarminePink}\zihao{0}\itshape,
+        % aftername = \par\medskip,
+        aftertitle = \par\bigskip\nointerlineskip{\color{LightRose}\rule{\linewidth}{2pt}}\par
+    },
+    subsubsection = {
+        format = \large\sffamily\bfseries\color{CarminePink},
+    },
+    paragraph = {
+        format = \large\sffamily\bfseries,
+    },
+    subparagraph = {
+        format = \sffamily\bfseries,
+    }
+}
+\newcommand\chapternamebox[1]{%
+\includegraphics[width=1cm]{image/title_label.pdf}{\zihao{2} #1}}
+\newcommand\subsubsectionnamebox[1]{%
+\tcbox[colback=white,colframe=CarminePink]{#1}}
 
 % 超链接
 \usepackage{hyperref}
@@ -129,29 +150,6 @@
 % urlcolor [magenta]
 % allcolors -- use this if you want to set all links to the same color
 }
-% 交叉引用
-\usepackage{nameref}
-\usepackage{prettyref}
-\newrefformat{fig}{{\color{SmrtSunglo}\underline{图\ref{#1}}}}
-\newrefformat{tab}{{\color{SmrtSunglo}\underline{表\ref{#1}}}}
-\newrefformat{cha}{{\color{SmrtSunglo}\underline{第\ref{#1}章}\nameref{#1}}}
-\newrefformat{app}{{\color{SmrtSunglo}\underline{附录\ref{#1}}\nameref{#1}}}
-\newrefformat{sec}{{\color{SmrtSunglo}\underline{第\ref{#1}节}\nameref{#1}}}
-
-% 索引
-\usepackage{makeidx}
-\makeindex
-
-% 图片
-\usepackage{graphicx}
-\usepackage{subfigure}
-\usepackage{tcolorbox}
-
-% 表格
-\usepackage{array}
-\usepackage{tabularx}
-\usepackage{multirow}
-\newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
 
 % 列表
 \usepackage{enumitem}
@@ -181,9 +179,9 @@
     {\sffamily\bfseries #2}\par\kaishu #3
     \end{minipage}}
 }
-\newcommand{\info}[1]{\innerinfo{\includegraphics[width=1.8cm]{image/18.pdf}}{注意：}{#1}}
-\newcommand{\dange}[1]{\innerinfo{\includegraphics[width=1.8cm]{image/19.pdf}}{有电危险：}{#1}}
-\newcommand{\danger}[2][危险]{\innerinfo{\includegraphics[width=1.8cm]{image/20.pdf}}{#1：}{#2}}
+\newcommand{\info}[1]{\innerinfo{\includegraphics[width=1.6cm]{image/ic_w_info.pdf}}{注意：}{#1}}
+\newcommand{\dange}[1]{\innerinfo{\includegraphics[width=1.6cm]{image/ic_w_flash.pdf}}{有电危险：}{#1}}
+\newcommand{\danger}[2][危险]{\innerinfo{\includegraphics[width=1.6cm]{image/ic_w_warning.pdf}}{#1：}{#2}}
 
 % 单位
 \newcommand{\unit}[1]{\,\mathrm{#1}}
@@ -198,7 +196,7 @@
 \newcommand{\btn}[2][Primary]{\tcbox[left=10pt,right=10pt,top=4pt,bottom=4pt,colframe=#1,colback=#1,colupper=white,arc=8pt]{#2}}
 \newcommand{\kbd}[1]{\tcbox[left=4pt,right=4pt,top=4pt,bottom=4pt,colframe=LightRose,colback=white]{#1}}
 \newcommand{\mnu}[1]{\tcbox[left=2pt,right=2pt,top=2pt,bottom=2pt,arc=1pt,colframe=Primary,colback=white]{#1}}
-\newcommand{\icn}[2][white]{\colorbox{#1}{\includegraphics[height=1em]{#2}}}
+\newcommand{\icn}[2][]{{\includegraphics[height=1em]{#2}}}
 
 % \zihao{6}
 % \include{title}
