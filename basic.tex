@@ -33,7 +33,7 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[height=3.5cm]{image/41.pdf}
+    \includegraphics[height=3.5cm]{line_graphs/robot_control_box_back.pdf}
     \caption{控制箱背板示意图}
     \label{fig:控制箱背板示意图}
 \end{figure}
@@ -67,7 +67,7 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 	\item 若使用无线热点，地址为：\url{http://10.20.17.1}
 \end{itemize}
 
-网页打开后会进入登录页面，请输入默认授权码：\verb|1111|，点击\btn{登录}或按回车键，登录\LM。
+网页打开后会进入登录页面，请输入默认授权码：\verb|1111|，点击\btn{登录}或按\kbd{Enter}，登录\LM。
 
 \begin{figure}[ht]
     \centering
@@ -118,7 +118,7 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 \item 碰撞检测
 
-	检测开关默认为开，“碰撞后的动作”默认为“急停”，可选择“急停”或“暂停”，同时可以拖动拉杆来调整“检测灵敏度”大小。点击“下一步”，进入界面设置。
+	检测开关默认为开，“碰撞后的动作”默认为“急停”，可选择“急停”或“暂停”，同时可以拖动拉杆来调整“检测灵敏度”大小。点击\btn{下一步}，进入界面设置。
 
 	\begin{figure}[ht]
 		\centering
@@ -143,7 +143,7 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 	\label{fig:界面设置}
 \end{figure}
 
-点击“完成”，进入\LM 首页。
+点击\btn{完成}，进入\LM 首页。
 
 \section{首页}
 
@@ -161,10 +161,12 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 \subsection{机器人状态}
 
+机器人状态区显示机器人当前状态，具体说明可参考\prettyref{tab:机器人状态列表}。
+
 \begin{table}[ht]
     \centering\small
     \begin{tabular}{|l|l|}\hline
-\bf 状态 & \bf 说明\\\hline
+\sf 状态 & \sf 说明\\\hline
 硬件通讯故障 & 机器人通讯故障或控制系统异常\\\hline
 已急停，请确认安全性 & 机器人处于急停状态\\\hline
 初始化中 & 机器人初始化中\\\hline
@@ -178,6 +180,7 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 已停止 & 机器人处于停止状态，非急停状态\\\hline
     \end{tabular}
     \caption{机器人状态列表}
+    \label{tab:机器人状态列表}
 \end{table}
 
 \subsection{温度}
@@ -220,13 +223,13 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 \begin{enumerate}
 	\item 通过关键字搜索消息通知；
 	\item 通过筛选5种类型的机器人消息通知：
-	\begin{itemize}
-\item \icn{image/30.pdf} 调试类
-\item \icn{image/29.pdf} 信息类：信息提醒类消息
-\item \icn{image/28.pdf} 警告类：系统运行时的警告级别的提醒，一般不影响使用
-\item \icn{image/27.pdf} 错误：系统出现了错误，需要保持关注错误的发生概率，如果频繁发生需尽快点击查看解决方案或与本公司及时取得联系
-\item \icn{image/26.pdf} 严重错误：系统出现严重错误存在运行风险或已无法正常运行，此时必须立即停机查看解决方案或与本公司及时取得联系。
-	\end{itemize}
+	\begin{description}
+\item[\icn{image/30.pdf} 调试]
+\item[\icn{image/29.pdf} 信息] 信息提醒类消息
+\item[\icn{image/28.pdf} 警告] 系统运行时的警告级别的提醒，一般不影响使用
+\item[\icn{image/27.pdf} 错误] 系统出现了错误，需要保持关注错误的发生概率，如果频繁发生需尽快点击查看解决方案或与本公司及时取得联系
+\item[\icn{image/26.pdf} 致命] 系统出现严重错误，存在运行风险或已无法正常运行，此时必须立即停机查看解决方案或与本公司及时取得联系。
+	\end{description}
 \end{enumerate}
 
 当消息中含有错误码时，点击错误码，可跳转至本公司官网对应的错误码解决方案查看页面，在页面中可根据错误码查找对应的问题及解决方案。
@@ -289,10 +292,10 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 \section{急停机器人}
 
 急停操作有两种方式，可任选其一：
-\begin{itemize}
-	\item 软急停：\LM 右下方的红色“急停”按钮；
-	\item 硬急停：按下控制箱顶部的红色凸起急停按钮或外接急停按钮（选配）。
-\end{itemize}
+\begin{description}
+	\item[软急停] \LM 右下方的红色\btn[Red]{急停ESTOP}按钮；
+	\item[硬急停] 按下控制箱顶部的红色凸起急停按钮或外接急停按钮（选配）。
+\end{description}
 
 \info{使用硬急停操作后，急停操作不会自动释放，需要顺时针旋转急停按钮，解除锁定后完成释放。}
 
@@ -307,10 +310,10 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 \section{胶囊控制区}
 胶囊控制区仅在非首页时显示，可查看“机器状态”和“任务历史”。通过长按胶囊控制区，可拖动胶囊控制区在页面中的位置。
-\begin{itemize}
-	\item “机器状态”包含机器人当前状态、机器人启动/停止按钮、示教按钮以及速度调整拉杆，可以在非首页时操作和控制机器人；
-	\item “任务历史”包含正在运行中及已完成的任务列表、任务的暂停/恢复和停止按钮，可以在非首页时查看任务历史，具体操作见\prettyref{sec:任务历史}。
-\end{itemize}
+\begin{description}
+	\item [机器状态] 包含机器人当前状态、机器人启动/停止按钮、示教按钮以及速度调整拉杆，可以在非首页时操作和控制机器人；
+	\item [任务历史] 包含正在运行中及已完成的任务列表、任务的暂停/恢复和停止按钮，可以在非首页时查看任务历史，具体操作见\prettyref{sec:任务历史}。
+\end{description}
 
 \begin{figure}[ht]
 	\centering

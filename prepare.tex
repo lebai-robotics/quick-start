@@ -60,7 +60,7 @@ LM3机器人产品主要由LM3机器人本体和控制箱组成。机器人本�
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{image/host.pdf}
+    \includegraphics[width=\textwidth]{line_graphs/robot_links.pdf}
     \caption{机器人本体及控制箱连接}
     \label{fig:机器人本体及控制箱连接}
 \end{figure}
@@ -78,7 +78,7 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[height=4cm]{image/13.pdf}
+    \includegraphics[height=4cm]{line_graphs/robot_box_io_plugin.pdf}
     \caption{控制箱I/O硬件接口示意图}
     \label{fig:控制箱IO}
 \end{figure}
@@ -132,8 +132,8 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
     2	&   电源负极 & \\\hline
     3	&   数字输出1	&   \multirow{2}{5cm}{输出电压$24\unit{V}$，最大电流$2\unit{A}$。}\\\cline{1-2}
     4	&   数字输出2	&   \\\hline
-    5	&   CANH	&   \\\hline
-    6	&   CANL	&   \\\hline
+    5	&   CANH	&  CAN通信总线高电平。 \\\hline
+    6	&   CANL	& CAN通信总线低电平。  \\\hline
     7	&   数字输入1	&   \multirow{2}{5cm}{
             输入电压$3\sim 30\unit{V}$。
     }\\\cline{1-2}
@@ -153,31 +153,29 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
     \centering
     \subfigure[正装]{
 		\begin{minipage}[b]{0.3\textwidth}\centering
-			\includegraphics[height=4cm, page=2]{image/setup.pdf}
+			\includegraphics[width=\linewidth]{line_graphs/install_direction_up.pdf}
 		\end{minipage}
 	}
     \subfigure[倒装]{
     	\begin{minipage}[b]{0.3\textwidth}\centering
-   		 	\includegraphics[height=4cm, page=3]{image/setup.pdf}
+   		 	\includegraphics[width=\linewidth]{line_graphs/install_direction_down.pdf}
     	\end{minipage}
     }
     \subfigure[侧装]{
-    	\begin{minipage}[b]{0.4\textwidth}\centering
-   		 	\includegraphics[width=4cm, page=4]{image/setup.pdf}
+    	\begin{minipage}[b]{0.3\textwidth}\centering
+   		 	\includegraphics[width=\linewidth]{line_graphs/install_direction_side.pdf}
     	\end{minipage}
     }
     \caption{机器人安装方式}
     \label{fig:机器人安装方式}
 \end{figure}
-
  
 \begin{figure}[ht]
     \centering
-    \includegraphics{image/1-5-base.png}
+    \includegraphics[height=5cm]{line_graphs/bottom_surface.pdf}
     \caption{机器人底座视图}
     \label{fig:机器人底座视图}
 \end{figure}
-
 
 \info{\begin{itemize}
 \item 机器人每一个安装孔位都应固定螺钉，固定后的每个螺钉都应能提供最小抗倾覆力；
