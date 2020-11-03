@@ -5,7 +5,18 @@
 \usepackage{ifthen}
 
 % 颜色
-\usepackage[dvipsnames]{xcolor}
+\usepackage[dvipsnames, cmyk]{xcolor}
+\definecolor{CarminePink}{HTML/cmyk}{E84746/0.01,0.83,0.71,0.01}
+\definecolor{SmrtSunglo}{HTML}{EB6160}
+\definecolor{LightCoral}{HTML}{EE7B7A}
+\definecolor{SeaPink}{HTML}{F19595}
+\definecolor{BeautyBush}{HTML}{F5B0AF}
+\definecolor{LightRose}{HTML}{F8CACA}
+\definecolor{MistyRose}{HTML}{FBE4E4}
+
+% 绘图
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds}
 
 % 字体
 \usepackage{fontspec}
@@ -19,14 +30,54 @@
 \ctexset{
     space=true,
     punct=quanjiao,
-    chapter/number = \arabic{chapter},
-    chapter/numberformat = \color{blue}\zihao{0}\itshape,
-    chapter/beforeskip = 0pt,
-    chapter/afterskip = 20pt plus 40pt minus 10pt,
+    chapter = {
+        beforeskip = 0pt,
+        fixskip = true,
+        format = \Huge\bfseries\CTEXnoindent,
+        nameformat = {\color{lightgray}\rule{\linewidth}{1bp}}\par\chapternamebox,
+        number = \arabic{chapter},
+        numberformat = \color{CarminePink}\zihao{0}\itshape,
+        % aftername = \par\medskip,
+        aftertitle = \par\bigskip\nointerlineskip{\color{LightRose}\rule{\linewidth}{2bp}}\par
+    }
 }
+\newcommand\chapternamebox[1]{%
+\includegraphics[width=1cm]{image/title_label.pdf}{\zihao{2} #1}}
 
 % 页面设置
-\usepackage[papersize={13cm,18.4cm},hmargin=1.91cm,vmargin=2.24cm]{geometry}
+\usepackage[papersize={13cm,18.4cm},hmargin=1.60cm,vmargin=2.10cm]{geometry}
+
+% 页面背景
+\usepackage[scale=1]{background}
+\usepackage{ifthen}
+\AddEverypageHook{%
+    \ifthenelse{\isodd{\value{page}}}%
+        {\backgroundsetup{
+            angle=0,
+            position={0,-0.65\textheight},
+            contents={\begin{tikzpicture}
+            \begin{scope}[fill opacity=0.5]
+                \skipdef\r=0
+                \skipdef\x=30
+                \skipdef\y=30
+                \draw[step=1,gray,very thin] (0,0) grid (500,500);
+                \tikz \foreach \i in {1,...,3}
+                    \pgfmathsetlength{\x}{random(0,400)}
+                    \pgfmathsetlength{\y}{random(0,400)}
+                    \pgfmathsetlength{\r}{random(30,80)}
+                    \fill[SmrtSunglo] (\x,\y) circle (\r);
+                    % \fill[SmrtSunglo] (\x,\pgfmathparse{random(0,\x)}\pgfmathresult) circle (\pgfmathparse{random(0,\x)}\pgfmathresult cm);
+            \end{scope}
+            \end{tikzpicture}}
+        }%
+        }%
+    {\backgroundsetup{
+        angle=270,
+        position={0.9\textwidth,-.7\textheight},%
+        contents={Version 1.0.0}
+    }%
+    }%
+\BgMaterial}
 
 % 页眉和页脚
 \usepackage{fancyhdr}
@@ -59,7 +110,7 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=Blue,
+    linkcolor=CarminePink,
 % anchorcolor [black]
 % citecolor [green]
 % filecolor [cyan]
@@ -71,11 +122,11 @@
 % 交叉引用
 \usepackage{nameref}
 \usepackage{prettyref}
-\newrefformat{fig}{ 图\ref{#1} }
-\newrefformat{tab}{ 表\ref{#1} }
-\newrefformat{cha}{ 第\ref{#1}章 \nameref{#1} }
-\newrefformat{app}{ 附录\ref{#1} \nameref{#1} }
-\newrefformat{sec}{ 第\ref{#1}节 \nameref{#1} }
+\newrefformat{fig}{{\color{CarminePink}图\ref{#1}}}
+\newrefformat{tab}{{\color{CarminePink}表\ref{#1}}}
+\newrefformat{cha}{{\color{CarminePink}第\ref{#1}章\nameref{#1}}}
+\newrefformat{app}{{\color{CarminePink}附录\ref{#1}\nameref{#1}}}
+\newrefformat{sec}{{\color{CarminePink}第\ref{#1}节\nameref{#1}}}
 
 % 索引
 \usepackage{makeidx}
@@ -92,9 +143,9 @@
 
 % 列表
 \usepackage{enumitem}
+\setlist{nosep}
 \setlist[enumerate, 1]{label=(\arabic*)}
 \setlist[enumerate, 2]{label=(\alpa*)}
-% \setlist{partopsep=2pt, itemsep=1pt, parsep=0pt}
 % \setlist[itemize, 1]{align=left, labelindent*=1em, topsep={1pt plus 1pt minus 1pt}, itemsep={3pt plus 1pt minus 2pt}}
 % \setlist[itemize, 2]{leftmargin=0em, topsep={2pt plus 2pt minus 1.5pt}, partopsep={3pt plus 2pt minus 3pt}, itemsep={1pt plus 1pt minus 1pt}, parsep={1pt plus 1pt minus 1pt}}
 
@@ -109,16 +160,16 @@
 \newcommand{\innerinfo}[3]{\par\vspace{0.4em}\noindent
     {\begin{minipage}[t]{0.2\linewidth}
     \vspace{0pt}
-    \includegraphics[width=1.8cm]{#1}
+    #1
     \end{minipage}}
     {\begin{minipage}[t]{0.8\linewidth}
     \vspace{0pt}
     {\sffamily\bfseries #2}\par\kaishu #3
     \end{minipage}}
 }
-\newcommand{\info}[1]{\innerinfo{image/18.pdf}{注意：}{#1}}
-\newcommand{\dange}[1]{\innerinfo{image/19.pdf}{有电危险：}{#1}}
-\newcommand{\danger}[2][危险]{\innerinfo{image/20.pdf}{#1：}{#2}}
+\newcommand{\info}[1]{\innerinfo{\includegraphics[width=1.8cm]{image/18.pdf}}{注意：}{#1}}
+\newcommand{\dange}[1]{\innerinfo{\includegraphics[width=1.8cm]{image/19.pdf}}{有电危险：}{#1}}
+\newcommand{\danger}[2][危险]{\innerinfo{\includegraphics[width=1.8cm]{image/20.pdf}}{#1：}{#2}}
 
 \newcommand{\btn}[1]{\fbox{#1}}
 \newcommand{\icn}[2][White]{\colorbox{#1}{\includegraphics[height=1em]{#2}}}
@@ -135,9 +186,9 @@
 \pagestyle{empty}
 \include{title}
 \include{copyright}
-{\small\tableofcontents}
 \pagestyle{fancy}
-
+\setcounter{page}{1}
+{\small\tableofcontents}
 \include{preface}
 \include{prepare}
 \include{basic}
