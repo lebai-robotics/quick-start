@@ -1,5 +1,5 @@
 % !TEX program = xelatex
-\documentclass[UTF8, 10pt]{ctexrep}
+\documentclass[UTF8, 10pt, twoside]{ctexrep}
 
 % 编程
 \usepackage{ifthen}
@@ -48,48 +48,52 @@
 \usepackage[papersize={13cm,18.4cm},hmargin=1.60cm,vmargin=2.10cm]{geometry}
 
 % 页面背景
-\usepackage[scale=1]{background}
+\usepackage[scale=1, angle=0, hshift=0, vshift=0, placement=top]{background}
 \usepackage{ifthen}
-\AddEverypageHook{%
-    \ifthenelse{\isodd{\value{page}}}%
-        {\backgroundsetup{
-            angle=0,
-            position={0,-0.65\textheight},
-            contents={\begin{tikzpicture}
-            \begin{scope}[fill opacity=0.5]
-                \skipdef\r=0
-                \skipdef\x=30
-                \skipdef\y=30
-                \draw[step=1,gray,very thin] (0,0) grid (500,500);
-                \tikz \foreach \i in {1,...,3}
-                    \pgfmathsetlength{\x}{random(0,400)}
-                    \pgfmathsetlength{\y}{random(0,400)}
-                    \pgfmathsetlength{\r}{random(30,80)}
-                    \fill[SmrtSunglo] (\x,\y) circle (\r);
-                    % \fill[SmrtSunglo] (\x,\pgfmathparse{random(0,\x)}\pgfmathresult) circle (\pgfmathparse{random(0,\x)}\pgfmathresult cm);
-            \end{scope}
-            \end{tikzpicture}}
-        }%
-        }%
-    {\backgroundsetup{
-        angle=270,
-        position={0.9\textwidth,-.7\textheight},%
-        contents={Version 1.0.0}
-    }%
-    }%
-\BgMaterial}
+\backgroundsetup{
+    position={0,0},
+    contents={
+    % \def\tikz@width{\pagewidth}
+    % \def\tikz@height{\pageheight}
+    \begin{tikzpicture}
+    \begin{scope}[fill opacity=0.5]
+        \skipdef\r=0
+        \skipdef\x=30
+        \skipdef\y=30
+        \draw[step=1,gray,very thin] (0,0) grid (500,500);
+        % \node at (10, 20) {\zihao{1}\color{LightRose}-\thepage-};
+        \tikz \foreach \i in {1,...,3}
+            \pgfmathsetlength{\x}{random(0,400)}
+            \pgfmathsetlength{\y}{random(0,400)}
+            \pgfmathsetlength{\r}{random(30,80)}
+            \fill[MistyRose] (\x,\y) circle (\r);
+            % \fill[SmrtSunglo] (\x,\pgfmathparse{random(0,\x)}\pgfmathresult) circle (\pgfmathparse{random(0,\x)}\pgfmathresult cm);
+    \end{scope}
+    \end{tikzpicture}}
+}
 
 % 页眉和页脚
 \usepackage{fancyhdr}
+\pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\newcommand\myfoot{\zihao{3}\color{LightRose}\sffamily--~\thepage~--}
+\newcommand\myleft{\color{SmrtSunglo}\kaishu\leftmark}
+\newcommand\myright{\color{SmrtSunglo}\kaishu\rightmark}
 \fancyhf{}
-\fancyfoot[C]{\thepage}
-\fancyhead[LO]{\rightmark}
-\fancyhead[RE]{\leftmark}
+\fancyfoot[LE,RO]{\myfoot}
+\fancyhead[LO]{\myleft}
+\fancyhead[RE]{\myright}
 \renewcommand{\headrulewidth}{0pt} % 注意不用 \setlength
 \renewcommand{\footrulewidth}{0pt}
-
+\fancypagestyle{plain}{ %
+    \fancyhf{} % remove everything
+    \fancyfoot[LE,RO]{\myfoot}
+    \fancyhead[LO]{\myleft}
+    \fancyhead[RE]{\myright}
+    \renewcommand{\headrulewidth}{0pt} % remove lines as well
+    \renewcommand{\footrulewidth}{0pt}
+}
 % 章节样式
 % \usepackage{titlesec}
 % \titleformat{\chapter}
@@ -110,7 +114,7 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=CarminePink,
+    linkcolor=SmrtSunglo,
 % anchorcolor [black]
 % citecolor [green]
 % filecolor [cyan]
@@ -122,11 +126,11 @@
 % 交叉引用
 \usepackage{nameref}
 \usepackage{prettyref}
-\newrefformat{fig}{{\color{CarminePink}图\ref{#1}}}
-\newrefformat{tab}{{\color{CarminePink}表\ref{#1}}}
-\newrefformat{cha}{{\color{CarminePink}第\ref{#1}章\nameref{#1}}}
-\newrefformat{app}{{\color{CarminePink}附录\ref{#1}\nameref{#1}}}
-\newrefformat{sec}{{\color{CarminePink}第\ref{#1}节\nameref{#1}}}
+\newrefformat{fig}{{\color{SmrtSunglo}\underline{图\ref{#1}}}}
+\newrefformat{tab}{{\color{SmrtSunglo}\underline{表\ref{#1}}}}
+\newrefformat{cha}{{\color{SmrtSunglo}\underline{第\ref{#1}章}\nameref{#1}}}
+\newrefformat{app}{{\color{SmrtSunglo}\underline{附录\ref{#1}}\nameref{#1}}}
+\newrefformat{sec}{{\color{SmrtSunglo}\underline{第\ref{#1}节}\nameref{#1}}}
 
 % 索引
 \usepackage{makeidx}
@@ -134,6 +138,7 @@
 
 % 图片
 \usepackage{graphicx}
+\usepackage{subfigure}
 
 % 表格
 \usepackage{array}
@@ -183,11 +188,9 @@
 
 \begin{document}
 % \zihao{6}
-\pagestyle{empty}
-\include{title}
-\include{copyright}
-\pagestyle{fancy}
-\setcounter{page}{1}
+% \include{title}
+% \include{copyright}
+% \setcounter{page}{1}
 {\small\tableofcontents}
 \include{preface}
 \include{prepare}
@@ -202,7 +205,6 @@
 \listoffigures
 \printindex % 索引 makeindex
 %\bibliography{...} % 参考文献 bibtex
-\pagestyle{empty}
 % \include{pdfs}
-\include{cover}
+% \include{cover}
 \end{document}

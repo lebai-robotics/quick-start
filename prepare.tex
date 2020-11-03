@@ -45,7 +45,7 @@ LM3机器人产品主要由LM3机器人本体和控制箱组成。机器人本�
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[height=7cm]{image/14.pdf}
+    \includegraphics[height=8cm]{image/arms.pdf}
     \caption{机器人关节示意图}
     \label{fig:机器人关节示意图}
 \end{figure}
@@ -60,7 +60,7 @@ LM3机器人产品主要由LM3机器人本体和控制箱组成。机器人本�
 
 \begin{figure}[ht]
     \centering
-    \includegraphics{image/1-2-host.png}
+    \includegraphics[width=\textwidth]{image/host.pdf}
     \caption{机器人本体及控制箱连接}
     \label{fig:机器人本体及控制箱连接}
 \end{figure}
@@ -86,7 +86,7 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 \begin{table}[ht]
     \centering\small
 \begin{tabular}{|c|c|l|}\hline
-   \bf 序号	&  \bf 功能	& \bf  性能参数\\\hline
+   \sf 序号	&  \sf 功能	& \sf  性能参数\\\hline
     1	&   电源正极	& $24\unit{V}$  \\\hline
     2	&   模拟输出1   &  \multirow{2}{5cm}{电压型：输出电压$0\sim 10\unit{V}$；\\电流型：输出电流$4\sim 20\unit{mA}$。
     }\\\cline{1-2}
@@ -125,7 +125,7 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 \begin{table}[ht]
     \centering\small
 \begin{tabular}{|c|c|l|}\hline
-   \bf 序号	&  \bf 功能	& \bf  性能参数\\\hline
+   \sf 序号	&  \sf 功能	& \sf  性能参数\\\hline
     1	&   电源正极   &  \multirow{2}{5cm}{
             电压$24\unit{V}$，最大电流$2\unit{A}$。
     }\\\cline{1-2}
@@ -151,7 +151,21 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{image/1-4-dir-new.png}
+    \subfigure[正装]{
+		\begin{minipage}[b]{0.3\textwidth}\centering
+			\includegraphics[height=4cm, page=2]{image/setup.pdf}
+		\end{minipage}
+	}
+    \subfigure[倒装]{
+    	\begin{minipage}[b]{0.3\textwidth}\centering
+   		 	\includegraphics[height=4cm, page=3]{image/setup.pdf}
+    	\end{minipage}
+    }
+    \subfigure[侧装]{
+    	\begin{minipage}[b]{0.4\textwidth}\centering
+   		 	\includegraphics[width=4cm, page=4]{image/setup.pdf}
+    	\end{minipage}
+    }
     \caption{机器人安装方式}
     \label{fig:机器人安装方式}
 \end{figure}
