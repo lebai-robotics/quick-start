@@ -29,15 +29,6 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds}
 
-% 交叉引用
-\usepackage{nameref}
-\usepackage{prettyref}
-\newrefformat{fig}{{\color{SmrtSunglo}\underline{图\ref{#1}}}}
-\newrefformat{tab}{{\color{SmrtSunglo}\underline{表\ref{#1}}}}
-\newrefformat{cha}{{\color{SmrtSunglo}\underline{第\ref{#1}章}\nameref{#1}}}
-\newrefformat{app}{{\color{SmrtSunglo}\underline{附录\ref{#1}}\nameref{#1}}}
-\newrefformat{sec}{{\color{SmrtSunglo}\underline{第\ref{#1}节}\nameref{#1}}}
-
 % 索引
 \usepackage{makeidx}
 \makeindex
@@ -137,12 +128,23 @@
 \newcommand\subsubsectionnamebox[1]{%
 \tcbox[colback=white,colframe=CarminePink]{#1}}
 
+% 交叉引用
+\usepackage{nameref}
+\usepackage{prettyref}
+\newrefformat{fig}{{\color{SmrtSunglo}\underline{图\ref{#1}}}}
+\newrefformat{tab}{{\color{SmrtSunglo}\underline{表\ref{#1}}}}
+\newrefformat{cha}{{\color{SmrtSunglo}\underline{第\ref{#1}章}\nameref{#1}}}
+\newrefformat{app}{{\color{SmrtSunglo}\underline{附录\ref{#1}}\nameref{#1}}}
+\newrefformat{sec}{{\color{SmrtSunglo}\underline{第\ref{#1}节}\nameref{#1}}}
+
 % 超链接
 \usepackage{hyperref}
 \hypersetup{
+    linktoc=page,
+    % linktocpage=true,
     colorlinks=true,
     linkcolor=SmrtSunglo,
-% anchorcolor [black]
+    % anchorcolor=black,
 % citecolor [green]
 % filecolor [cyan]
 % menucolor [red]
@@ -156,8 +158,8 @@
 \setlist{nosep}
 \setlist[enumerate, 1]{label=(\arabic*)}
 \setlist[enumerate, 2]{label=(\alpa*)}
-\setlist[itemize]{font=\sffamily}
-\setlist[description]{font=\sffamily}
+\setlist[itemize]{font=\sffamily\bfseries}
+\setlist[description]{font=\sffamily\bfseries}
 % \setlist[itemize, 1]{align=left, labelindent*=1em, topsep={1pt plus 1pt minus 1pt}, itemsep={3pt plus 1pt minus 2pt}}
 % \setlist[itemize, 2]{leftmargin=0em, topsep={2pt plus 2pt minus 1.5pt}, partopsep={3pt plus 2pt minus 3pt}, itemsep={1pt plus 1pt minus 1pt}, parsep={1pt plus 1pt minus 1pt}}
 
