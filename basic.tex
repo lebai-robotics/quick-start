@@ -5,6 +5,13 @@
 
 操作前，请再次确认已阅读并确保已遵循\prettyref{sec:安全指南}内容，排除潜在风险，确保操作安全。
 
+\begin{figure}[hb]
+    \centering
+    \includegraphics[height=4cm]{line_graphs/robot_control_box_back.pdf}
+    \caption{控制箱背板示意图}
+    \label{fig:控制箱背板示意图}
+\end{figure}
+
 \begin{enumerate}
 \item 将机器人电缆插头插入控制箱的机器人接口；
 \item 控制箱插上电源线，并将电源插头接入$220 \unit{V}$交流电插座；
@@ -27,16 +34,11 @@
 \item 切勿让电源插头和插座粘附灰尘和金属附着物。
 \end{itemize}}
 
-\section{连接机器⼈}
+\clearpage
+
+\section{连接机器人}
 LM3支持有线网络连接和无线网络连接，无线网络连接目前仅支持接入控制箱内置的Wi-Fi热点网络。
 \subsection{有线网络连接}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[height=3.5cm]{line_graphs/robot_control_box_back.pdf}
-    \caption{控制箱背板示意图}
-    \label{fig:控制箱背板示意图}
-\end{figure}
 
 使用网线将控制箱背板的网口与路由器或交换机连接，同时确保用于操作机器人的电脑、平板、手机或其他图形化终端设备与机器人接入的是同一网络。
 
@@ -59,6 +61,8 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
     \label{fig:无线网络连接拓扑图}
 \end{figure}
 
+\clearpage
+
 \section{登录\LM}
 熟悉\LM 系统的操作将有助于您更方便和快速地上手使用本公司的机器人产品。
 打开电脑、平板、手机或其他图形化终端设备的浏览器，在地址栏输入如下地址：
@@ -71,10 +75,12 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{image/31.pdf}
+    \includegraphics[width=0.8\textwidth]{screen/2-4.png}
     \caption{登录\LM}
     \label{fig:登录LM}
 \end{figure}
+
+\clearpage
 
 \section{设置引导页}
 
@@ -84,7 +90,7 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{image/34.pdf}
+    \includegraphics[width=\textwidth]{screen/2-5.png}
     \caption{系统设置}
     \label{fig:系统设置}
 \end{figure}
@@ -98,12 +104,14 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=\textwidth]{image/33.pdf}
+		\includegraphics[width=\textwidth]{screen/2-6.png}
 		\caption{安装方式}
 		\label{fig:安装方式}
 	\end{figure}
 
 	\danger{安装方式的选择一定要与实际安装方式一致，否则有可能导致误伤。}
+
+\clearpage
 
 \item 操作模式
 
@@ -111,18 +119,20 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=\textwidth]{image/32.pdf}
+		\includegraphics[width=\textwidth]{screen/2-7.png}
 		\caption{操作模式}
 		\label{fig:操作模式}
 	\end{figure}
 
+\clearpage
+
 \item 碰撞检测
 
-	检测开关默认为开，“碰撞后的动作”默认为“急停”，可选择“急停”或“暂停”，同时可以拖动拉杆来调整“检测灵敏度”大小。点击\btn{下一步}，进入界面设置。
+	检测开关默认为开，“碰撞后的动作”默认为\mnu{急停}，可选择\mnu{急停}或\mnu{暂停}，同时可以拖动拉杆来调整“检测灵敏度”大小。点击\btn{下一步}，进入界面设置。
 
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=\textwidth]{image/10.pdf}
+		\includegraphics[width=\textwidth]{screen/2-8.png}
 		\caption{碰撞检测}
 		\label{fig:碰撞检测}
 	\end{figure}
@@ -130,20 +140,22 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 	\danger{机器人运行过程中，无论是否开启“碰撞检测”功能，禁止在没有防护的情况下进入到机器人作业半径范围内，否则存在人员被机器人撞伤，卷入的危险。}
 
 \end{enumerate}
-	
+
 \subsection{界面设置}
 
-在界面设置中，可以选择“深色主题”或“浅色主题”，目前\LM 浅色主题还在测试阶段，建议您选择使用“深色主题”。
+在界面设置中，建议您选择使用\mnu{深色主题}。
+% 可以选择\mnu{深色主题}或\mnu{浅色主题}，目前\LM 浅色主题还在测试阶段，
 
 \begin{figure}[ht]
 	\centering
-	\color{red}缺图
-	% \includegraphics[width=\textwidth]{image/10.pdf}
+	\includegraphics[width=\textwidth]{screen/2-9.png}
 	\caption{界面设置}
 	\label{fig:界面设置}
 \end{figure}
 
 点击\btn{完成}，进入\LM 首页。
+
+\clearpage
 
 \section{首页}
 
@@ -153,11 +165,12 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 \begin{figure}[ht]
 	\centering
-	\color{red}缺图
-	% \includegraphics[width=\textwidth]{image/10.pdf}
+	\includegraphics[width=\textwidth]{screen/2-10.png}
 	\caption{\LM 首页}
 	\label{fig:LM首页}
 \end{figure}
+
+\clearpage
 
 \subsection{机器人状态}
 
@@ -184,36 +197,43 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 \end{table}
 
 \subsection{温度}
-\LM 首页左上方实时监测机器人整机温度\footnote{整机温度：取控制箱内控制器的CPU温度和机器人每个关节的温度的最大值作为整机温度的显示，当整机温度数值右侧显示芯片图标为表示当前CPU温度值最高，显示一个关节加数字图标时表示该数字对应的关节温度较高。}，每个关节正常温度范围值在室温至65 ℃之间。点击左边区域的关节空间标签中关节角度的右侧温度计图标，可实时观测关节1至关节6的温度变化；再次点击该图标，可以切换回关节角度显示。
-
-\begin{figure}[ht]
-	\centering
-	\color{red}缺图
-	% \includegraphics[width=\textwidth]{image/2.pdf}
-	\caption{温度信息}
-	\label{fig:温度信息}
-\end{figure}
+如\prettyref{fig:温度信息}，\LM 首页左上方实时监测机器人整机温度\footnote{整机温度：取控制箱内控制器的CPU温度和机器人每个关节的温度的最大值作为整机温度的显示，当整机温度数值右侧显示芯片图标为表示当前CPU温度值最高，显示一个关节加数字图标时表示该数字对应的关节温度较高。}，每个关节正常温度范围值在室温至65 ℃之间。点击左边区域的关节空间标签中关节角度的右侧温度计图标，可实时观测关节1至关节6的温度变化；再次点击该图标，可以切换回关节角度显示。
 
 \danger[警告]{当关节温度显示超过65℃时，请勿触摸机器外表面，否则有高温烫伤风险，并请立即停机，待机器温度回到常温，再检查当前机器人负载是否超过额定有效负载$3\kg$或者机器人是否碰撞到外部物品。}
 
-\subsection{位置信息}
-\LM 首页左侧区域实时同步机器人位置信息，包含坐标空间和关节空间。坐标空间显示机器人在坐标空间的位置和姿态的实时数据；关节空间显示机器人6个关节角度的实时数据。
-
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{image/2.pdf}
-	\caption{位置信息}
-	\label{fig:位置信息}
+	\begin{minipage}[t]{0.32\linewidth}
+		\centering
+		\includegraphics[height=6cm]{screen/2-11-t.jpg}
+		\caption{关节温度}
+		\label{fig:温度信息}
+	\end{minipage}
+	\begin{minipage}[t]{0.32\linewidth}
+		\centering
+		\includegraphics[height=6cm]{screen/2-12-1.png}
+		\caption{关节空间}
+		\label{fig:关节位置信息}
+	\end{minipage}
+	\begin{minipage}[t]{0.32\linewidth}
+		\centering
+		\includegraphics[height=6cm]{screen/2-12.png}
+		\caption{坐标空间}
+		\label{fig:坐标位置信息}
+	\end{minipage}
 \end{figure}
 
-\subsection{速度调整}
-点击\LM 首页示教按钮下方的速度图标，在展开的拖动条中上下拖动以调整机器人的运行速度比例，速度比例可在$0\sim 100$区间内调整。
+\subsection{位置信息}
+\LM 首页左侧区域实时同步机器人位置信息，包含坐标空间和关节空间。如\prettyref{fig:坐标位置信息}，坐标空间显示机器人在坐标空间的位置和姿态的实时数据；如\prettyref{fig:关节位置信息}，关节空间显示机器人6个关节角度的实时数据。
+
+\subsection{速度因子}
+点击\LM 首页示教按钮下方的速度图标，在展开的滑动条中拖动滑块或点击滑动条以调整机器人的运行速度比例，调整区间为$0\sim 100$。
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{image/3.pdf}
-	\caption{速度调整}
-	\label{fig:速度调整}
+	\includegraphics[height=4cm]{screen/2-13.png}
+	\caption{速度因子}
+	\label{fig:速度因子}
 \end{figure}
 
 \subsection{消息中心}
@@ -232,15 +252,7 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 	\end{description}
 \end{enumerate}
 
-当消息中含有错误码时，点击错误码，可跳转至本公司官网对应的错误码解决方案查看页面，在页面中可根据错误码查找对应的问题及解决方案。
-
-\begin{figure}[ht]
-	\centering
-	\color{red}缺图
-	% \includegraphics[width=\textwidth]{image/2.pdf}
-	\caption{消息中心}
-	\label{fig:消息中心}
-\end{figure}
+点击消息项的错误码链接，可跳转至本公司官网对应的错误码解决方案查看页面，在页面中可根据错误码查找对应的问题及解决方案。
 
 \subsection{任务历史}
 \label{sec:任务历史}
@@ -250,44 +262,48 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 	\item 已完成的任务右侧显示“重新运行”小旗帜\icn{image/38}，点击可重新运行当前选择的任务。
 \end{itemize}
 
-\danger[警告]{当运行某个场景，该场景的任务进入任务历史列表。该任务运行完成，点击“重新运行”按钮后，当前执行的任务为之前执行该任务的场景数据，即使该场景在该任务运行完后发生变更，也不会影响该任务的重新运行，重新运行的任务不受该场景的数据变更影响，以上一次运行任务的场景数据为准。}
- 	
 点击“任务历史”列表项任务名称，进入该任务对应的场景编辑页面。
 
-\begin{figure}[ht]
+\danger[警告]{当运行某个场景，该场景的任务进入任务历史列表。该任务运行完成，点击“重新运行”按钮后，当前执行的任务为之前执行该任务的场景数据，即使该场景在该任务运行完后发生变更，也不会影响该任务的重新运行，重新运行的任务不受该场景的数据变更影响，以上一次运行任务的场景数据为准。}
+
+\begin{figure}[htb]
 	\centering
-	\color{red}缺图
-	% \includegraphics[width=\textwidth]{image/2.pdf}
-	\caption{任务历史}
-	\label{fig:任务历史}
+	\begin{minipage}[t]{0.55\linewidth}
+		\centering
+		\includegraphics[height=8cm]{screen/2-14.png}
+		\caption{消息中心}
+		\label{fig:消息中心}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.4\linewidth}
+		\centering
+		\includegraphics[height=8cm]{screen/2-15.png}
+		\caption{任务历史}
+		\label{fig:任务历史}
+	\end{minipage}
 \end{figure}
 
-\section{启动机器人}
-进入\LM ，如\prettyref{fig:启动机器人}所示，点击首页蓝色启动按钮\icn{image/39.pdf}；当首页视图区上方机器人状态标签显示为“空闲”时，表示您已成功启动机器人。
+\clearpage
 
-% \begin{figure}[ht]
-% 	\centering
-% 	\includegraphics[width=\textwidth]{image/4.pdf}
-% 	\caption{\LM 首页--启动机器人}
-% 	\label{fig:启动机器人}
-% \end{figure}
+\section{启动机器人}
+进入\LM ，如\prettyref{fig:启动机器人}所示，点击首页蓝色启动按钮\icn{image/39.pdf}；当首页视图区上方机器人状态标签显示为\mnu{空闲}时，表示您已成功启动机器人。
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{image/5.pdf}
+	\includegraphics[width=\textwidth]{screen/2-16.png}
 	\caption{\LM  首页--启动机器人}
 	\label{fig:启动机器人}
 \end{figure}
 
 \section{停止机器人}
-进入\LM ，如\prettyref{fig:停止机器人}所示，点击首页红色停止按钮；当机器人状态变为“已停止”时，表示您已成功停止机器人。
+当机器人处于\mnu{运行中}或\mnu{空闲}状态时，可以点击首页或如\prettyref{fig:胶囊控制区}所示的胶囊控制区的红色停止按钮；当机器人状态变为\mnu{已停止}时，表示您已成功停止机器人。
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=\textwidth]{image/6.pdf}
-	\caption{\LM  首页--停止机器人}
-	\label{fig:停止机器人}
-\end{figure}
+% \begin{figure}[ht]
+% 	\centering
+% 	\includegraphics[width=\textwidth]{image/6.pdf}
+% 	\caption{\LM  首页--停止机器人}
+% 	\label{fig:停止机器人}
+% \end{figure}
 
 \section{急停机器人}
 
@@ -309,16 +325,16 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 \danger[警告]{关闭机器人需严格遵守上述操作步骤，否则可能导致机器人文件系统损坏、机器人功能故障等问题。}
 
 \section{胶囊控制区}
-胶囊控制区仅在非首页时显示，可查看“机器状态”和“任务历史”。通过长按胶囊控制区，可拖动胶囊控制区在页面中的位置。
+胶囊控制区仅在非首页时显示，可查看“机器状态”和“任务历史”。长按可拖动调整胶囊控制区在页面中的位置。
+
+\begin{figure}[hb]
+	\centering
+	\includegraphics[height=4cm]{screen/2-18.png}
+	\caption{胶囊控制区}
+	\label{fig:胶囊控制区}
+\end{figure}
+
 \begin{description}
 	\item [机器状态] 包含机器人当前状态、机器人启动/停止按钮、示教按钮以及速度调整拉杆，可以在非首页时操作和控制机器人；
 	\item [任务历史] 包含正在运行中及已完成的任务列表、任务的暂停/恢复和停止按钮，可以在非首页时查看任务历史，具体操作见\prettyref{sec:任务历史}。
 \end{description}
-
-\begin{figure}[ht]
-	\centering
-	\color{red}缺图
-	% \includegraphics[width=\textwidth]{image/2.pdf}
-	\caption{胶囊控制区示意图}
-	\label{fig:胶囊控制区示意图}
-\end{figure}
