@@ -21,6 +21,7 @@
 
 \definecolor{Primary}{HTML/cmyk}{1E5AF0/0.58,0.35,0,0}
 \definecolor{Info}{HTML}{8296A6}
+\definecolor{Danger}{HTML}{FF3B30}
 \definecolor{Card}{HTML}{374148}
 
 \usepackage{tcolorbox}
@@ -36,6 +37,7 @@
 % 图片
 \usepackage{graphicx}
 \usepackage{subfigure}
+\usepackage{float}
 
 % 表格
 \usepackage{array}
@@ -62,7 +64,7 @@
     % \def\tikz@width{\pagewidth}
     % \def\tikz@height{\pageheight}
     \begin{tikzpicture}
-    \begin{scope}[fill opacity=0.5]
+    \begin{scope}[fill]
         \skipdef\r=0
         \skipdef\x=30
         \skipdef\y=30
@@ -113,7 +115,19 @@
         % aftername = \par\medskip,
         aftertitle = \par\bigskip\nointerlineskip{\color{LightRose}\rule{\linewidth}{2pt}}\par
     },
+    section = {
+        beforeskip = 10pt plus 6pt minus 4pt,
+        afterskip = 4pt plus 6pt minus 4pt,
+        numberformat = \color{CarminePink},
+    },
+    subsection = {
+        beforeskip = 6pt plus 6pt minus 4pt,
+        afterskip = 4pt plus 6pt minus 4pt,
+        numberformat = \color{CarminePink},
+    },
     subsubsection = {
+        beforeskip = 4pt plus 6pt minus 4pt,
+        afterskip = 4pt plus 6pt minus 4pt,
         format = \large\sffamily\bfseries\color{CarminePink},
     },
     paragraph = {
@@ -171,7 +185,7 @@
 
 % 自定义指令
 \newcommand{\LM}{{\sf L~MASTER™}}
-\newcommand{\innerinfo}[3]{\par\vspace{0.4em}\noindent
+\newcommand{\innerinfo}[3]{\par\vspace{4pt}\noindent
     {\begin{minipage}[t]{0.2\linewidth}
     \vspace{0pt}
     #1
@@ -205,7 +219,9 @@
 % \include{copyright}
 % \setcounter{page}{1}
 \setcounter{tocdepth}{3}
+\pagestyle{empty}
 {\small\tableofcontents}
+\pagestyle{fancy}
 \include{preface}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
