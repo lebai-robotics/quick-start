@@ -11,12 +11,13 @@
 
 % 颜色
 \usepackage[dvipsnames, cmyk]{xcolor} % cmyk
-\definecolor{CarminePink}{HTML/cmyk}{E84746/0.01,0.83,0.71,0.01}
+\definecolor{CarminePink}{HTML/cmyk}{EB6160/0.01,0.83,0.71,0.01}
 \definecolor{SmrtSunglo}{HTML}{EB6160}
 \definecolor{LightCoral}{HTML}{EE7B7A}
 \definecolor{SeaPink}{HTML}{F19595}
 \definecolor{BeautyBush}{HTML}{F5B0AF}
 \definecolor{LightRose}{HTML}{F8CACA}
+\definecolor{LightPink}{HTML}{F19595}
 \definecolor{MistyRose}{HTML}{FBE4E4}
 
 \definecolor{Primary}{HTML/cmyk}{1E5AF0/0.58,0.35,0,0}
@@ -66,7 +67,7 @@
         \skipdef\r=0
         \skipdef\x=30
         \skipdef\y=30
-        \draw[step=1,gray,very thin] (0,0) grid (500,500);
+        % \draw[step=1,gray,very thin] (0,0) grid (500,500);
         % \node at (10, 20) {\zihao{1}\color{LightRose}-\thepage-};
         \tikz \foreach \i in {1,...,3}
             \pgfmathsetlength{\x}{random(0,400)}
@@ -81,7 +82,7 @@
 % 页眉和页脚
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\newcommand\myfoot{\zihao{3}\color{SmrtSunglo}\itshape--~\thepage~--}
+\newcommand\myfoot{\zihao{5}\color{SmrtSunglo}\itshape--~\thepage~--}
 \newcommand\myleft{\color{SmrtSunglo}\kaishu\leftmark}
 \newcommand\myright{\color{SmrtSunglo}\kaishu\rightmark}
 \fancyhf{}
@@ -107,11 +108,11 @@
         beforeskip = 0pt,
         fixskip = true,
         format = \Huge\bfseries\CTEXnoindent,
-        nameformat = {\color{gray!50!white}\rule{\linewidth}{1pt}}\par\chapternamebox,
+        nameformat = \par\chapternamebox,
         number = \arabic{chapter},
         numberformat = \color{CarminePink}\zihao{0}\itshape,
         % aftername = \par\medskip,
-        aftertitle = \par\bigskip\nointerlineskip{\color{LightRose}\rule{\linewidth}{2pt}}\par
+        aftertitle = \par\bigskip\nointerlineskip{\color{LightPink}\rule{\linewidth}{1pt}}\par
     },
     subsubsection = {
         format = \large\sffamily\bfseries\color{CarminePink},
