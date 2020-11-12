@@ -166,6 +166,8 @@
 \usepackage{caption}
 \captionsetup[table]{labelsep=space,labelfont=bf}
 \captionsetup[figure]{labelsep=space,labelfont=bf} 
+\setlength{\abovecaptionskip}{6pt}
+\setlength{\belowcaptionskip}{8pt}
 
 % 目录
 \usepackage{titlesec}
@@ -194,17 +196,21 @@
 % filecolor [cyan]
 % menucolor [red]
 % runcolor [cyan - same as file color]
-% urlcolor [magenta]
+urlcolor=CarminePink,
 % allcolors -- use this if you want to set all links to the same color
 }
+
+% 脚注
+\usepackage{perpage} %the perpage package
+\MakePerPage{footnote} %the perpage package command
 
 % 列表
 \usepackage{enumitem}
 \setlist{nosep}
 \setlist[enumerate, 1]{label=(\arabic*)}
 \setlist[enumerate, 2]{label=(\alpa*)}
-\setlist[itemize]{font=\sffamily}
-\setlist[description]{font=\sffamily}
+\setlist[itemize]{font=\sffamily\bfseries}
+\setlist[description]{font=\sffamily\bfseries}
 % \setlist[itemize, 1]{align=left, labelindent*=1em, topsep={1pt plus 1pt minus 1pt}, itemsep={3pt plus 1pt minus 2pt}}
 % \setlist[itemize, 2]{leftmargin=0em, topsep={2pt plus 2pt minus 1.5pt}, partopsep={3pt plus 2pt minus 3pt}, itemsep={1pt plus 1pt minus 1pt}, parsep={1pt plus 1pt minus 1pt}}
 
