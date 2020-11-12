@@ -55,7 +55,7 @@
 % \setCJKmonofont[BoldFont={Kaiti SC Bold}]{Kaiti SC Regular}
 
 % 页面设置
-\usepackage[papersize={13cm,18.4cm},hmargin=1.60cm,vmargin=2.10cm]{geometry}
+\usepackage[papersize={13cm,18.4cm},top=1.8cm,bottom=2cm,left=2.1cm,right=1.8cm]{geometry}
 
 % 页面背景
 \usepackage[scale=1, angle=0, hshift=0, vshift=0, placement=top]{background}
@@ -84,18 +84,18 @@
 % 页眉和页脚
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\newcommand\myfoot{\zihao{5}\color{SmrtSunglo}\itshape--~\thepage~--}
+\newcommand\myfoot{\zihao{5}\color{lightgray}\sffamily---~{\color{black}\thepage}~---}
 \newcommand\myleft{\color{SmrtSunglo}\kaishu\leftmark}
 \newcommand\myright{\color{SmrtSunglo}\kaishu\rightmark}
 \fancyhf{}
-\fancyfoot[LE,RO]{\myfoot}
+\fancyfoot[C]{\myfoot}
 \fancyhead[LO]{\myleft}
 \fancyhead[RE]{\myright}
 \renewcommand{\headrulewidth}{0pt} % 注意不用 \setlength
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{ %
     \fancyhf{} % remove everything
-    \fancyfoot[LE,RO]{\myfoot}
+    \fancyfoot[C]{\myfoot}
     \fancyhead[LO]{\myleft}
     \fancyhead[RE]{\myright}
     \renewcommand{\headrulewidth}{0pt} % remove lines as well
@@ -108,12 +108,12 @@
     punct=quanjiao,
     chapter = {
         beforeskip = 0pt,
+        afterskip = 20pt,
         fixskip = true,
-        format = \Huge\bfseries\CTEXnoindent,
+        format = \Huge\bfseries\setlength\parindent{0pt},
         nameformat = \par\chapternamebox,
         number = \arabic{chapter},
         numberformat = \color{CarminePink}\zihao{0}\itshape,
-        % aftername = \par\medskip,
         aftertitle = \par\bigskip\nointerlineskip{\color{LightPink}\rule{\linewidth}{1pt}}\par
     },
     section = {
@@ -129,10 +129,11 @@
     subsubsection = {
         beforeskip = 4pt plus 6pt minus 4pt,
         afterskip = 4pt plus 6pt minus 4pt,
-        format = \large\sffamily\bfseries\color{CarminePink},
+        numberformat = \color{CarminePink},
+        format = \large\sffamily\bfseries,
     },
     paragraph = {
-        format = \large\sffamily\bfseries,
+        format = \large\sffamily\bfseries\color{CarminePink},
     },
     subparagraph = {
         format = \sffamily\bfseries,
@@ -151,6 +152,26 @@
 \newrefformat{cha}{{\color{SmrtSunglo}\underline{第\ref{#1}章}\nameref{#1}}}
 \newrefformat{app}{{\color{SmrtSunglo}\underline{附录\ref{#1}}\nameref{#1}}}
 \newrefformat{sec}{{\color{SmrtSunglo}\underline{第\ref{#1}节}\nameref{#1}}}
+
+% 图表
+\usepackage{caption}
+\captionsetup[table]{labelsep=space,labelfont=bf}
+\captionsetup[figure]{labelsep=space,labelfont=bf} 
+
+% 目录
+\usepackage{titlesec}
+\usepackage{titletoc}
+\contentsmargin{2em}
+\dottedcontents{chapter}[4em]{\sffamily}{4em}{1pc}
+\dottedcontents{section}[5em]{}{3em}{1mm}
+\dottedcontents{subsection}[7em]{}{4em}{1mm}
+\dottedcontents{subsubsection}[9em]{}{4em}{1mm}
+% \titlecontents{section}
+%               [3cm]
+%               {\bf \large}%
+%               {\contentslabel{2.5em}}%
+%               {}%
+%               {\titlerule*[0.5pc]{$\cdot$}\contentspage\hspace*{3cm}}%
 
 % 超链接
 \usepackage{hyperref}
@@ -173,8 +194,8 @@
 \setlist{nosep}
 \setlist[enumerate, 1]{label=(\arabic*)}
 \setlist[enumerate, 2]{label=(\alpa*)}
-\setlist[itemize]{font=\sffamily\bfseries}
-\setlist[description]{font=\sffamily\bfseries}
+\setlist[itemize]{font=\sffamily}
+\setlist[description]{font=\sffamily}
 % \setlist[itemize, 1]{align=left, labelindent*=1em, topsep={1pt plus 1pt minus 1pt}, itemsep={3pt plus 1pt minus 2pt}}
 % \setlist[itemize, 2]{leftmargin=0em, topsep={2pt plus 2pt minus 1.5pt}, partopsep={3pt plus 2pt minus 3pt}, itemsep={1pt plus 1pt minus 1pt}, parsep={1pt plus 1pt minus 1pt}}
 
@@ -218,12 +239,13 @@
 % \zihao{6}
 % \include{title}
 % \include{copyright}
-% \setcounter{page}{1}
+\setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
-\pagestyle{empty}
-{\small\tableofcontents}
-\clearpage
-\pagestyle{fancy}
+\pagenumbering{roman}
+{\linespread{1.6}\small\tableofcontents}
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
 \include{preface}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
@@ -239,10 +261,10 @@
 \listoffigures
 \clearpage
 \pagestyle{empty}
-\clearpage
-\listoftables
-\clearpage
-\include{copyright}
+% \clearpage
+% \listoftables
+% \clearpage
+% \include{copyright}
 % \printindex % 索引 makeindex
 %\bibliography{...} % 参考文献 bibtex
 % \include{pdfs}
