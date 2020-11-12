@@ -223,7 +223,7 @@ urlcolor=CarminePink,
 
 % 自定义指令
 \newcommand{\LM}{{\sf L~MASTER™}}
-\newcommand{\innerinfo}[3]{{\setlength{\parindent}{0pt}\par\vspace*{6pt}
+\newcommand{\innerinfo}[3]{{\setlength{\parindent}{0pt}\par\medskip
     {\begin{minipage}[t]{0.18\linewidth}
     \vspace{0pt}
     #1
@@ -231,10 +231,8 @@ urlcolor=CarminePink,
     {\begin{minipage}[t]{0.8\linewidth}
     \vspace{0pt}
     {\sffamily\bfseries #2}\par\kaishu #3
-    \end{minipage}\par}
+    \end{minipage}\bigskip}
 }
-
-
 }
 \newcommand{\info}[1]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_info.pdf}}{注意：}{#1}}
 \newcommand{\dange}[1]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_flash.pdf}}{有电危险：}{#1}}
