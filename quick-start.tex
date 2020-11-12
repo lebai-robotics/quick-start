@@ -221,6 +221,7 @@
 \setcounter{tocdepth}{3}
 \pagestyle{empty}
 {\small\tableofcontents}
+\clearpage
 \pagestyle{fancy}
 \include{preface}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter\ #1}{}}
@@ -233,9 +234,15 @@
 \include{support}
 \appendix
 \include{standard}
-\listoftables
+\clearpage
 \listoffigures
-\printindex % 索引 makeindex
+\clearpage
+\pagestyle{empty}
+\clearpage
+\listoftables
+\clearpage
+\include{copyright}
+% \printindex % 索引 makeindex
 %\bibliography{...} % 参考文献 bibtex
 % \include{pdfs}
 % \include{cover}
