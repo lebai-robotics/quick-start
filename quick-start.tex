@@ -10,7 +10,7 @@
 \everymath{\displaystyle}
 
 % 颜色
-\usepackage[dvipsnames, cmyk]{xcolor} % cmyk
+\usepackage[dvipsnames, cmyk, table]{xcolor} % cmyk
 \definecolor{CarminePink}{HTML/cmyk}{EB6160/0.01,0.83,0.71,0.01}
 \definecolor{SmrtSunglo}{HTML}{EB6160}
 \definecolor{LightCoral}{HTML}{EE7B7A}
@@ -24,6 +24,12 @@
 \definecolor{Info}{HTML}{8296A6}
 \definecolor{Danger}{HTML}{FF3B30}
 \definecolor{Card}{HTML}{374148}
+
+\definecolor{th}{HTML}{D53C36}
+\definecolor{thText}{HTML}{FFFFFF}
+\definecolor{trOdd}{HTML}{F9FAFA}
+\definecolor{trEven}{HTML}{EAEAEA}
+\definecolor{td}{HTML}{FBE4E4}
 
 \usepackage{tcolorbox}
 
@@ -45,6 +51,7 @@
 \usepackage{tabularx}
 \usepackage{multirow}
 \newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
+\newcommand{\Th}[1]{\multicolumn{1}{c}{\sffamily\color{white} #1}}
 
 % 字体
 \usepackage{fontspec}
@@ -55,7 +62,7 @@
 % \setCJKmonofont[BoldFont={Kaiti SC Bold}]{Kaiti SC Regular}
 
 % 页面设置
-\usepackage[papersize={13cm,18.4cm},top=1.8cm,bottom=2cm,left=2.1cm,right=1.8cm]{geometry}
+\usepackage[papersize={13cm,18.4cm},top=2cm,bottom=2.5cm,left=2cm,right=1.5cm]{geometry}
 
 % 页面背景
 \usepackage[scale=1, angle=0, hshift=0, vshift=0, placement=top]{background}
@@ -117,20 +124,22 @@
         aftertitle = \par\bigskip\nointerlineskip{\color{LightPink}\rule{\linewidth}{1pt}}\par
     },
     section = {
-        beforeskip = 10pt plus 6pt minus 4pt,
+        beforeskip = 10pt plus 6pt minus 10pt,
         afterskip = 4pt plus 6pt minus 4pt,
-        numberformat = \color{CarminePink},
+        format = \Large\bfseries\raggedright ,
+        numberformat = \color{CarminePink}\S,
     },
     subsection = {
-        beforeskip = 6pt plus 6pt minus 4pt,
+        beforeskip = 6pt plus 6pt minus 6pt,
         afterskip = 4pt plus 6pt minus 4pt,
+        format = \large\sffamily\bfseries\raggedright ,
         numberformat = \color{CarminePink},
     },
     subsubsection = {
         beforeskip = 4pt plus 6pt minus 4pt,
         afterskip = 4pt plus 6pt minus 4pt,
+        format = \sffamily\bfseries,
         numberformat = \color{CarminePink},
-        format = \large\sffamily\bfseries,
     },
     paragraph = {
         format = \large\sffamily\bfseries\color{CarminePink},
@@ -149,9 +158,9 @@
 \usepackage{prettyref}
 \newrefformat{fig}{{\color{SmrtSunglo}\underline{图\ref{#1}}}}
 \newrefformat{tab}{{\color{SmrtSunglo}\underline{表\ref{#1}}}}
-\newrefformat{cha}{{\color{SmrtSunglo}\underline{第\ref{#1}章}\nameref{#1}}}
-\newrefformat{app}{{\color{SmrtSunglo}\underline{附录\ref{#1}}\nameref{#1}}}
-\newrefformat{sec}{{\color{SmrtSunglo}\underline{第\ref{#1}节}\nameref{#1}}}
+\newrefformat{cha}{{\color{SmrtSunglo}\underline{第\ref{#1}章\nameref{#1}}}}
+\newrefformat{app}{{\color{SmrtSunglo}\underline{附录\ref{#1}\nameref{#1}}}}
+\newrefformat{sec}{{\color{SmrtSunglo}\underline{第\ref{#1}节\nameref{#1}}}}
 
 % 图表
 \usepackage{caption}
@@ -162,7 +171,7 @@
 \usepackage{titlesec}
 \usepackage{titletoc}
 \contentsmargin{2em}
-\dottedcontents{chapter}[4em]{\sffamily}{4em}{1pc}
+\dottedcontents{chapter}[4em]{\addvspace{6pt}\sffamily}{4em}{1mm}
 \dottedcontents{section}[5em]{}{3em}{1mm}
 \dottedcontents{subsection}[7em]{}{4em}{1mm}
 \dottedcontents{subsubsection}[9em]{}{4em}{1mm}
@@ -207,23 +216,23 @@
 
 % 自定义指令
 \newcommand{\LM}{{\sf L~MASTER™}}
-\newcommand{\innerinfo}[3]{\par\vspace{4pt}\noindent
-    {\begin{minipage}[t]{0.2\linewidth}
+\newcommand{\innerinfo}[3]{{\setlength{\parindent}{0pt}\setlength{\parsep}{4pt plus 10pt minus 4pt}\par\vspace{6pt}\par
+    {\begin{minipage}[t]{0.18\linewidth}
     \vspace{0pt}
     #1
     \end{minipage}}
     {\begin{minipage}[t]{0.8\linewidth}
     \vspace{0pt}
     {\sffamily\bfseries #2}\par\kaishu #3
-    \end{minipage}}
-}
-\newcommand{\info}[1]{\innerinfo{\includegraphics[width=1.6cm]{image/ic_w_info.pdf}}{注意：}{#1}}
-\newcommand{\dange}[1]{\innerinfo{\includegraphics[width=1.6cm]{image/ic_w_flash.pdf}}{有电危险：}{#1}}
-\newcommand{\danger}[2][危险]{\innerinfo{\includegraphics[width=1.6cm]{image/ic_w_warning.pdf}}{#1：}{#2}}
+    \end{minipage}\par}
+}}
+\newcommand{\info}[1]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_info.pdf}}{注意：}{#1}}
+\newcommand{\dange}[1]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_flash.pdf}}{有电危险：}{#1}}
+\newcommand{\danger}[2][危险]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_warning.pdf}}{#1：}{#2}}
 
 % 单位
 \newcommand{\unit}[1]{\,\mathrm{#1}}
-\newcommand{\Nm}{\unit{N\cdot m}}
+\newcommand{\Nm}{\unit{N\!\cdot\! m}}
 \newcommand{\kg}{\unit{kg}}
 \newcommand{\cm}{\unit{cm}}
 \newcommand{\mm}{\unit{mm}}
@@ -242,7 +251,7 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 \pagenumbering{roman}
-{\linespread{1.6}\small\tableofcontents}
+{\small\tableofcontents}
 \newpage
 \pagenumbering{arabic}
 \setcounter{page}{1}
@@ -257,10 +266,10 @@
 \include{support}
 \appendix
 \include{standard}
-\clearpage
-\listoffigures
-\clearpage
-\pagestyle{empty}
+% \clearpage
+% \listoffigures
+% \clearpage
+% \pagestyle{empty}
 % \clearpage
 % \listoftables
 % \clearpage
