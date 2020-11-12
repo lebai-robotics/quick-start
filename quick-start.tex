@@ -10,7 +10,7 @@
 \everymath{\displaystyle}
 
 % 颜色
-\usepackage[dvipsnames, cmyk]{xcolor} % cmyk
+\usepackage[dvipsnames, cmyk, table]{xcolor} % cmyk
 \definecolor{CarminePink}{HTML/cmyk}{EB6160/0.01,0.83,0.71,0.01}
 \definecolor{SmrtSunglo}{HTML}{EB6160}
 \definecolor{LightCoral}{HTML}{EE7B7A}
@@ -22,7 +22,14 @@
 
 \definecolor{Primary}{HTML/cmyk}{1E5AF0/0.58,0.35,0,0}
 \definecolor{Info}{HTML}{8296A6}
+\definecolor{Danger}{HTML}{FF3B30}
 \definecolor{Card}{HTML}{374148}
+
+\definecolor{th}{HTML}{D53C36}
+\definecolor{thText}{HTML}{FFFFFF}
+\definecolor{trOdd}{HTML}{F9FAFA}
+\definecolor{trEven}{HTML}{EAEAEA}
+\definecolor{td}{HTML}{FBE4E4}
 
 \usepackage{tcolorbox}
 
@@ -37,12 +44,14 @@
 % 图片
 \usepackage{graphicx}
 \usepackage{subfigure}
+\usepackage{float}
 
 % 表格
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{multirow}
 \newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
+\newcommand{\Th}[1]{\multicolumn{1}{c}{\sffamily\color{white} #1}}
 
 % 字体
 \usepackage{fontspec}
@@ -53,7 +62,7 @@
 % \setCJKmonofont[BoldFont={Kaiti SC Bold}]{Kaiti SC Regular}
 
 % 页面设置
-\usepackage[papersize={13cm,18.4cm},hmargin=1.60cm,vmargin=2.10cm]{geometry}
+\usepackage[papersize={13cm,18.4cm},top=2cm,bottom=2.5cm,left=2cm,right=1.5cm]{geometry}
 
 % 页面背景
 \usepackage[scale=1, angle=0, hshift=0, vshift=0, placement=top]{background}
@@ -63,7 +72,7 @@
     % \def\tikz@width{\pagewidth}
     % \def\tikz@height{\pageheight}
     \begin{tikzpicture}
-    \begin{scope}[fill opacity=0.5]
+    \begin{scope}[fill]
         \skipdef\r=0
         \skipdef\x=30
         \skipdef\y=30
@@ -82,18 +91,18 @@
 % 页眉和页脚
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\newcommand\myfoot{\zihao{5}\color{SmrtSunglo}\itshape--~\thepage~--}
+\newcommand\myfoot{\zihao{5}\color{lightgray}\sffamily---~{\color{black}\thepage}~---}
 \newcommand\myleft{\color{SmrtSunglo}\kaishu\leftmark}
 \newcommand\myright{\color{SmrtSunglo}\kaishu\rightmark}
 \fancyhf{}
-\fancyfoot[LE,RO]{\myfoot}
+\fancyfoot[C]{\myfoot}
 \fancyhead[LO]{\myleft}
 \fancyhead[RE]{\myright}
 \renewcommand{\headrulewidth}{0pt} % 注意不用 \setlength
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{ %
     \fancyhf{} % remove everything
-    \fancyfoot[LE,RO]{\myfoot}
+    \fancyfoot[C]{\myfoot}
     \fancyhead[LO]{\myleft}
     \fancyhead[RE]{\myright}
     \renewcommand{\headrulewidth}{0pt} % remove lines as well
@@ -106,19 +115,34 @@
     punct=quanjiao,
     chapter = {
         beforeskip = 0pt,
+        afterskip = 20pt,
         fixskip = true,
-        format = \Huge\bfseries\CTEXnoindent,
+        format = \Huge\bfseries\setlength\parindent{0pt},
         nameformat = \par\chapternamebox,
         number = \arabic{chapter},
         numberformat = \color{CarminePink}\zihao{0}\itshape,
-        % aftername = \par\medskip,
         aftertitle = \par\bigskip\nointerlineskip{\color{LightPink}\rule{\linewidth}{1pt}}\par
     },
+    section = {
+        beforeskip = 10pt plus 6pt minus 10pt,
+        afterskip = 4pt plus 6pt minus 4pt,
+        format = \Large\bfseries\raggedright ,
+        numberformat = \color{CarminePink}\S,
+    },
+    subsection = {
+        beforeskip = 6pt plus 6pt minus 6pt,
+        afterskip = 4pt plus 6pt minus 4pt,
+        format = \large\sffamily\bfseries\raggedright ,
+        numberformat = \color{CarminePink},
+    },
     subsubsection = {
-        format = \large\sffamily\bfseries\color{CarminePink},
+        beforeskip = 4pt plus 6pt minus 4pt,
+        afterskip = 4pt plus 6pt minus 4pt,
+        format = \sffamily\bfseries,
+        numberformat = \color{CarminePink},
     },
     paragraph = {
-        format = \large\sffamily\bfseries,
+        format = \large\sffamily\bfseries\color{CarminePink},
     },
     subparagraph = {
         format = \sffamily\bfseries,
@@ -134,9 +158,29 @@
 \usepackage{prettyref}
 \newrefformat{fig}{{\color{SmrtSunglo}\underline{图\ref{#1}}}}
 \newrefformat{tab}{{\color{SmrtSunglo}\underline{表\ref{#1}}}}
-\newrefformat{cha}{{\color{SmrtSunglo}\underline{第\ref{#1}章}\nameref{#1}}}
-\newrefformat{app}{{\color{SmrtSunglo}\underline{附录\ref{#1}}\nameref{#1}}}
-\newrefformat{sec}{{\color{SmrtSunglo}\underline{第\ref{#1}节}\nameref{#1}}}
+\newrefformat{cha}{{\color{SmrtSunglo}\underline{第\ref{#1}章\nameref{#1}}}}
+\newrefformat{app}{{\color{SmrtSunglo}\underline{附录\ref{#1}\nameref{#1}}}}
+\newrefformat{sec}{{\color{SmrtSunglo}\underline{第\ref{#1}节\nameref{#1}}}}
+
+% 图表
+\usepackage{caption}
+\captionsetup[table]{labelsep=space,labelfont=bf}
+\captionsetup[figure]{labelsep=space,labelfont=bf} 
+
+% 目录
+\usepackage{titlesec}
+\usepackage{titletoc}
+\contentsmargin{2em}
+\dottedcontents{chapter}[4em]{\addvspace{6pt}\sffamily}{4em}{1mm}
+\dottedcontents{section}[5em]{}{3em}{1mm}
+\dottedcontents{subsection}[7em]{}{4em}{1mm}
+\dottedcontents{subsubsection}[9em]{}{4em}{1mm}
+% \titlecontents{section}
+%               [3cm]
+%               {\bf \large}%
+%               {\contentslabel{2.5em}}%
+%               {}%
+%               {\titlerule*[0.5pc]{$\cdot$}\contentspage\hspace*{3cm}}%
 
 % 超链接
 \usepackage{hyperref}
@@ -159,8 +203,8 @@
 \setlist{nosep}
 \setlist[enumerate, 1]{label=(\arabic*)}
 \setlist[enumerate, 2]{label=(\alpa*)}
-\setlist[itemize]{font=\sffamily\bfseries}
-\setlist[description]{font=\sffamily\bfseries}
+\setlist[itemize]{font=\sffamily}
+\setlist[description]{font=\sffamily}
 % \setlist[itemize, 1]{align=left, labelindent*=1em, topsep={1pt plus 1pt minus 1pt}, itemsep={3pt plus 1pt minus 2pt}}
 % \setlist[itemize, 2]{leftmargin=0em, topsep={2pt plus 2pt minus 1.5pt}, partopsep={3pt plus 2pt minus 3pt}, itemsep={1pt plus 1pt minus 1pt}, parsep={1pt plus 1pt minus 1pt}}
 
@@ -172,23 +216,23 @@
 
 % 自定义指令
 \newcommand{\LM}{{\sf L~MASTER™}}
-\newcommand{\innerinfo}[3]{\par\vspace{0.4em}\noindent
-    {\begin{minipage}[t]{0.2\linewidth}
+\newcommand{\innerinfo}[3]{{\setlength{\parindent}{0pt}\setlength{\parsep}{4pt plus 10pt minus 4pt}\par\vspace{6pt}\par
+    {\begin{minipage}[t]{0.18\linewidth}
     \vspace{0pt}
     #1
     \end{minipage}}
     {\begin{minipage}[t]{0.8\linewidth}
     \vspace{0pt}
     {\sffamily\bfseries #2}\par\kaishu #3
-    \end{minipage}}
-}
-\newcommand{\info}[1]{\innerinfo{\includegraphics[width=1.6cm]{image/ic_w_info.pdf}}{注意：}{#1}}
-\newcommand{\dange}[1]{\innerinfo{\includegraphics[width=1.6cm]{image/ic_w_flash.pdf}}{有电危险：}{#1}}
-\newcommand{\danger}[2][危险]{\innerinfo{\includegraphics[width=1.6cm]{image/ic_w_warning.pdf}}{#1：}{#2}}
+    \end{minipage}\par}
+}}
+\newcommand{\info}[1]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_info.pdf}}{注意：}{#1}}
+\newcommand{\dange}[1]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_flash.pdf}}{有电危险：}{#1}}
+\newcommand{\danger}[2][危险]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_warning.pdf}}{#1：}{#2}}
 
 % 单位
 \newcommand{\unit}[1]{\,\mathrm{#1}}
-\newcommand{\Nm}{\unit{N\cdot m}}
+\newcommand{\Nm}{\unit{N\!\cdot\! m}}
 \newcommand{\kg}{\unit{kg}}
 \newcommand{\cm}{\unit{cm}}
 \newcommand{\mm}{\unit{mm}}
@@ -204,9 +248,13 @@
 % \zihao{6}
 % \include{title}
 % \include{copyright}
-% \setcounter{page}{1}
+\setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
+\pagenumbering{roman}
 {\small\tableofcontents}
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
 \include{preface}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
@@ -218,9 +266,15 @@
 \include{support}
 \appendix
 \include{standard}
-\listoftables
-\listoffigures
-\printindex % 索引 makeindex
+% \clearpage
+% \listoffigures
+% \clearpage
+% \pagestyle{empty}
+% \clearpage
+% \listoftables
+% \clearpage
+% \include{copyright}
+% \printindex % 索引 makeindex
 %\bibliography{...} % 参考文献 bibtex
 % \include{pdfs}
 % \include{cover}
