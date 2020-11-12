@@ -223,7 +223,7 @@ urlcolor=CarminePink,
 
 % 自定义指令
 \newcommand{\LM}{{\sf L~MASTER™}}
-\newcommand{\innerinfo}[3]{{\setlength{\parindent}{0pt}\par\medskip
+\newcommand{\innerinfo}[3]{{\setlength{\parindent}{0pt}\par
     {\begin{minipage}[t]{0.18\linewidth}
     \vspace{0pt}
     #1
@@ -231,7 +231,7 @@ urlcolor=CarminePink,
     {\begin{minipage}[t]{0.8\linewidth}
     \vspace{0pt}
     {\sffamily\bfseries #2}\par\kaishu #3
-    \end{minipage}\bigskip}
+    \end{minipage}\smallskip}
 }
 }
 \newcommand{\info}[1]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_info.pdf}}{注意：}{#1}}
