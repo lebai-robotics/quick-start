@@ -31,7 +31,7 @@
 	\item 产品拆装过程中，轻拿轻放，防止磕碰、摔落。
 \end{itemize}}
 
-% \clearpage
+\clearpage
 
 \danger{机器人需要安全地放置在坚固防震表面上，请确保机器人操作不会受到冲击、震动影响，否则机器人安装螺钉松脱可能会造成机器人倾倒，引起误伤或财产损失。}
 \danger{请确保安装环境中无易燃气体、易燃粉尘、易燃液体等物质，否则可能造成爆炸或引起火灾。}
@@ -122,9 +122,11 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
     \footnotesize{注：以上所提的关节运动范围无限制需排除机器人自干涉的情况，自干涉的情况因实际运动场景而有差异}
 \end{table}
 
+\clearpage
+
 \subsection{运动范围}
 
-见\prettyref{tab:机器人运动范围}。
+见\prettyref{fig:机器人运动范围}。
 
 \begin{figure}[ht]
     \centering
@@ -142,6 +144,9 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
     \label{fig:机器人运动范围}
 \end{figure}
 
+
+% \clearpage
+
 \subsection{I/O接口}
 
 LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同的应用场景，您可以选择不同位置的I/O接口来实现相应的I/O操作。
@@ -155,7 +160,7 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[height=4cm]{line_graphs/robot_box_io_plugin.pdf}
+    \includegraphics[height=3cm]{line_graphs/robot_box_io_plugin.pdf}
     \caption{控制箱I/O硬件接口示意图}
     \label{fig:控制箱IO}
 \end{figure}
@@ -182,11 +187,12 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 \tO  13	& \tO 数字输入3	& \tE \\
 \tE  14	& \tE 数字输入4	& \multirow{-4}{5cm}{\tE 输入电压$3\sim 30\unit{V}$}\\
 \tO  15	& \tO 电源负极	& \tO \\
+\tE GND & \tE & \tE \\
 \end{tabular}
 \caption{控制箱I/O接口引脚说明}
 \label{tab:控制箱IO}
 \end{table}
-\clearpage
+% \clearpage
     \item 如\prettyref{fig:法兰盘IO}和\prettyref{tab:法兰盘IO}，末端法兰盘上提供：
     \begin{itemize}
         \item 2个数字输入接口；
@@ -225,13 +231,15 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 
 \end{enumerate}
 
-\clearpage
+% \clearpage
 
 \subsection{网络连接}
 
 LM3提供以太网、Wi-Fi(2.4 GHz) 热点网络、4G物联网三种网络连接方式。其中：以太网和Wi-Fi网络连接用于提供给用户操作和连接机器人使用，4G物联网连接目前仅用于设备基础信息\footnote{设备基础信息仅限于：设备名称，设备网络连接类型及状态，软件系统版本，系统运行错误信息且不包含任何客户业务数据（包括且不限于场景数据等）。如需其他信息的上报，乐白将事前获得您的授权同意后才进行。}的数据上报。
 
-\vfill
+% \vfill
+
+\clearpage
 
 \section{机器人安装}
 
@@ -258,7 +266,7 @@ LM3提供以太网、Wi-Fi(2.4 GHz) 热点网络、4G物联网三种网络连接
     \label{fig:机器人安装方式}
 \end{figure}
 
-\clearpage
+% \clearpage
 
 \begin{figure}[ht]
     \centering
