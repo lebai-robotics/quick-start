@@ -1,5 +1,5 @@
 % !TEX program = xelatex
-\documentclass[UTF8, 10pt, twoside]{ctexrep}
+\documentclass[UTF8, 10pt, twoside, sub4section]{ctexrep}
 
 % 编程
 \usepackage{ifthen}
@@ -143,6 +143,7 @@
     },
     paragraph = {
         format = \large\sffamily\bfseries\color{CarminePink},
+        % aftertitle = \@@par,
     },
     subparagraph = {
         format = \sffamily\bfseries,
@@ -222,7 +223,7 @@ urlcolor=CarminePink,
 
 % 自定义指令
 \newcommand{\LM}{{\sf L~MASTER™}}
-\newcommand{\innerinfo}[3]{{\setlength{\parindent}{0pt}\setlength{\parsep}{4pt plus 10pt minus 4pt}\par\vspace{6pt}\par
+\newcommand{\innerinfo}[3]{{\setlength{\parindent}{0pt}\par\vspace*{6pt}
     {\begin{minipage}[t]{0.18\linewidth}
     \vspace{0pt}
     #1
@@ -230,7 +231,7 @@ urlcolor=CarminePink,
     {\begin{minipage}[t]{0.8\linewidth}
     \vspace{0pt}
     {\sffamily\bfseries #2}\par\kaishu #3
-    \end{minipage}\par}
+    \end{minipage}\vspace*{6pt}\par}
 }}
 \newcommand{\info}[1]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_info.pdf}}{注意：}{#1}}
 \newcommand{\dange}[1]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_flash.pdf}}{有电危险：}{#1}}
