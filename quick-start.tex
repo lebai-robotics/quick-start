@@ -231,8 +231,11 @@ urlcolor=CarminePink,
     {\begin{minipage}[t]{0.8\linewidth}
     \vspace{0pt}
     {\sffamily\bfseries #2}\par\kaishu #3
-    \end{minipage}\vspace*{6pt}\par}
-}}
+    \end{minipage}\par}
+}
+
+
+}
 \newcommand{\info}[1]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_info.pdf}}{注意：}{#1}}
 \newcommand{\dange}[1]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_flash.pdf}}{有电危险：}{#1}}
 \newcommand{\danger}[2][危险]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_warning.pdf}}{#1：}{#2}}
