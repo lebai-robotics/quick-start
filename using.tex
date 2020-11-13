@@ -14,11 +14,11 @@
 
 	\begin{figure}[htb]
 		\centering
-		\includegraphics[width=\textwidth]{screen/3-1.png}
+		\includegraphics[width=\textwidth]{shots/timeline_editor.pdf}
 		\caption{时间轴编辑器}
 		\label{fig:时间轴编辑器}
 
-		\includegraphics[width=\textwidth]{screen/3-2.png}
+		\includegraphics[width=\textwidth]{shots/code_editor.pdf}
 		\caption{代码编辑器}
 		\label{fig:代码编辑器}
 	\end{figure}
@@ -166,12 +166,12 @@
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{screen/3-8.png}
+	\includegraphics[width=\textwidth]{shots/fine_tuning_cartesian.pdf}
 	\caption{坐标空间微调}
 	\label{fig:坐标空间微调}
 \end{figure}
 
-不同的相对坐标系可以选择微调时使用的坐标系表示方式：
+微调时可以选择不同的坐标系表示方式：
 \begin{itemize}
 	\item 相对于底座时，可使用直角坐标系或圆柱坐标系；
 	\item 相对于末端时，仅支持直角坐标系。
@@ -199,7 +199,7 @@
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{screen/3-10.png}
+	\includegraphics[width=\textwidth]{shots/fine_tuning_joint.pdf}
 	\caption{关节空间微调}
 	\label{fig:关节空间微调}
 \end{figure}
@@ -260,7 +260,9 @@
 % 	\item 外置I/O
 % \end{itemize}
 
-\info{运行任务前请确认要使用的I/O输入输出电气连接正常。}
+% \info{运行任务前请确认要使用的I/O输入输出电气连接正常。}
+
+\info{运行任务前请确认数字I/O的输入输出电气连接正常。}
 
 \subsubsection{模拟I/O动作块}
 在\nameref{fig:添加动作块弹出框}中选择\mnu{模拟I/O}，在弹出的添加对话框中，顶部标签页对应模拟I/O的操作类型，模拟I/O动作块支持三种类型的操作：
@@ -270,7 +272,7 @@
 \item[设置] 设置某个模拟I/O端口的输出值。
 \end{description}
 
-% \info{运行任务前请确认模拟I/O的输入输出电气连接正常。}
+\info{运行任务前请确认模拟I/O的输入输出电气连接正常。}
 
 模拟I/O端口来源，仅有控制箱I/O和外置I/O（如有）。点击\btn{添加}完成模拟I/O动作块的插入。
 
@@ -348,7 +350,7 @@
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{screen/3-17.png}
+	\includegraphics[width=\textwidth]{shots/position_check.pdf}
 	\caption{恢复位置}
 	\label{fig:位置安全检查页}
 \end{figure}
@@ -372,6 +374,13 @@
 \def\ttt{通过搜索框或快速搜索动作块等操作或者手动选中}
 \ttt 2个或以上的同类型且该类型动作块内的子类型（如果该类型动作块存在子类型的话）相同的动作块。
 
+\begin{figure}[hb]
+	\centering
+	\includegraphics[height=2.6cm]{shots/batch_edit.pdf}
+	\caption{批量编辑动作块}
+	\label{fig:批量编辑动作块}
+\end{figure}
+
 点击场景编辑器功能区的\btn{批量修改…}按钮，或者用鼠标右键点击动作块选择\mnu{批量修改…}，可对动作块以下内容进行批量编辑。
 
 \begin{description}
@@ -393,14 +402,14 @@
 
 \begin{figure}[hb]
 	\centering
-	\includegraphics[height=2.6cm]{screen/3-18.png}
+	\includegraphics[height=2.6cm]{shots/batch_adjust_positions.pdf}
 	\caption{批量微调位置块}
 	\label{fig:批量微调位置块}
 \end{figure}
 
 微调移动至目标位置后，点击页面右上角的\btn{更新}按钮，完成批量微调；点击\btn[Info]{取消}可放弃批量微调操作。其中，\btn{更新}按钮右侧数字表示当前选中的位置块总数。
 
-% \clearpage
+\clearpage
 
 \subsection{导出场景}
 在场景列表页面选择需要保存的场景，鼠标移动到场景卡片右上角\icn{image/vdots.pdf}按钮，弹出场景菜单，选择\mnu{导出}，在弹出的保存对话框选择场景文件的保存位置（场景文件后缀名为 \verb|lbd|）。
