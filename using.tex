@@ -12,24 +12,27 @@
 \begin{itemize}[leftmargin=6.5em]
 	\item [时间轴编辑器]
 
-	\begin{figure}[htb]
-		\centering
-		\includegraphics[width=\textwidth]{shots/timeline_editor.pdf}
-		\caption{时间轴编辑器}
-		\label{fig:时间轴编辑器}
-
-		\includegraphics[width=\textwidth]{shots/code_editor.pdf}
-		\caption{代码编辑器}
-		\label{fig:代码编辑器}
-	\end{figure}
-
-	如\prettyref{fig:时间轴编辑器}\footnote{时间轴编辑器：以时间先后顺序展现机器人的顺序执行的动作列表，上海乐白机器人自主设计和研发的且拥有自主知识产权的专为机器人控制系统设计和研发的机器人场景编辑器。}，可视化编辑器，低门槛无需理解任何逻辑关系，只需要按照操作说明和引导完成相应的动作块\footnote{场景的时间轴编辑器中，每个可操作的独立元素称作一个动作块（Block），若干个动作块的集合可以打包成为动作包。}场景编写，即可让机器人运动起来。
+	如\prettyref{fig:时间轴编辑器}，可视化编辑器，低门槛无需理解任何逻辑关系，只需要按照操作说明和引导完成相应的动作块\footnote{场景的时间轴编辑器中，每个可操作的独立元素称作一个动作块（Block），若干个动作块的集合可以打包成为动作包。}场景编写，即可让机器人运动起来。
 
 	\item [代码编辑器]
 
 	针对高级用户，我们提供基于Lua语言的代码编辑器，如\prettyref{fig:代码编辑器}。使用代码编辑器可以完成各种复杂的逻辑和自定义的操作流程，可定制化程度高，需要具备一定的编程基础和逻辑基础。
 
 \end{itemize}
+
+	\begin{figure}[htb]
+		\centering
+		\includegraphics[width=\textwidth]{shots/timeline_editor.pdf}
+		\caption{时间轴编辑器\protect\footnotemark}
+		\label{fig:时间轴编辑器}
+
+		\vfill
+
+		\includegraphics[width=\textwidth]{shots/code_editor.pdf}
+		\caption{代码编辑器}
+		\label{fig:代码编辑器}
+	\end{figure}
+		\footnotetext{时间轴编辑器：以时间先后顺序展现机器人的顺序执行的动作列表，上海乐白机器人自主设计和研发的且拥有自主知识产权的专为机器人控制系统设计和研发的机器人场景编辑器。}
 
 \clearpage
 
@@ -384,9 +387,9 @@
 \def\ttt{通过搜索框或快速搜索动作块等操作或者手动选中}
 \ttt 2个或以上的同类型且该类型动作块内的子类型（如果该类型动作块存在子类型的话）相同的动作块。
 
-\begin{figure}[hb]
+\begin{figure}[htb]
 	\centering
-	\includegraphics[height=2.6cm]{shots/batch_edit.pdf}
+	\includegraphics[width=\textwidth]{shots/batch_edit.pdf}
 	\caption{批量编辑动作块}
 	\label{fig:批量编辑动作块}
 \end{figure}
@@ -414,7 +417,7 @@
 
 \begin{figure}[hb]
 	\centering
-	\includegraphics[height=2.6cm]{shots/batch_adjust_positions.pdf}
+	\includegraphics[width=\textwidth]{shots/batch_adjust_positions.pdf}
 	\caption{批量微调位置块}
 	\label{fig:批量微调位置块}
 \end{figure}
