@@ -1,7 +1,6 @@
 \chapter{准备工作}
 \section{开箱}
 打开包装箱，取出机器人本体、控制箱、电源线、配件包等产品。
-\vspace*{-6pt}
 
 \section{安全指南}
 \label{sec:安全指南}
@@ -26,23 +25,20 @@
 \item 安装表面：安装机器人时，需选择一个坚固且防震的表面，该表面需要可以承受至少10倍的底座关节完全扭转力（底座关节最大扭矩$40 \Nm$），以及至少5倍的机器人重量（机器人本体自重$9.5 \kg$）。
 \end{itemize}
 
-\vfill
-\newpage
-
-\info{\begin{itemize}
+\info{\begin{itemize}[leftmargin=1.5em]
 	\item 使用环境，避免设备进水进尘进油烟等，如有类似场景注意遮蔽设备；
 	\item 不可拆解机器，避免造成产品损坏；
 	\item 产品拆装过程中，轻拿轻放，防止磕碰、摔落。
 \end{itemize}}
 
-% \clearpage
+\clearpage
 
 \danger{机器人需要安全地放置在坚固防震表面上，请确保机器人操作不会受到冲击、震动影响，否则机器人安装螺钉松脱可能会造成机器人倾倒，引起误伤或财产损失。}
 \danger{请确保安装环境中无易燃气体、易燃粉尘、易燃液体等物质，否则可能造成爆炸或引起火灾。}
 \danger{请确保安装环境中无水、腐蚀性气体、金属屑、灰尘等物质，同时确保安装环境温度与湿度在允许范围内，否则可能会造成机器人误动作、故障或漏电。}
 \danger{请勿在超过机器人抗电磁干扰、静电放电能力等范围的环境中使用，否则可能造成机器人停机，运行轨迹发生变化，产生不可预估的危险。\footnote{详见\prettyref{app:参照标准}。}}
 
-% \clearpage
+\clearpage
 
 \subsection{安装注意事项}
 控制箱应水平放置，两侧进出风口应至少保留$5 \cm$空隙，以确保空气流通以及散热良好。
@@ -50,6 +46,8 @@
 \dange{控制箱和电缆应避免接触任何液体，且勿用湿手接触插头，否则可能导致人员触电，甚至伤亡。}
 
 \danger{控制箱不得暴露在灰尘或超出IP20防护等级\footnote{IP20防护等级的含义：(1)防尘等级：防止人的手指接触到电器内部的零件，防止中等尺寸（直径大于$12.5 \mm$）的外物侵入。(2)防水等级：对水或湿气无特殊的防护。}的潮湿环境下，密切注意存在传导性灰尘的环境。}
+
+\vfill
 
 \section{产品简介}
 
@@ -59,16 +57,16 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[height=8cm]{image/arms.pdf}
+    \includegraphics[height=10cm]{image/arms.pdf}
     \caption{机器人关节示意图}
     \label{fig:机器人关节示意图}
 \end{figure}
 
 机器人本体为机器人产品的执行机构，其中底座为机器人本体安装处，肩部和肘部可执行较大幅度动作，腕部1和腕部 2可执行较精细动作，腕部 3 可以连接末端工具。
 
-控制箱为机器人系统的控制部分，可控制机器人在工作空间中的位置、姿态，连接设备的电气输入和输出端以及查看机器人的各种状态数据和信息。在实际应用场景下，为确保运行安全，通常需要在控制箱上外接急停开关（选配）。
-
 \clearpage
+
+控制箱为机器人系统的控制部分，可控制机器人在工作空间中的位置、姿态，连接设备的电气输入和输出端以及查看机器人的各种状态数据和信息。在实际应用场景下，为确保运行安全，通常需要在控制箱上外接急停开关（选配）。
 
 如\prettyref{fig:机器人本体及控制箱连接}所示，控制箱通过机器人电缆与机器人本体连接。连接上电后\footnote{请参考\prettyref{cha:基础操作}相关内容。}，用户可通过电脑、平板、手机或其他图形化终端设备的浏览器\footnote{建议使用 Google Chrome 浏览器、Microsoft Edge浏览器或其他基于Webkit 内核的现代浏览器来获得更好的体验。 }访问机器人的\LM\footnote{\LM 是本公司为机器人量身定制的机器人控制系统，所有对机器人的可视化操作和控制必须通过登录\LM 系统后再进行。}系统控制机器人。
 
@@ -83,9 +81,9 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 
 \subsection{基础参数}
 
-见\prettyref{tab:基础参数}。
+% 见\prettyref{tab:基础参数}。
 
-\begin{table}[h!]
+\begin{table}[htb!]
     \centering
     \rowcolors{1}{trEven}{trOdd}
     \newcommand\Thr[1]{\cellcolor{th}\sffamily\color{white}{#1}}
@@ -104,14 +102,18 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
     \label{tab:基础参数}
 \end{table}
 
-机器人最大允许有效负载取决于重心偏移，如\prettyref{fig:有效负载图}。重心偏移定义为工具输出法兰的中心与重心之间的距离。
+\vspace{-0.8cm}
 
-\begin{figure}[ht]
+\begin{figure}[htb!]
 	\centering
-	\includegraphics[width=0.8\textwidth]{line_graphs/effective_payload.pdf}
+	\includegraphics[height=5cm]{line_graphs/effective_payload.pdf}
 	\caption{有效负载图}
 	\label{fig:有效负载图}
 \end{figure}
+
+\clearpage
+
+机器人最大允许有效负载取决于重心偏移，如\prettyref{fig:有效负载图}。重心偏移定义为工具输出法兰的中心与重心之间的距离。
 
 \danger[警告]{\begin{itemize}
 	\item 负载条件应在图表所示范围内；
@@ -119,9 +121,11 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 	\item 超过允许值会导致机器内部件的提早损坏。
 \end{itemize}}
 
+\vfill
+
 \subsection{运动轴}
 
-见\prettyref{tab:运动轴}。
+% 见\prettyref{tab:运动轴}。
 
 \begin{table}[ht]{
     \centering
@@ -146,7 +150,7 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 
 \subsection{工作空间}
 
-见\prettyref{fig:机器人运动范围}。
+% 见\prettyref{fig:机器人运动范围}。
 
 \begin{figure}[ht]
     \centering
@@ -164,7 +168,7 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
     \label{fig:机器人运动范围}
 \end{figure}
 
-\clearpage
+% \clearpage
 
 \subsection{I/O接口}
 
@@ -185,7 +189,7 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 \end{figure}
 
 \begin{table}[ht]
-    \centering\small
+    \centering
     % \rowcolors{1}{trEven}{trOdd}
     \def\tE{\cellcolor{trEven}}
     \def\tO{\cellcolor{trOdd}}
@@ -226,7 +230,7 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 \end{figure}
 
 \begin{table}[ht]
-    \centering\small
+    \centering
     \rowcolors{1}{trEven}{trOdd}
     \def\tE{\cellcolor{trEven}}
     \def\tO{\cellcolor{trOdd}}

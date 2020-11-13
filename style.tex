@@ -59,9 +59,6 @@
 \setCJKsansfont{Source Han Sans SC}
 % \setCJKmonofont[BoldFont={Kaiti SC Bold}]{Kaiti SC Regular}
 
-% 页面设置
-\usepackage[papersize={13cm,18.4cm},top=2cm,bottom=2.5cm,left=2cm,right=1.5cm]{geometry}
-
 % 页面背景
 \usepackage[scale=1, angle=0, hshift=0, vshift=0, placement=top]{background}
 \backgroundsetup{
@@ -228,6 +225,7 @@ urlcolor=CarminePink,
     #1
     \end{minipage}}
     {\begin{minipage}[t]{0.8\linewidth}
+    \setlist[itemize]{leftmargin=1.5em}
     \vspace{0pt}
     {\sffamily\bfseries #2}\par\kaishu #3
     \end{minipage}\smallskip}
