@@ -91,20 +91,21 @@
 % 页眉和页脚
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\newcommand\myfoot{\zihao{5}\color{lightgray}\sffamily---~{\color{black}\thepage}~---}
-\newcommand\myleft{\color{SmrtSunglo}\kaishu\leftmark}
-\newcommand\myright{\color{SmrtSunglo}\kaishu\rightmark}
+% \newcommand\myfoot{\zihao{5}\color{darkgray}\sffamily---~{\thepage}~---}
+\newcommand\myfoot{\zihao{5}\color{darkgray}\sffamily~{\thepage}~}
+\newcommand\myleft{\color{darkgray}\kaishu\leftmark}
+\newcommand\myright{\color{darkgray}\kaishu\rightmark}
 \fancyhf{}
-\fancyfoot[C]{\myfoot}
-\fancyhead[LO]{\myleft}
-\fancyhead[RE]{\myright}
+\fancyfoot[LE, RO]{\myfoot}
+\fancyhead[LE]{\myleft}
+\fancyhead[RO]{\myright}
 \renewcommand{\headrulewidth}{0pt} % 注意不用 \setlength
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{ %
     \fancyhf{} % remove everything
-    \fancyfoot[C]{\myfoot}
-    \fancyhead[LO]{\myleft}
-    \fancyhead[RE]{\myright}
+    \fancyfoot[LE, RO]{\myfoot}
+    \fancyhead[LE]{\myleft}
+    \fancyhead[RO]{\myright}
     \renewcommand{\headrulewidth}{0pt} % remove lines as well
     \renewcommand{\footrulewidth}{0pt}
 }
@@ -117,7 +118,7 @@
         beforeskip = 0pt,
         afterskip = 20pt,
         fixskip = true,
-        format = \Huge\bfseries\setlength\parindent{0pt},
+        format = \Huge\sffamily\bfseries\setlength\parindent{0pt},
         nameformat = \par\chapternamebox,
         number = \arabic{chapter},
         numberformat = \color{CarminePink}\zihao{0}\itshape,
@@ -126,8 +127,8 @@
     section = {
         beforeskip = 10pt plus 6pt minus 10pt,
         afterskip = 4pt plus 6pt minus 4pt,
-        format = \Large\bfseries\raggedright ,
-        numberformat = \color{CarminePink}\S,
+        format = \Large\sffamily\bfseries\raggedright ,
+        numberformat = \color{CarminePink},
     },
     subsection = {
         beforeskip = 6pt plus 6pt minus 6pt,
@@ -191,7 +192,7 @@
     linktoc=page,
     % linktocpage=true,
     colorlinks=true,
-    linkcolor=SmrtSunglo,
+    linkcolor=CarminePink,
     % anchorcolor=black,
 % citecolor [green]
 % filecolor [cyan]
@@ -202,8 +203,8 @@ urlcolor=CarminePink,
 }
 
 % 脚注
-\usepackage{perpage} %the perpage package
-\MakePerPage{footnote} %the perpage package command
+% \usepackage{perpage} %the perpage package
+% \MakePerPage{footnote} %the perpage package command
 
 % 列表
 \usepackage{enumitem}

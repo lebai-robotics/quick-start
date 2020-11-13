@@ -26,6 +26,9 @@
 \item 安装表面：安装机器人时，需选择一个坚固且防震的表面，该表面需要可以承受至少10倍的底座关节完全扭转力（底座关节最大扭矩$40 \Nm$），以及至少5倍的机器人重量（机器人本体自重$9.5 \kg$）。
 \end{itemize}
 
+\vfill
+\newpage
+
 \info{\begin{itemize}
 	\item 使用环境，避免设备进水进尘进油烟等，如有类似场景注意遮蔽设备；
 	\item 不可拆解机器，避免造成产品损坏；
@@ -65,7 +68,7 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 
 控制箱为机器人系统的控制部分，可控制机器人在工作空间中的位置、姿态，连接设备的电气输入和输出端以及查看机器人的各种状态数据和信息。在实际应用场景下，为确保运行安全，通常需要在控制箱上外接急停开关（选配）。
 
-% \clearpage
+\clearpage
 
 如\prettyref{fig:机器人本体及控制箱连接}所示，控制箱通过机器人电缆与机器人本体连接。连接上电后\footnote{请参考\prettyref{cha:基础操作}相关内容。}，用户可通过电脑、平板、手机或其他图形化终端设备的浏览器\footnote{建议使用 Google Chrome 浏览器、Microsoft Edge浏览器或其他基于Webkit 内核的现代浏览器来获得更好的体验。 }访问机器人的\LM\footnote{\LM 是本公司为机器人量身定制的机器人控制系统，所有对机器人的可视化操作和控制必须通过登录\LM 系统后再进行。}系统控制机器人。
 
@@ -76,7 +79,7 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
     \label{fig:机器人本体及控制箱连接}
 \end{figure}
 
-% \clearpage
+\clearpage
 
 \subsection{基础参数}
 
@@ -85,20 +88,36 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 \begin{table}[h!]
     \centering
     \rowcolors{1}{trEven}{trOdd}
+    \newcommand\Thr[1]{\cellcolor{th}\sffamily\color{white}{#1}}
     \begin{tabular}{rl}
-工作半径 &		$638\mm $ \\
-有效负载    &	$\le 3\kg$\\
-自重    &	$9.5\kg$\\
-重复精度    &	$\pm 0.5\mm$\\
-末端速度    &	$\le 2\unit{m/s}$\\
-功耗    &	典型功耗$150\unit{W}$\\
-安装方式    &	正装、倒装、侧装\\
-安装面积    &	$\approx 160 \unit{cm^2}$\\
-主机箱尺寸  &	$270\times 250\times 130(H) \mm$\\
+\Thr{工作半径} &		$638\mm $ \\
+\Thr{有效负载   } &	$\le 3\kg$\\
+\Thr{自重   } &	$9.5\kg$\\
+\Thr{重复精度   } &	$\pm 0.5\mm$\\
+\Thr{末端速度   } &	$\le 2\unit{m/s}$\\
+\Thr{功耗   } &	典型功耗$150\unit{W}$\\
+\Thr{安装方式   } &	正装、倒装、侧装\\
+\Thr{安装面积   } &	$\approx 160 \unit{cm^2}$\\
+\Thr{主机箱尺寸 } &	$270\times 250\times 130(H) \mm$\\
     \end{tabular}
     \caption{乐白机器人基础参数}
     \label{tab:基础参数}
 \end{table}
+
+机器人最大允许有效负载取决于重心偏移，如\prettyref{fig:有效负载图}。重心偏移定义为工具输出法兰的中心与重心之间的距离。
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{line_graphs/effective_payload.pdf}
+	\caption{有效负载图}
+	\label{fig:有效负载图}
+\end{figure}
+
+\danger[警告]{\begin{itemize}
+	\item 负载条件应在图表所示范围内；
+	\item 图中显示的有效负载表示的是最大负载能力，在任何情况下，都不应该超过图中所示的最大重量；
+	\item 超过允许值会导致机器内部件的提早损坏。
+\end{itemize}}
 
 \subsection{运动轴}
 
@@ -125,7 +144,7 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 
 \clearpage
 
-\subsection{运动范围}
+\subsection{工作空间}
 
 见\prettyref{fig:机器人运动范围}。
 
@@ -145,8 +164,7 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
     \label{fig:机器人运动范围}
 \end{figure}
 
-
-% \clearpage
+\clearpage
 
 \subsection{I/O接口}
 
@@ -188,7 +206,7 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 \tO  13	& \tO 数字输入3	& \tE \\
 \tE  14	& \tE 数字输入4	& \multirow{-4}{5cm}{\tE 输入电压$3\sim 30\unit{V}$}\\
 \tO  15	& \tO 电源负极	& \tO \\
-\tE GND & \tE & \tE \\
+% \tE GND & \tE & \tE \\
 \end{tabular}
 \caption{控制箱I/O接口引脚说明}
 \label{tab:控制箱IO}
