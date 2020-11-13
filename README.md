@@ -1,4 +1,0 @@
-
-```bash
-xelatex quick-start
-```
