@@ -50,6 +50,10 @@
 \usepackage{multirow}
 \newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
 \newcommand{\Th}[1]{\multicolumn{1}{c}{\sffamily\color{white} #1}}
+\def\tE{\cellcolor{trEven}}
+\def\tO{\cellcolor{trOdd}}
+\newcommand\Thr[1]{\cellcolor{th}\sffamily\color{white}{#1}}
+\newcommand\tablenote[1]{\par\vspace*{1em}\par{\small{\sffamily 注：}#1}}
 
 % 字体
 \usepackage{fontspec}
@@ -239,6 +243,7 @@ urlcolor=CarminePink,
 \newcommand{\kg}{\unit{kg}}
 \newcommand{\cm}{\unit{cm}}
 \newcommand{\mm}{\unit{mm}}
+\newcommand{\oC}{\unit{^\circ C}}
 
 \tcbset{boxsep=0mm,nobeforeafter,center title,tcbox raise base}
 \newcommand{\btn}[2][Primary]{\tcbox[left=10pt,right=10pt,top=4pt,bottom=4pt,colframe=#1,colback=#1,colupper=white,arc=8pt]{#2}}

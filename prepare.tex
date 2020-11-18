@@ -45,7 +45,9 @@
 
 \dange{控制箱和电缆应避免接触任何液体，且勿用湿手接触插头，否则可能导致人员触电，甚至伤亡。}
 
-\danger{控制箱不得暴露在灰尘或超出IP20防护等级\footnote{IP20防护等级的含义：(1)防尘等级：防止人的手指接触到电器内部的零件，防止中等尺寸（直径大于$12.5 \mm$）的外物侵入。(2)防水等级：对水或湿气无特殊的防护。}的潮湿环境下，密切注意存在传导性灰尘的环境。}
+\danger{控制箱不得暴露在灰尘或超出IP20防护等级%
+% \footnote{IP20防护等级的含义：(1)防尘等级：防止人的手指接触到电器内部的零件，防止中等尺寸（直径大于$12.5 \mm$）的外物侵入。(2)防水等级：对水或湿气无特殊的防护。}
+的潮湿环境下，密切注意存在传导性灰尘的环境。}
 
 \vfill
 
@@ -57,23 +59,23 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[height=10cm]{image/arms.pdf}
+    \includegraphics[height=11cm]{image/arms.pdf}
     \caption{机器人关节示意图}
     \label{fig:机器人关节示意图}
 \end{figure}
 
-机器人本体为机器人产品的执行机构，其中底座为机器人本体安装处，肩部和肘部可执行较大幅度动作，腕部1和腕部 2可执行较精细动作，腕部 3 可以连接末端工具。
+机器人本体为机器人产品的执行机构（以下简称机器人），其中底座为机器人安装处，肩部和肘部可执行较大幅度动作，腕部1和腕部 2可执行较精细动作，腕部 3 可以连接末端工具。
 
 \clearpage
 
 控制箱为机器人系统的控制部分，可控制机器人在工作空间中的位置、姿态，连接设备的电气输入和输出端以及查看机器人的各种状态数据和信息。在实际应用场景下，为确保运行安全，通常需要在控制箱上外接急停开关（选配）。
 
-如\prettyref{fig:机器人本体及控制箱连接}所示，控制箱通过机器人电缆与机器人本体连接。连接上电后\footnote{请参考\prettyref{cha:基础操作}相关内容。}，用户可通过电脑、平板、手机或其他图形化终端设备的浏览器\footnote{建议使用 Google Chrome 浏览器、Microsoft Edge浏览器或其他基于Webkit 内核的现代浏览器来获得更好的体验。 }访问机器人的\LM\footnote{\LM 是本公司为机器人量身定制的机器人控制系统，所有对机器人的可视化操作和控制必须通过登录\LM 系统后再进行。}系统控制机器人。
+如\prettyref{fig:机器人本体及控制箱连接}所示，控制箱通过机器人电缆与机器人连接。连接上电后\footnote{请参考\prettyref{cha:基础操作}相关内容。}，用户可通过电脑、平板、手机或其他图形化终端设备的浏览器\footnote{建议使用 Google Chrome 浏览器、Microsoft Edge浏览器或其他基于Webkit 内核的现代浏览器来获得更好的体验。 }访问机器人的\LM\footnote{\LM 是本公司为机器人量身定制的机器人控制系统，所有对机器人的可视化操作和控制必须通过登录\LM 系统后再进行。}系统控制机器人。
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{line_graphs/robot_links.pdf}
-    \caption{机器人本体及控制箱连接}
+    \caption{机器人及控制箱连接}
     \label{fig:机器人本体及控制箱连接}
 \end{figure}
 
@@ -83,35 +85,62 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 
 % 见\prettyref{tab:基础参数}。
 
+% \begin{table}[htb!]
+%     \centering
+%     \rowcolors{1}{trEven}{trOdd}
+%     \newcommand\Thr[1]{\cellcolor{th}\sffamily\color{white}{#1}}
+%     \begin{tabular}{cllll}
+% \tO & \Thr{自由度} & 6 & \Thr{工作半径} &		$638\mm $ \\
+% \tO & \Thr{有效负载   } &	$\le 3\kg$ & \Thr{重量   } &	$9.5\kg$\\
+% \tO & \Thr{重复精度   } &	$\pm 0.5\mm$ & \Thr{末端速度   } &	$\le 2\unit{m/s}$\\
+% \tO & \Thr{环境湿度   } &	$25\sim 85\%$（无冷凝） & \Thr{环境温度} &	$0\sim 40\oC$\\
+% \tO & \Thr{防护等级} &	IP54 & \Thr{供电电源} &	$48\unit{V}$(DC)\\
+% \multirow{-6}{4em}{\tO 机器人} & \Thr{安装方式   } &	正装、倒装、侧装 & \Thr{安装面积   } &	$\approx 160 \unit{cm^2}$\\
+% \tE & \Thr{尺寸} & $270\times 250\times 130(H) \mm$ & \Thr{重量} & $3.8\kg$ \\
+% \tE & \Thr{机器人电缆长度} & $2\unit{m}$ & \Thr{供电电源} & $100\sim 240\unit{V}$(AC), $50\sim 60\unit{Hz}$ \\
+% \multirow{-3}{4em}{\tE 控制箱} & \Thr{防护等级} & IP20 & \Thr{通讯协议} & 以太网  \\
+%     \end{tabular} 
+% \footnotesize{控制箱和机器人整机典型功耗	$150\unit{W}$}
+%     \caption{乐白机器人基础参数}
+%     \label{tab:基础参数}
+% \end{table}
+
 \begin{table}[htb!]
     \centering
-    \rowcolors{1}{trEven}{trOdd}
-    \newcommand\Thr[1]{\cellcolor{th}\sffamily\color{white}{#1}}
-    \begin{tabular}{rl}
-\Thr{工作半径} &		$638\mm $ \\
-\Thr{有效负载   } &	$\le 3\kg$\\
-\Thr{自重   } &	$9.5\kg$\\
-\Thr{重复精度   } &	$\pm 0.5\mm$\\
-\Thr{末端速度   } &	$\le 2\unit{m/s}$\\
-\Thr{功耗   } &	典型功耗$150\unit{W}$\\
-\Thr{安装方式   } &	正装、倒装、侧装\\
-\Thr{安装面积   } &	$\approx 160 \unit{cm^2}$\\
-\Thr{主机箱尺寸 } &	$270\times 250\times 130(H) \mm$\\
+    \rowcolors{1}{trOdd}{trEven}
+    \caption{机器人基础参数}
+    \label{tab:机器人基础参数}
+    \begin{tabular}{m{4.2em}m{12em}m{4.2em}m{4.5em}}
+\Thr{自由度} & 6 & \Thr{工作半径} &		$638\mm $ \\
+\Thr{有效负载   } &	$\le 3\kg$ & \Thr{重量   } &	$9.5\kg$\\
+\Thr{重复精度   } &	$\pm 0.5\mm$ & \Thr{末端速度   } &	$\le 2\unit{m/s}$\\
+\Thr{环境湿度   } &	$25\!\sim\! 85\%$（无冷凝） & \Thr{环境温度} &	$0\!\sim\! 40\oC$\\
+\Thr{防护等级} &	IP54 & \Thr{供电电源} &	$48\unit{V}$(DC)\\
+\Thr{安装方式   } &	正装、倒装、侧装 & \Thr{安装面积   } &	$\approx 160 \unit{cm^2}$\\
     \end{tabular}
-    \caption{乐白机器人基础参数}
-    \label{tab:基础参数}
+
+    \caption{控制箱基础参数}
+    \label{tab:控制箱基础参数}
+    \begin{tabular}{m{4.2em}m{12em}m{4.2em}m{4.5em}}    
+\Thr{尺寸} & $270\times 250\times 130(H) \mm$ & \Thr{重量} & $3.8\kg$ \\
+\Thr{供电电源} & $100\!\sim\! 240\unit{V}$(AC), $50\!\sim\! 60\unit{Hz}$ & \Thr{电缆长度} & $2\unit{m}$ \\
+\Thr{防护等级} & IP20 & \Thr{通讯协议} & 以太网  \\
+    \end{tabular}
+
+\tablenote{控制箱和机器人整机典型功耗	$150\unit{W}$}
 \end{table}
 
-\vspace{-0.8cm}
+\vfill
+
+\clearpage
 
 \begin{figure}[htb!]
 	\centering
-	\includegraphics[height=5cm]{line_graphs/effective_payload.pdf}
+	\includegraphics[width=\textwidth]{line_graphs/effective_payload.pdf}
 	\caption{有效负载图}
 	\label{fig:有效负载图}
 \end{figure}
 
-\clearpage
 
 机器人最大允许有效负载取决于重心偏移，如\prettyref{fig:有效负载图}。重心偏移定义为工具输出法兰的中心与重心之间的距离。
 
@@ -121,16 +150,18 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 	\item 超过允许值会导致机器内部件的提早损坏。
 \end{itemize}}
 
-\vfill
+% \clearpage
 
 \subsection{运动轴}
 
 % 见\prettyref{tab:运动轴}。
 
-\begin{table}[ht]{
+\begin{table}[ht]
     \centering
     \rowcolors{1}{trEven}{trOdd}
     \def\dps{\unit{^\circ/s}}
+    \caption{乐白机器人运动轴}
+    \label{tab:运动轴}
     \begin{tabular}{ccc}
 \rowcolor{th} \Th{关节} &	\Th{运动范围} &	\Th{最大速度}\\
 关节1   &	无限制  &	$180\dps$ \\
@@ -140,10 +171,9 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 关节5   &	无限制  &	$180\dps$ \\
 关节6   &	无限制  &	$180\dps$ \\
     \end{tabular}
-    \caption{乐白机器人运动轴}
-    \label{tab:运动轴}
-}
-    \footnotesize{注：以上所提的关节运动范围无限制需排除机器人自干涉的情况，自干涉的情况因实际运动场景而有差异}
+
+    \tablenote{以上所提的关节运动范围无限制需排除机器人自干涉的情况，\\
+    自干涉的情况因实际运动场景而有差异}
 \end{table}
 
 \clearpage
@@ -155,12 +185,12 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 \begin{figure}[ht]
     \centering
     \subfigure[沿$Z$轴方向]{
-    	\begin{minipage}[b]{0.45\textwidth}\centering
+    	\begin{minipage}[b]{0.4\textwidth}\centering
    		 	\includegraphics[width=\linewidth]{line_graphs/view-via-z.pdf}
     	\end{minipage}
     }
     \subfigure[沿$X$轴或$Y$轴方向]{
-    	\begin{minipage}[b]{0.45\textwidth}\centering
+    	\begin{minipage}[b]{0.4\textwidth}\centering
    		 	\includegraphics[width=\linewidth]{line_graphs/view-via-xy.pdf}
     	\end{minipage}
     }
@@ -184,8 +214,6 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 \begin{table}[htb!]
     \centering
     % \rowcolors{1}{trEven}{trOdd}
-    \def\tE{\cellcolor{trEven}}
-    \def\tO{\cellcolor{trOdd}}
 \begin{tabular}{cll}
 \rowcolor{th} \Th{序号}	&  \Th{功能}	& \Th{性能参数}\\
 \tO  1	& \tO 电源正极	& \tO $24\unit{V}$  \\
