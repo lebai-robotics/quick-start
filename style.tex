@@ -21,6 +21,7 @@
 \definecolor{Primary}{HTML/cmyk}{1E5AF0/0.58,0.35,0,0}
 \definecolor{Info}{HTML}{8296A6}
 \definecolor{Danger}{HTML}{FF3B30}
+\definecolor{Warning}{HTML}{FEAF16}
 \definecolor{Card}{HTML}{374148}
 
 \definecolor{th}{HTML/cmyk}{EB6160/0.01,0.83,0.71,0.01}
@@ -157,9 +158,12 @@
 \usepackage{prettyref}
 \newrefformat{fig}{{\color{CarminePink}\underline{图\ref{#1}}}}
 \newrefformat{tab}{{\color{CarminePink}\underline{表\ref{#1}}}}
-\newrefformat{cha}{{\color{CarminePink}\underline{第\ref{#1}章\nameref{#1}}}}
-\newrefformat{app}{{\color{CarminePink}\underline{附录\ref{#1}\nameref{#1}}}}
-\newrefformat{sec}{{\color{CarminePink}\underline{第\ref{#1}节\nameref{#1}}}}
+% \newrefformat{cha}{{\color{CarminePink}\underline{第\ref{#1}章\nameref{#1}}}}
+% \newrefformat{app}{{\color{CarminePink}\underline{附录\ref{#1}\nameref{#1}}}}
+% \newrefformat{sec}{{\color{CarminePink}\underline{第\ref{#1}节\nameref{#1}}}}
+\newrefformat{cha}{{\color{CarminePink}\underline{第\pageref{#1}页第\ref{#1}章\nameref{#1}}}}
+\newrefformat{app}{{\color{CarminePink}\underline{第\pageref{#1}页附录\ref{#1}\nameref{#1}}}}
+\newrefformat{sec}{{\color{CarminePink}\underline{第\pageref{#1}页第\ref{#1}节\nameref{#1}}}}
 
 % 图表
 \usepackage{caption}
@@ -248,8 +252,12 @@ urlcolor=CarminePink,
 \tcbset{boxsep=0mm,nobeforeafter,center title,tcbox raise base}
 \newcommand{\btn}[2][Primary]{\tcbox[left=10pt,right=10pt,top=4pt,bottom=4pt,colframe=#1,colback=#1,colupper=white,arc=8pt]{#2}}
 \newcommand{\kbd}[1]{\tcbox[left=4pt,right=4pt,top=4pt,bottom=4pt,colframe=LightRose,colback=white]{#1}}
-\newcommand{\mnu}[1]{\tcbox[left=2pt,right=2pt,top=2pt,bottom=2pt,arc=1pt,colframe=Primary,colback=white]{#1}}
+\newcommand{\mnu}[1]{\tcbox[left=2pt,right=2pt,top=2pt,bottom=2pt,arc=1pt,colframe=LightRose,colback=white]{#1}}
 \newcommand{\icn}[2][]{{\includegraphics[height=1em]{#2}}}
 
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
+
+\newcommand{\ThisBook}{本手册} % {《用户手册》}
+\newcommand{\eBook}{电子版用户手册}
+\newcommand{\ThatBook}{《服务指南》}
