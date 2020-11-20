@@ -150,13 +150,14 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 	\item 超过允许值会导致机器内部件的提早损坏。
 \end{itemize}}
 
-% \clearpage
+\clearpage
 
 \subsection{运动轴}
 
+\vspace*{-1cm}
 % 见\prettyref{tab:运动轴}。
 
-\begin{table}[ht]
+\begin{table}[htb!]
     \centering
     \rowcolors{1}{trEven}{trOdd}
     \def\dps{\unit{^\circ/s}}
@@ -176,14 +177,14 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
     自干涉的情况因实际运动场景而有差异}
 \end{table}
 
-\clearpage
+% \clearpage
 
 \subsection{工作空间}
 \label{sec:工作空间}
 
 % 见\prettyref{fig:机器人运动范围}。
 
-\begin{figure}[ht]
+\begin{figure}[htb!]
     \centering
     \subfigure[沿$Z$轴方向]{
     	\begin{minipage}[b]{0.4\textwidth}\centering
@@ -197,6 +198,14 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
     }
     \caption{乐白机器人工作空间示意图}
     \label{fig:机器人运动范围}
+\end{figure}
+
+
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[height=3cm]{line_graphs/robot_box_io_plugin.pdf}
+    \caption{控制箱I/O硬件接口示意图}
+    \label{fig:控制箱IO}
 \end{figure}
 
 % \clearpage
@@ -243,13 +252,6 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
         \item 2个数字输入接口；
         \item 2个数字输出接口。
     \end{itemize}
-
-\begin{figure}[htb!]
-    \centering
-    \includegraphics[height=3cm]{line_graphs/robot_box_io_plugin.pdf}
-    \caption{控制箱I/O硬件接口示意图}
-    \label{fig:控制箱IO}
-\end{figure}
 
 \begin{figure}[htb!]
     \centering
@@ -335,3 +337,32 @@ LM3提供以太网、Wi-Fi(2.4 GHz) 热点网络、4G物联网三种网络连接
 \end{itemize}}
 
 \danger[警告]{切勿将机器人（含控制箱）固定在不稳固的位置，否则可能会跌落损坏。}
+
+% \clearpage
+
+\section{末端工具安装}
+
+如\prettyref{fig:机器人末端法兰盘接口}，机器人末端法兰盘正面有4个M6螺纹孔，用于连接末端工具与机器人；
+法兰盘侧面有4个M3螺纹孔，用于乐白轻量化末端工具的安装。正常使用且
+不包括受外界碰撞情况下，机器人末端（含工具）最大可承受$3\kg$负载。
+
+\begin{figure}[ht]
+    \centering
+    \subfigure[侧视图]{
+		\begin{minipage}[b]{0.2\textwidth}\centering
+			\includegraphics[height=4cm]{line_graphs/flange_side_view.pdf}
+		\end{minipage}
+	}
+    \subfigure[正视图]{
+    	\begin{minipage}[b]{0.5\textwidth}\centering
+   		 	\includegraphics[height=4cm]{line_graphs/flange_face_view.pdf}
+    	\end{minipage}
+    }
+    \subfigure[俯视图]{
+    	\begin{minipage}[b]{0.2\textwidth}\centering
+   		 	\includegraphics[height=4cm]{line_graphs/flange_top_view.pdf}
+    	\end{minipage}
+    }
+    \caption{机器人末端法兰盘接口}
+    \label{fig:机器人末端法兰盘接口}
+\end{figure}
