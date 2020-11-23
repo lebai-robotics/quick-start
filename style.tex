@@ -49,6 +49,7 @@
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{multirow}
+\usepackage{threeparttable}
 \newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
 \newcommand{\Th}[1]{\multicolumn{1}{c}{\sffamily\color{white} #1}}
 \def\tE{\cellcolor{trEven}}
@@ -164,7 +165,7 @@
 % \newrefformat{sec}{{\color{CarminePink}\underline{第\ref{#1}节\nameref{#1}}}}
 \newrefformat{cha}{{\color{CarminePink}\underline{第\pageref{#1}页第\ref{#1}章\nameref{#1}}}}
 \newrefformat{app}{{\color{CarminePink}\underline{第\pageref{#1}页附录\ref{#1}\nameref{#1}}}}
-\newrefformat{sec}{{\color{CarminePink}\underline{第\pageref{#1}页第\ref{#1}节\nameref{#1}}}}
+\newrefformat{sec}{{\color{CarminePink}\underline{第\pageref{#1}页 \ref{#1} \nameref{#1}}}}
 
 % 图表
 \usepackage{caption}
