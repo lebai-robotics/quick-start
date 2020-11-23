@@ -64,7 +64,7 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
     \label{fig:机器人关节示意图}
 \end{figure}
 
-机器人本体为机器人产品的执行机构（以下简称机器人），其中底座为机器人安装处，肩部和肘部可执行较大幅度动作，腕部1和腕部 2可执行较精细动作，腕部 3 可以连接末端工具。
+机器人本体（以下简称机器人）为机器人产品的执行机构，其中底座为机器人安装处，肩部和肘部可执行较大幅度动作，腕部1和腕部 2可执行较精细动作，腕部 3 可以连接末端工具。
 
 \clearpage
 
@@ -154,7 +154,7 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 
 \subsection{运动轴}
 
-\vspace*{-1cm}
+% \vspace*{-1cm}
 % 见\prettyref{tab:运动轴}。
 
 \begin{table}[htb!]
@@ -173,16 +173,18 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 关节6   &	无限制  &	$180\dps$ \\
     \end{tabular}
 
-    \tablenote{以上所提的关节运动范围无限制需排除机器人自干涉的情况，\\
+    \tablenote{以上所提的关节运动范围无限制需排除机器人自干涉的情况，\\[-4pt]
     自干涉的情况因实际运动场景而有差异}
 \end{table}
+
+% \vspace{-10pt}
 
 % \clearpage
 
 \subsection{工作空间}
 \label{sec:工作空间}
 
-% 见\prettyref{fig:机器人运动范围}。
+LM3机器人的工作空间是指底座关节周围$540\mm$范围内的区域。如\prettyref{fig:机器人运动范围}，双点划线所示范围是$\!P\!$点的最佳运行区域。
 
 \begin{figure}[htb!]
     \centering
@@ -200,19 +202,13 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
     \label{fig:机器人运动范围}
 \end{figure}
 
-
-\begin{figure}[htb!]
-    \centering
-    \includegraphics[height=3cm]{line_graphs/robot_box_io_plugin.pdf}
-    \caption{控制箱I/O硬件接口示意图}
-    \label{fig:控制箱IO}
-\end{figure}
-
 % \clearpage
 
 \subsection{I/O接口}
 
 LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同的应用场景，您可以选择不同位置的I/O接口来实现相应的I/O操作。
+
+% \vfill
 
 \begin{enumerate}
     \item 如\prettyref{fig:控制箱IO}和\prettyref{tab:控制箱IO}，机器人控制箱提供：
@@ -221,6 +217,14 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
         \item 2个模拟输入，2个模拟输出接口。
     \end{itemize}
 
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[height=3cm]{line_graphs/robot_box_io_plugin.pdf}
+    \caption{控制箱I/O硬件接口示意图}
+    \label{fig:控制箱IO}
+\end{figure}
+
+% \newpage
 \begin{table}[htb!]
     \centering
     % \rowcolors{1}{trEven}{trOdd}
@@ -246,6 +250,8 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 \caption{控制箱I/O接口引脚说明}
 \label{tab:控制箱IO}
 \end{table}
+
+\clearpage
 
     \item 如\prettyref{fig:法兰盘IO}和\prettyref{tab:法兰盘IO}，末端法兰盘上提供：
     \begin{itemize}
@@ -285,7 +291,7 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 
 \end{enumerate}
 
-% \clearpage
+\clearpage
 
 \subsection{网络连接}
 
@@ -299,7 +305,7 @@ LM3提供以太网、Wi-Fi(2.4 GHz) 热点网络、4G物联网三种网络连接
 
 如\prettyref{fig:机器人安装方式}，LM3机器人支持三种安装方式：正装、倒装、侧装（侧装时注意机器人电缆出口必须朝下）。
 
-\begin{figure}[ht]
+\begin{figure}[htb!]
     \centering
     \subfigure[正装]{
 		\begin{minipage}[b]{0.3\textwidth}\centering
@@ -322,14 +328,18 @@ LM3提供以太网、Wi-Fi(2.4 GHz) 热点网络、4G物联网三种网络连接
 
 % \clearpage
 
-\begin{figure}[ht]
+% \vspace*{-0.6cm}
+
+使用机器人配件包中的 4 颗 M6 螺钉，对应机器人底座（如\prettyref{fig:机器人底座视图}）上的 4 个安装孔进行安装操作，建议以 $9\Nm$ 扭矩紧固这些螺钉。如果需要更准确地调整机器人位置，还可钻2 个直径$5 \mm$的孔并用销加以固定。
+
+% \vspace*{-0.8cm}
+
+\begin{figure}[htb!]
     \centering
     \includegraphics[height=5cm]{line_graphs/bottom_surface.pdf}
     \caption{机器人底座视图}
     \label{fig:机器人底座视图}
 \end{figure}
-
-使用机器人配件包中的 4 颗 M6 螺钉，对应机器人底座（如\prettyref{fig:机器人底座视图}）上的 4 个安装孔进行安装操作，建议以 $9\Nm$ 扭矩紧固这些螺钉。如果需要更准确地调整机器人位置，还可钻2 个直径$5 \mm$的孔并用销加以固定。
 
 \info{\begin{itemize}
 \item 机器人每一个安装孔位都应固定螺钉；
@@ -338,7 +348,7 @@ LM3提供以太网、Wi-Fi(2.4 GHz) 热点网络、4G物联网三种网络连接
 
 \danger[警告]{切勿将机器人（含控制箱）固定在不稳固的位置，否则可能会跌落损坏。}
 
-% \clearpage
+\clearpage
 
 \section{末端工具安装}
 
@@ -346,7 +356,7 @@ LM3提供以太网、Wi-Fi(2.4 GHz) 热点网络、4G物联网三种网络连接
 法兰盘侧面有4个M3螺纹孔，用于乐白轻量化末端工具的安装。正常使用且
 不包括受外界碰撞情况下，机器人末端（含工具）最大可承受$3\kg$负载。
 
-\begin{figure}[ht]
+\begin{figure}[h!]
     \centering
     \subfigure[侧视图]{
 		\begin{minipage}[b]{0.2\textwidth}\centering
