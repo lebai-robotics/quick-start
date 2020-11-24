@@ -14,7 +14,11 @@
 \include{title}
 \include{copyright}
 \pagenumbering{roman}
-{\small\tableofcontents}
+{\small
+\tableofcontents
+\listoffigures
+\listoftables
+}
 \newpage
 \pagenumbering{arabic}
 \setcounter{page}{1}
@@ -29,16 +33,6 @@
 \include{support}
 \appendix
 \include{standard}
-% \clearpage
-% \listoffigures
-% \clearpage
-% \pagestyle{empty}
-% \clearpage
-% \listoftables
-% \clearpage
 \include{online}
-% \printindex % 索引 makeindex
-%\bibliography{...} % 参考文献 bibtex
-% \include{pdfs}
 \include{cover}
 \end{document}
