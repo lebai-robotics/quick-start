@@ -51,9 +51,9 @@
 
 \vfill
 
-\section{产品简介}
+% \section{产品简介}
 
-\subsection{产品组成}
+\section{产品组成}
 
 LM3机器人产品主要由机器人本体和控制箱组成。机器人本体共有6 个旋转关节，即6个自由度(DoF)。如\prettyref{fig:机器人关节示意图}所示，机器人关节包括底座（关节 1）、肩部（关节 2）、肘部（关节 3）、腕部1（关节 4）、腕部 2（关节 5）和腕部 3（关节 6）。
 
@@ -81,7 +81,7 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 
 \clearpage
 
-\subsection{基础参数}
+\section{基础参数}
 
 % 见\prettyref{tab:基础参数}。
 
@@ -134,25 +134,7 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 
 \clearpage
 
-\begin{figure}[htb!]
-	\centering
-	\includegraphics[width=\textwidth]{line_graphs/effective_payload.pdf}
-	\caption{有效负载图}
-	\label{fig:有效负载图}
-\end{figure}
-
-
-机器人最大允许有效负载取决于重心偏移，如\prettyref{fig:有效负载图}。重心偏移定义为工具输出法兰的中心与重心之间的距离。
-
-\danger[警告]{\begin{itemize}
-	\item 负载条件应在图表所示范围内。
-	\item 图中显示的有效负载表示的是最大负载能力，在任何情况下，都不应该超过图中所示的最大重量。
-	\item 超过允许值会导致机器内部件的提早损坏。
-\end{itemize}}
-
-\clearpage
-
-\subsection{运动轴}
+\section{运动轴}
 
 % \vspace*{-1cm}
 % 见\prettyref{tab:运动轴}。
@@ -181,7 +163,7 @@ LM3机器人产品主要由机器人本体和控制箱组成。机器人本体�
 
 % \clearpage
 
-\subsection{工作空间}
+\section{工作空间}
 \label{sec:工作空间}
 
 LM3机器人的工作空间是指底座关节周围$540\mm$范围内的区域。如\prettyref{fig:机器人运动范围}，双点划线所示范围是$\!P\!$点的最佳运行区域。
@@ -204,7 +186,7 @@ LM3机器人的工作空间是指底座关节周围$540\mm$范围内的区域。
 
 % \clearpage
 
-\subsection{I/O接口}
+\section{I/O接口}
 
 LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同的应用场景，您可以选择不同位置的I/O接口来实现相应的I/O操作。
 
@@ -293,7 +275,7 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 
 \clearpage
 
-\subsection{网络连接}
+\section{网络连接}
 
 LM3提供以太网、Wi-Fi(2.4 GHz) 热点网络、4G物联网三种网络连接方式。其中：以太网和Wi-Fi网络连接用于提供给用户操作和连接机器人使用，4G物联网连接目前仅用于设备基础信息\footnote{设备基础信息仅限于：设备名称，设备网络连接类型及状态，软件系统版本，系统运行错误信息且不包含任何客户业务数据（包括且不限于场景数据等）。如需其他信息的上报，本公司将事前获得您的授权同意后才进行。}的数据上报（用于设备健康状态监控）。
 
@@ -376,3 +358,22 @@ LM3提供以太网、Wi-Fi(2.4 GHz) 热点网络、4G物联网三种网络连接
     \caption{机器人末端法兰盘接口}
     \label{fig:机器人末端法兰盘接口}
 \end{figure}
+
+\clearpage
+
+\NoBgThispage
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=\textwidth]{line_graphs/effective_payload.pdf}
+	\caption{有效负载图}
+	\label{fig:有效负载图}
+\end{figure}
+
+机器人最大允许有效负载取决于重心偏移，如\prettyref{fig:有效负载图}。重心偏移定义为工具输出法兰的中心与重心之间的距离。
+
+\danger[警告]{\begin{itemize}
+	\item 负载条件应在图表所示范围内。
+	\item 图中显示的有效负载表示的是最大负载能力，在任何情况下，都不应该超过图中所示的最大重量。
+	\item 超过允许值会导致机器内部件的提早损坏。
+\end{itemize}}
