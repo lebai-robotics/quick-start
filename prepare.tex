@@ -198,19 +198,19 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 
 % \vfill
 
-\begin{figure}[htb!]
-    \centering
-    \includegraphics[height=4cm]{line_graphs/robot_box_io_plugin.pdf}
-    \caption{控制箱I/O硬件接口示意图}
-    \label{fig:控制箱IO}
-\end{figure}
-
 \begin{enumerate}
     \item 如\prettyref{fig:控制箱IO}和\prettyref{tab:控制箱IO}，机器人控制箱提供：
     \begin{itemize}
         \item 4个数字输入，4个数字输出接口。
         \item 2个模拟输入，2个模拟输出接口。
     \end{itemize}
+
+\begin{figure}[htb!]
+    \centering
+    \includegraphics[height=4cm]{line_graphs/robot_box_io_plugin.pdf}
+    \caption{控制箱I/O硬件接口示意图}
+    \label{fig:控制箱IO}
+\end{figure}
 
 % \vspace{-1cm}
 
@@ -244,18 +244,18 @@ LM3提供的I/O接口有两部分：控制箱和末端法兰盘，根据不同�
 
 \clearpage
 
+    \item 如\prettyref{fig:法兰盘IO}和\prettyref{tab:法兰盘IO}，末端法兰盘上提供：
+    \begin{itemize}
+        \item 2个数字输入接口。
+        \item 2个数字输出接口。
+    \end{itemize}
+
 \begin{figure}[htb!]
     \centering
     \includegraphics[height=3cm]{image/35.pdf}
     \caption{末端法兰盘 I/O硬件接口示意图}
     \label{fig:法兰盘IO}
 \end{figure}
-
-    \item 如\prettyref{fig:法兰盘IO}和\prettyref{tab:法兰盘IO}，末端法兰盘上提供：
-    \begin{itemize}
-        \item 2个数字输入接口。
-        \item 2个数字输出接口。
-    \end{itemize}
 
 \begin{table}[htb!]
     \centering
@@ -348,17 +348,17 @@ LM3提供以太网、Wi-Fi(2.4 GHz) 热点网络、4G物联网三种网络连接
 
 \begin{figure}[h!]
     \centering
-    \subfigure[侧视图]{
+    \subfigure{
 		\begin{minipage}[b]{0.2\textwidth}\centering
 			\includegraphics[height=4cm]{line_graphs/flange_side_view.pdf}
 		\end{minipage}
 	}
-    \subfigure[正视图]{
+    \subfigure{
     	\begin{minipage}[b]{0.5\textwidth}\centering
    		 	\includegraphics[height=4cm]{line_graphs/flange_face_view.pdf}
     	\end{minipage}
     }
-    \subfigure[俯视图]{
+    \subfigure{
     	\begin{minipage}[b]{0.2\textwidth}\centering
    		 	\includegraphics[height=4cm]{line_graphs/flange_top_view.pdf}
     	\end{minipage}
@@ -367,7 +367,7 @@ LM3提供以太网、Wi-Fi(2.4 GHz) 热点网络、4G物联网三种网络连接
     \label{fig:机器人末端法兰盘接口}
 \end{figure}
 
-\clearpage
+% \clearpage
 
 \NoBgThispage
 
