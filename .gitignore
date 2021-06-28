@@ -10,3 +10,5 @@
 *.ilg
 *~
 *DS_Store
+release/
+lebai-manual-*.pdf

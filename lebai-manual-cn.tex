@@ -1,0 +1,33 @@
+% !TEX program = xelatex
+\documentclass[UTF8, 10pt, twoside, sub4section]{ctexrep}
+\input{style/package}
+\input{cn/define}
+\input{style/command}
+\begin{document}
+
+% \zihao{6}
+\include{cover/front}
+\include{cn/i-copyright}
+\pagenumbering{roman}
+{\small
+\tableofcontents
+% \listoffigures
+% \listoftables
+}
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\include{cn/0-preface}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\include{cn/1-prepare}
+\include{cn/2-basic}
+\include{cn/3-using}
+\include{cn/4-reset}
+\include{cn/5-repair}
+\include{cn/6-support}
+\appendix
+\include{cn/a-standard}
+\include{cn/b-online}
+\include{cover/back}
+\end{document}
