@@ -4,7 +4,7 @@
 
 在讲述如何创建和编写一个场景之前，我们先了解下乐白机器人的场景编辑器以及如何进行拖动示教\footnote{拖动示教：即让机器人根据人手的拖拽来带动机器人，同时在正确设置末端工具质量和质心情况下，机器人可以达到一个自我平衡的运行状态。}操作。
 
-\vspace*{-0.8em}
+% \vspace*{-0.8em}
 
 \section{场景编辑器}
 
@@ -41,7 +41,7 @@
 	\end{figure}
 			% \footnotetext{时间轴编辑器：以时间先后顺序展现机器人的顺序执行的动作列表，上海乐白机器人自主设计和研发的且拥有自主知识产权的专为机器人控制系统设计和研发的机器人场景编辑器。}
 
-\clearpage
+% \clearpage
 
 \subsection{切换编辑器类型}
 
@@ -61,9 +61,9 @@
 
 \info{当某个场景的编辑器类型从时间轴编辑器切换成代码编辑器后，无法再反向转换回去。操作之前请使用 \mnu{导出} \footnote{详见\prettyref{sec:导出场景}。} 或 \mnu{复制} 功能进行备份。}
 
-\vfill
+% \vfill
 
-\clearpage
+% \clearpage
 
 % \subsection{类型图标说明}
 % \begin{itemize}
@@ -82,9 +82,9 @@
 
 \danger[警告]{示教过程中注意关节角度的转动不可超出安全范围\footnote{详见\prettyref{sec:运行安全}。}，否则可能导致机器人急停或其他故障。}
 
-\vfill
+% \vfill
 
-\clearpage
+% \clearpage
 
 \section{编写场景}
 \subsection{创建新场景}
@@ -346,43 +346,43 @@
 
 在搜索框展开状态下，点击搜索框左侧的\icn{image/all.pdf}图标，可以根据弹出框中的动作块类型来进行快速搜索。同时，也可结合文本输入框中输入的关键字来查询对应类型或全部类型下的符合该关键字的动作块。
 
-\vfill
+% \vfill
 
 \subsubsection{信号量}
-信号量在\LM~v2.1 中暂无有效使用。
+% 信号量在\LM~v2.1 中暂无有效使用。
 
-\vfill
+% \vfill
 
 \subsubsection{速度和加速时间}
 \label{sec:速度和加速时间}
 工具栏上的速度和加速时间为当前场景全局的速度和加速时间配置入口，当未使用\prettyref{sec:编辑位置}提到的单个位置动作块的速度和加速时间调整操作时，所有该场景下的位置动作块使用全局的速度和加速时间配置。
 
-\vfill
+% \vfill
 
 \subsubsection{撤销/恢复}
 当误删除某个动作块或者执行了错误操作时，可以点击撤销按钮\icn{image/ic_toolbar_undo.pdf}执行撤销操作；反之，如果想恢复之前被撤销的操作，可以点击恢复按钮\icn{image/ic_toolbar_redo.pdf}执行恢复操作。
 
-\vfill
+% \vfill
 
 \danger[警告]{从当前编辑器页面返回或退出时，编辑器的撤销和恢复历史将被清空，再次返回当前场景编辑器时，将无法执行之前的撤销和恢复操作。}
 
-\vfill
+% \vfill
 
 \subsubsection{删除/清空}
 当编辑区选中部分动作块时，\icn{image/ic_toolbar_delete.pdf}删除/清空按钮上将展示对应选择的动作块数量，此时点击该按钮执行删除对应动作块的操作；当编辑区未选中任何动作块时，此时点击该按钮执行清空当前场景操作。
 
-\vfill
+% \vfill
 
 \danger[警告]{请务必确保您已知晓执行此操作的后果并在二次确认删除或清空时，执行此操作，特别是当执行完删除或清空操作退出了当前编辑器，再次进入该场景编辑操作时，将无法还原删除或清空前的状态。}
 
-\vfill
+% \vfill
 
-\clearpage
+% \clearpage
 
 \subsubsection{场景循环次数}
 点击时间轴编辑器工具栏右上角循环次数图标\icn{image/ic_toolbar_loops.pdf}修改任务循环次数（默认循环为1次）；当次数为0时，表示执行无限循环$\infty$任务，直到机器人急停或停止。
 
-\vfill
+% \vfill
 
 \subsubsection{运行场景}
 \label{sec:运行场景}
@@ -392,7 +392,7 @@
 	\item 双击机器人肩部按钮，如\prettyref{fig:肩部按钮示意图}所示（肩部灯板中间有“白”标识的按钮）。
 \end{itemize}
 
-\vfill
+% \vfill
 
 \begin{figure}[ht]
 	\centering

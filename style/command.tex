@@ -1,4 +1,4 @@
-\newcommand{\DocVersion}{v1.1.0}
+\newcommand{\DocVersion}{2.3}
 % 编程
 
 % 数学
@@ -71,8 +71,8 @@
 % 页眉和页脚
 \pagestyle{fancy}
 \newcommand\myfoot{\zihao{5}\color{darkgray}\sffamily~{\thepage}~}
-\newcommand\myleft{\color{darkgray}\kaishu\leftmark}
-\newcommand\myright{\color{darkgray}\kaishu\rightmark}
+\newcommand\myleft{\zihao{7}\color{darkgray}\kaishu\leftmark}
+\newcommand\myright{\zihao{7}\color{darkgray}\kaishu\rightmark}
 \fancyhf{}
 \fancyfoot[LE, RO]{\myfoot}
 \fancyhead[LE]{\myleft}
@@ -93,8 +93,8 @@
     space=true,
     punct=quanjiao,
     chapter = {
-        beforeskip = 0pt,
-        afterskip = 20pt,
+        beforeskip = 0em,
+        afterskip = 1em,
         fixskip = true,
         format = \Huge\sffamily\bfseries\setlength\parindent{0pt},
         nameformat = \par\chapternamebox,
@@ -103,25 +103,25 @@
         aftertitle = \par\bigskip\nointerlineskip{\color{LightPink}\rule{\linewidth}{1pt}}\par
     },
     section = {
-        beforeskip = 10pt plus 6pt minus 10pt,
-        afterskip = 4pt plus 6pt minus 4pt,
+        beforeskip = 1em plus 0.6em minus 1em,
+        afterskip = 0.4em plus 0.6em minus 0.4em,
         format = \Large\sffamily\bfseries\raggedright ,
         numberformat = \color{CarminePink},
     },
     subsection = {
-        beforeskip = 6pt plus 6pt minus 6pt,
-        afterskip = 4pt plus 6pt minus 4pt,
+        beforeskip = 0.3em plus 0.3em minus 0.3em,
+        afterskip = 0.0em plus 0.3em minus 0.0em,
         format = \large\sffamily\bfseries\raggedright ,
         numberformat = \color{CarminePink},
     },
     subsubsection = {
-        beforeskip = 4pt plus 6pt minus 4pt,
-        afterskip = 4pt plus 6pt minus 4pt,
-        format = \sffamily\bfseries,
+        beforeskip = 0.0em plus 0.3em minus 0.0em,
+        afterskip = 0.0em plus 0.3em minus 0.0em,
+        format = \normalsize\sffamily\bfseries,
         numberformat = \color{CarminePink},
     },
     paragraph = {
-        format = \large\sffamily\bfseries\color{CarminePink},
+        format = \normalsize\sffamily\bfseries\color{CarminePink},
         % aftertitle = \@@par,
     },
     subparagraph = {
@@ -138,8 +138,8 @@
 % 图表
 \captionsetup[table]{labelsep=space,labelfont=bf}
 \captionsetup[figure]{labelsep=space,labelfont=bf} 
-\setlength{\abovecaptionskip}{6pt}
-\setlength{\belowcaptionskip}{8pt}
+\setlength{\abovecaptionskip}{3pt}
+\setlength{\belowcaptionskip}{4pt}
 % \setlength{\textfloatsep}{0.6\baselineskip plus 0.2\baselineskip minus 0.5\baselineskip}
 \setlength{\textfloatsep}{0pt}
 
@@ -190,20 +190,20 @@ urlcolor=CarminePink,
 
 % 自定义指令
 \newcommand{\innerinfo}[3]{{\setlength{\parindent}{0pt}\par
-    {\begin{minipage}[t]{0.18\linewidth}
+    {\begin{minipage}[t]{0.12\linewidth}
     \vspace{0pt}
     #1
     \end{minipage}}
-    {\begin{minipage}[t]{0.8\linewidth}
+    {\begin{minipage}[t]{0.86\linewidth}
     \setlist[itemize]{leftmargin=1.5em}
     \vspace{0pt}
     {\bfseries #2}\par\kaishu #3
     \end{minipage}\medskip}
 }
 }
-\newcommand{\info}[1]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_info.pdf}}{\Info}{#1}}
-\newcommand{\dange}[1]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_flash.pdf}}{\Dange}{#1}}
-\newcommand{\danger}[2][\Danger]{\innerinfo{\includegraphics[width=1.5cm]{image/ic_w_warning.pdf}}{#1}{#2}}
+\newcommand{\info}[1]{\innerinfo{\includegraphics[width=1cm]{image/ic_w_info.pdf}}{\Info}{#1}}
+\newcommand{\dange}[1]{\innerinfo{\includegraphics[width=1cm]{image/ic_w_flash.pdf}}{\Dange}{#1}}
+\newcommand{\danger}[2][\Danger]{\innerinfo{\includegraphics[width=1cm]{image/ic_w_warning.pdf}}{#1}{#2}}
 
 % 单位
 \newcommand{\unit}[1]{\,\mathrm{#1}}
