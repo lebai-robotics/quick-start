@@ -42,9 +42,7 @@
 LM3支持有线网络连接和无线网络连接，无线网络连接目前仅支持接入控制箱内置的Wi-Fi热点网络。
 \subsection{有线网络连接}
 
-使用网线连接控制箱背板的网口与路由器或交换机的LAN口，同时确保用于操作机器人的电脑、平板、手机或其他图形化终端设备与机器人接入的是同一网络。
-
-有线网络的连接示意如\prettyref{fig:有线网络连接拓扑图}：
+如\prettyref{fig:有线网络连接拓扑图}，使用网线连接控制箱背板的网口与路由器或交换机的LAN口，同时确保用于操作机器人的电脑、平板、手机或其他图形化终端设备与机器人接入的是同一网络。
 
 \begin{figure}[ht]
     \centering
@@ -57,6 +55,8 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 \subsection{无线网络连接}
 机器人出厂后，默认会启用一个热点名称为设备名称\footnote{可在控制箱的铭牌上找到设备名称。}的Wi-Fi热点，设备名称格式如：\verb|Lebai-123456|（后6位为随机字符），默认密码为：\verb|88888888|（8个8）。可通过电脑、平板、手机或其他图形化终端设备的Wi-Fi功能连接该设备名称对应的Wi-Fi热点网络，连接和控制机器人。
+
+在设置页面修改设备昵称，会修改设备的 SSID。
 
 \begin{figure}[ht]
     \centering
@@ -75,7 +75,7 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 	\item 若使用无线热点，地址为：\url{http://10.20.17.1}
 \end{itemize}
 
-网页打开后会进入登录页面，请输入默认授权码：\verb|1111|，点击\btn{登录}或按\kbd{Enter}，登录\LM。
+网页打开后会进入登录页面，请输入默认授权码：\verb|1111| 登录 \LM 。登录授权码可以在设置页面修改。
 
 \begin{figure}[ht]
     \centering
@@ -108,7 +108,7 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=\textwidth]{screen/2-6.png}
+		\includegraphics[width=0.8\textwidth]{screen/2-6.png}
 		\caption{安装方式}
 		\label{fig:安装方式}
 	\end{figure}
@@ -142,7 +142,7 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=\textwidth]{screen/2-8.png}
+		\includegraphics[width=0.8\textwidth]{screen/2-8.png}
 		\caption{碰撞检测}
 		\label{fig:碰撞检测}
 	\end{figure}
@@ -158,12 +158,12 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 第三步，在\mnu{界面设置}中设置界面主题，推荐使用\mnu{深色主题}。
 % 可以选择\mnu{深色主题}或\mnu{浅色主题}，目前\LM 浅色主题还在测试阶段，
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=\textwidth]{screen/2-9.png}
-	\caption{界面设置}
-	\label{fig:界面设置}
-\end{figure}
+% \begin{figure}[ht]
+% 	\centering
+% 	\includegraphics[width=\textwidth]{screen/2-9.png}
+% 	\caption{界面设置}
+% 	\label{fig:界面设置}
+% \end{figure}
 
 点击\btn{完成}，进入\LM 首页。
 
@@ -221,70 +221,57 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
     \label{tab:机器人状态列表}
 \end{table}
 
-% \vspace*{-3em}
+\subsection{位置信息}
+\LM 首页左面板实时同步机器人位置信息，包含坐标空间和关节空间。如\prettyref{fig:位置信息}，当前坐标位置显示机器人在坐标空间的位置和姿态的实时数据；当前关节位置显示机器人 6 个关节角度的实时数据。
 
-\subsection{温度信息}
-如\prettyref{fig:关节位置信息}，\LM 首页左面板实时显示机器人的整机温度\footnote{取控制箱内控制器的CPU温度和机器人每个关节的温度的最大值作为整机温度的显示。当整机温度数值右侧显示的图标为芯片时，表示当前CPU温度值最高；当显示一个关节加数字图标时，表示该数字对应的关节温度较高。}，每个关节正常温度在室温至$65\oC$之间。
-在左面板中选择关节空间选项卡，默认展示6个关节的关节角度。
-点击\mnu{关节角度}右侧的~\icn{image/icon_temperature.pdf}~图标，可实时观测关节1至关节6的温度变化；
-如\prettyref{fig:温度信息}，点击\mnu{关节温度}右侧的\icn{image/angle.pdf}图标，可以切换回关节角度显示。
-
-% \vspace*{-1em}
-
-\danger[警告]{当关节温度显示超过$65\oC$时，请勿触摸机器人外表面，否则有高温烫伤风险，并请立即停机，待机器温度回到常温，再检查当前机器人负载是否超过额定有效负载$3\kg$或机器人是否碰撞到外部物品。}
-
-\begin{figure}[ht]
+\begin{figure}[htb]
 	\centering
-	\begin{minipage}[t]{0.32\linewidth}
+	\begin{minipage}[t]{0.3\linewidth}
 		\centering
-		\includegraphics[height=6cm]{screen/2-11-t.jpg}
-		\caption{关节温度}
-		\label{fig:温度信息}
+		\includegraphics[width=3cm]{image/07/图2.11 位置信息.png}
+		\caption{位置信息}
+		\label{fig:位置信息}
 	\end{minipage}
-	\begin{minipage}[t]{0.32\linewidth}
+	\hfill
+	\begin{minipage}[t]{0.3\linewidth}
 		\centering
-		\includegraphics[height=6cm]{screen/2-12-1.png}
-		\caption{关节空间}
-		\label{fig:关节位置信息}
+			\includegraphics[width=3cm]{image/07/图2.12 整机温度.png}
+			\caption{整机温度}
+			\label{fig:整机温度}
 	\end{minipage}
-	\begin{minipage}[t]{0.32\linewidth}
+	\hfill
+	\begin{minipage}[t]{0.3\linewidth}
 		\centering
-		\includegraphics[height=6cm]{screen/2-12.png}
-		\caption{坐标空间}
-		\label{fig:坐标位置信息}
+		\includegraphics[height=4cm]{screen/2-13.png}
+		\caption{速度比例}
+		\label{fig:速度比例}
 	\end{minipage}
 \end{figure}
 
-% \vspace*{-2em}
+\subsection{温度信息}
+如\prettyref{fig:整机温度}，
+\LM 首页左面板实时显示机器人的控制箱温度以及每个关节的实时温度。每个关节正常温度在室温至$65\oC$之间。
 
-\subsection{位置信息}
-\LM 首页左面板实时同步机器人位置信息，包含坐标空间和关节空间。如\prettyref{fig:关节位置信息}，关节空间显示机器人6个关节角度的实时数据；如\prettyref{fig:坐标位置信息}，坐标空间显示机器人在坐标空间的位置和姿态的实时数据。
+\danger[警告]{当关节温度显示超过$65\oC$时，请勿触摸机器人外表面，否则有高温烫伤风险，并请立即停机，待机器温度回到常温，再检查当前机器人负载是否超过额定有效负载$3\kg$或机器人是否碰撞到外部物品。}
 
 \subsection{速度比例}
 点击\LM 首页控制区的速度图标，在展开的滑动条中拖动滑块或点击滑动条以调整机器人的运行速度比例，比例范围为$0\sim 100$。
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[height=4cm]{screen/2-13.png}
-	\caption{速度比例}
-	\label{fig:速度比例}
-\end{figure}
-
 \subsection{消息中心}
-在消息中心中，可查看机器人提示、警告、软硬件异常的消息通知。鼠标移动到\LM 首页右上角的消息图标\colorbox{black}{\icn{image/22.pdf}}可以打开消息中心。
+在消息中心中，可查看机器人提示、警告、软硬件异常的消息通知。鼠标点击\LM 首页右上角的消息图标\colorbox{black}{\icn{image/22.pdf}}可以打开消息中心。
 
 \begin{figure}[htb]
 	\centering
-	\begin{minipage}[t]{0.55\linewidth}
+	\begin{minipage}[t]{0.5\linewidth}
 		\centering
-		\includegraphics[height=8cm]{screen/2-14.png}
+		\includegraphics[width=4cm]{screen/2-14.png}
 		\caption{消息中心}
 		\label{fig:消息中心}
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{0.4\linewidth}
+	\begin{minipage}[t]{0.45\linewidth}
 		\centering
-		\includegraphics[height=8cm]{screen/2-15.png}
+		\includegraphics[width=4cm]{image/07/图2.13 任务历史.png}
 		\caption{任务历史}
 		\label{fig:任务历史}
 	\end{minipage}
@@ -308,15 +295,27 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 \subsection{任务历史}
 \label{sec:任务历史}
-任务历史列表中显示正在运行中及已完成的任务，并以时间顺序排列展现。当任务正在运行时，任务历史标题栏会出现\mnu{停止}、\mnu{暂停}或\mnu{恢复}的控制按键。任务历史列表中：
+\LM 首页，或者点击标题栏小旗帜按钮，可以查看任务历史。
+
+任务历史列表中显示正在运行中及已完成的任务，包含每个任务的名称、花费时长、运行次数及状态，并以时间顺序排列展现。
+
 \begin{itemize}
-	\item 正在运行的任务右侧显示当前已运行次数及当前运行周期的进度。
-	\item 已完成的任务右侧显示\icn{image/icon_flag.pdf}~\mnu{重新运行}按钮，点击可重新运行当前选择的任务。
+	\item 当任务正在运行时，左侧显示任务中止按钮（图标），右侧运行状态显示蓝色； 
+	\item 当任务已完成，左侧显示重新运行按钮\icn{image/icon_flag.pdf}，点击可重新运行当前选择的任务。右侧状态栏为绿色表示任务已完成；黄色表示任务已中止；红色表示任务已急停。
 \end{itemize}
 
 点击\mnu{任务历史}任一个任务的任务名称，可进入该任务对应的场景编辑页面。
 
-\danger[警告]{当运行某个场景，该场景的任务进入任务历史列表。该任务运行完成，点击\mnu{重新运行}按钮后，当前执行的任务为之前执行该任务的场景数据，即使该场景在该任务运行完后发生变更，也不会影响该任务的重新运行，重新运行的任务不受该场景的数据变更影响，以上一次运行任务的场景数据为准。}
+\danger[警告]{运行某个场景，则该场景的任务进入任务历史列表。当该任务完成后，点击 重新运行 按钮，当前执行的任务为之前执行该任务的场景数据，重新运行的任务不受场景的数据变更影响，以上一次运行任务的场景数据为准。}
+
+\subsection{离线仿真}
+
+点击标题栏按钮可以将系统切换离线仿真模式与真机在线模式，切换过程中会重启软件系统。
+
+\begin{itemize}
+\item \mnu{真机在线}模式是通过软件系统直接操作机器人执行任务。
+\item \mnu{离线仿真}即脱机操作，使用系统界面的仿真机器人模型进行模拟操作。
+\end{itemize}
 
 % \clearpage
 
@@ -325,7 +324,7 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{screen/2-16.png}
+	\includegraphics[width=\textwidth]{image/07/图2.17 启动机器人.png}
 	\caption{启动机器人}
 	\label{fig:启动机器人}
 \end{figure}
@@ -352,9 +351,13 @@ LM3支持有线网络连接和无线网络连接，无线网络连接目前仅�
 
 \section{关闭机器人}
 \begin{enumerate}
-	\item 先停止或者急停机器人。
-	\item 长按控制箱开关机按钮或使用外置开关机按钮（选配），直至控制箱开关机按钮的蓝色指示灯熄灭。
-	\item 关闭控制箱背板的红色总电源开关。
+	\item 先停止或者急停机器人。 
+	\item 关闭操作有两种方式，可任选其一： 
+	\begin{itemize}
+	\item 软关闭：选中\LM 首页下方的控制箱图标，点击翻转展开后最左侧的关机按钮。
+	\item 硬关闭：长按控制箱开关机按钮或使用外置开关机按钮（选配），直至控制箱开关机按钮的蓝色指示灯熄灭。 
+		\end{itemize}
+	\item 关闭控制箱背板的红色总电源开关。 
 \end{enumerate}
 
 \danger[警告]{关闭机器人需严格遵守上述操作步骤，否则可能导致机器人文件系统损坏、机器人功能故障等问题。}

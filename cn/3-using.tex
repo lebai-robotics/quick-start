@@ -27,7 +27,7 @@
 
 	\begin{figure}[htb]
 		\centering
-		\includegraphics[width=\textwidth]{shots/timeline_editor.pdf}
+		\includegraphics[width=\textwidth]{image/07/图3.1 时间轴编辑器 分区示意.png}
 		\caption{时间轴编辑器
 		% \protect\footnotemark
 		}
@@ -35,7 +35,7 @@
 
 		\vfill
 
-		\includegraphics[width=\textwidth]{shots/code_editor.pdf}
+		\includegraphics[width=\textwidth]{image/07/图3.2 代码编辑器 分区示意图.png}
 		\caption{代码编辑器}
 		\label{fig:代码编辑器}
 	\end{figure}
@@ -59,7 +59,7 @@
 	\label{fig:切换编辑器类型}
 \end{figure}
 
-\info{当某个场景的编辑器类型从时间轴编辑器切换成代码编辑器后，无法再反向转换回去。操作之前请使用 \mnu{导出} \footnote{详见\prettyref{sec:导出场景}。} 或 \mnu{复制} 功能进行备份。}
+% \info{当某个场景的编辑器类型从时间轴编辑器切换成代码编辑器后，无法再反向转换回去。操作之前请使用 \mnu{导出} \footnote{详见\prettyref{sec:导出场景}。} 或 \mnu{复制} 功能进行备份。}
 
 % \vfill
 
@@ -84,7 +84,7 @@
 
 % \vfill
 
-% \clearpage
+\clearpage
 
 \section{编写场景}
 \subsection{创建新场景}
@@ -99,23 +99,23 @@
 
 \subsection{添加动作块}
 
-时间轴编辑器支持的动作块类型有：
-\begin{itemize}
-\item 位置
-\item 手爪
-\item 等待
-\item 消息提示
-\item 数字I/O
-\item 模拟I/O
-\item 信号量
-\item 负载配置
-\end{itemize}
+% 时间轴编辑器支持的动作块类型有：
+% \begin{itemize}
+% \item 位置
+% \item 手爪
+% \item 等待
+% \item 消息提示
+% \item 数字I/O
+% \item 模拟I/O
+% \item 信号量
+% \item 负载配置
+% \end{itemize}
 
 点击时间轴编辑器的添加动作块按钮\icn{image/plus.pdf}，可以弹出\nameref{fig:添加动作块弹出框}，如\prettyref{fig:添加动作块弹出框}所示。
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=5cm]{screen/3-5.png}
+	\includegraphics[width=5cm]{image/07/图3.5 动作块选择框.png}
 	\caption{动作块选择框}
 	\label{fig:添加动作块弹出框}
 \end{figure}
@@ -146,7 +146,7 @@
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[height=3.5cm]{image/15.pdf}
+	\includegraphics[height=3.5cm]{image/07/图3.7 位置块焦点状态.png}
 	\caption{位置块焦点状态}
 	\label{fig:位置块焦点状态}
 \end{figure}
@@ -169,23 +169,20 @@
 
 \paragraph{微调}
 \label{sec:微调}
-在编辑场景时，动作轨迹中的位置需要精准细微调整，可以对单个位置进行微调。选择微调图标，页面可自动跳转至微调页面。
-
-% 微调页面中虚的机器人和实的机器人底座重叠展示，其中虚的机器人表示当前位置块存储的目标位置，实的机器人表示机器人当前位置。
-当机器人当前\mnu{实际位置}与位置块存储的\mnu{目标位置}不一致时，微调页面中会出现虚的机器人与实的机器人，其中虚的机器人表示当前位置块存储的目标位置，实的机器人表示机器人当前的实际位置。
-
-通过实际位置\icn{image/position.pdf}和目标位置\icn{image/saved.pdf}切换按钮进行切换，可查看目标位置与实际位置的数值。
+在编辑场景时，如果需要精准调整动作轨迹中的位置，可以对单个位置进行微调。选择微调图标，页面可自动跳转至微调页面。
+ 
+微调页面的左面板功能区，可展开查看机器人当前坐标位置数据与目标坐标位置数据。当机器人当前 实际位置 与位置块存储的 目标位置 不一致 时，微调页面中会出现虚的机器人与实的机器人，其中虚的机器人表示当前位置块存储的目标位置，实的机器人表示机器人当前的实际位置。
 
 \subparagraph{坐标空间微调}
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{shots/fine_tuning_cartesian.pdf}
+	\includegraphics[width=\textwidth]{image/07/图3.8 坐标空间微调.png}
 	\caption{坐标空间微调}
 	\label{fig:坐标空间微调}
 \end{figure}
 
-微调时可以选择不同的坐标系表示方式：
+微调时可以选择不同的参考坐标系及坐标系表示方式： 
 \begin{itemize}
 	\item 相对于底座时，可使用直角坐标系或圆柱坐标系。
 	\item 相对于末端时，仅支持直角坐标系。
@@ -204,35 +201,42 @@
 
 乐白机器人采用$Z\textrm{-}Y\textrm{-}X$欧拉角（EulerZYX）描述机器人末端的姿态，即先绕坐标系$Z$轴旋转$R_z$角，再绕旋转后的坐标系$Y$轴旋转$R_y$角，最后绕旋转两次后的坐标系$X$轴旋转$R_x$角。
 
-选择圆柱坐标系\footnote{圆柱坐标系的$X\textrm{-}Y$平面为极坐标系。在直角坐标系的点$P(x, y, z)$表示为圆柱坐标系的$P'(\rho, \theta, z)$，其中 $\rho=\sqrt{x^2+y^2}$，$\theta=\arctan\frac{y}{x}$。}，左侧调整盘会由调整$(X, Y)$变为调整$(\rho, \theta)$。
+选择圆柱坐标系\footnote{圆柱坐标系的$X\textrm{-}Y$平面为极坐标系。在直角坐标系的点$P(x, y, z)$表示为圆柱坐标系的$P'(\rho, \theta, z)$，其中 $\rho=\sqrt{x^2+y^2}$，$\theta=\arctan\frac{y}{x}$。}，左侧调整盘会由$(X, Y)$变为$(\rho, \theta)$。
 
-当参考坐标系选择\mnu{相对于末端}时（在不添加TCP的情况下\footnote{详见\prettyref{sec:TCP设置}。}），就是以机器人法兰盘平面的圆心作为坐标系原点，以直角坐标系为调整方式，通过在微调页面输入位置或姿态的数值或拉动屏幕下方的拉杆操作，机器人自动移动到指定位置后，点击\btn{更新}，完成位置微调。
+当参考坐标系选择\mnu{相对于末端}时（在不添加TCP的情况下\footnote{详见\prettyref{sec:TCP设置}。}），就是以机器人法兰盘平面的圆心作为坐标系原点，以直角坐标系为调整方式，通过在微调页面的当前坐标位置框中输入位置/姿态的数值，或拉动屏幕下方的拉杆操作，机器人自动移动到指定位置后，点击\btn{更新}，完成位置微调。
 
 \subparagraph{关节空间微调}
-点击微调页面左上方\mnu{关节空间}，通过输入关节1至关节6的角度数值，机器人会自动到达指定位置；或通过拉动屏幕下方各个方向的拉杆进行操作，当释放拉杆时，微调停止，点击\btn{更新}，完成位置微调。
+点击微调页面下方的\mnu{关节空间}，可切换至关节空间微调。在微调页面的左面板功能区，可展开查看机器人当前关节位置数据与目标关节位置数据，通过输入关节 1 至关节 6 的角度数值，机器人会自动到达指定位置；或通过拉动屏幕下方各个方向的拉杆进行操作，当释放拉杆时，微调停止，点击\btn{更新}，完成位置微调。
+
+\info{当机器人运行时因为关节超限急停，用户在重新启动后可在关节空间微调中点击“临时禁用关节位置限制”，解除关节受限（20s）进行位置微调操作即可。}
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{shots/fine_tuning_joint.pdf}
+	\includegraphics[width=\textwidth]{image/07/图3.10 关节空间微调.png}
 	\caption{关节空间微调}
 	\label{fig:关节空间微调}
 \end{figure}
 
-\paragraph{速度与加速时间}
-速度与加速时间是针对当前场景或单个位置块的速度$v$和加速度$a$进行修改，其中横轴对应加速时间，横轴数值越靠近原点，加速时间越短，加速度越大。纵轴对应速度，纵轴越靠近原点，速度越小。
+\paragraph{速度控件}
+速度控件可以修改场景或者位置动作块的运行速度$v$、加速度$a$、时间$t$和交融半径$r$。用户可以在场景编辑器的工具栏上全局操作，也可点击单个位置块\icn{image/ic_a_v.pdf}按钮进行单独操作。
+
+单个位置块的速度默认打开场景全局功能，即表示与当前场景的全局设置保持一致。取消“场景全局”前的功能勾选，即可对单个位置块进行速度参数的调整。
+
+单个位置块速度可以通过调整速度与加速度或者修改运动时间这两种方式进行操作。
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[height=4cm]{screen/3-11.png}
-	\caption{速度与加速时间调整控件}
-	\label{fig:速度与加速时间}
+	\includegraphics[height=4cm]{image/07/图3.11 速度与加速时间调整控件.png}
+	\caption{速度控件}
+	\label{fig:速度控件}
 \end{figure}
 
-速度与加速时间的调整，用户可以在场景编辑器的工具栏上全局操作\footnote{详见\prettyref{sec:速度和加速时间}。}，也可以对每个位置块单独操作。
+\subparagraph{交融半径}
 
-点击位置块\icn{image/ic_a_v.pdf}按钮弹出\nameref{fig:速度与加速时间}，右上角的\icn{image/lock.pdf}为当前位置块与编辑器工具栏上的全局速度和加速时间信息的同步锁。当场景中添加新的位置时，该位置块的速度加速时间控件全局锁默认为锁定状态，即表示与当前场景的全局速度和加速时间保持一致；当用户拖拽调整控件的横轴或纵轴任意一个拖拽点，使速度与加速时间发生变化时，全局锁解锁，即该位置块使用自己指定的速度和加速时间，不再使用全局的速度和加速时间参数值；用户可以再次点击\icn{image/unlock.pdf}图标锁定同步锁，则该位置块又保持与全局速度与加速时间一致的参数值。
+当设定交融半径大于0时，机器人动作指令轨迹不会在指定的目标位置停止，而是以一种平滑的方式连续运动，使得动作连续性更好，移动时间更短，效率更高。
 
-平滑功能，主要是指存在连续相邻多个位置块时，机器人控制系统自动优化出最佳路径，不停止地经过当前位置块的目标位置，使得动作连续性更好，移动的时间更短，效率更高。具体表现为当打开平滑功能之后，机器人位置间移动时，两个动作块之间不会出现明显的机器人位置间移动时的减速停止现象。
+当交融半径设置为0时，机器人轨迹可以精确到达每一个位置块的目标位置坐标。在两个直线运动之间设置交融半径，机器人仍然在同一平面内运动；而在两个关节运动或者关节运动与直线运动之间设置交融半径，机器人不能确保在同一平面内运动。
+
 
 在添加完位置动作块后，如果不需要添加其他类型的动作块，则可以直接查看\prettyref{sec:运行场景}的内容。
 
@@ -323,14 +327,28 @@
 \danger[警告]{添加负载配置时，质量和质心的设置必须尽量与末端工具质量一致，更换或卸除末端工具时，一定要相应地修改负载参数或禁用对应的末端设备，否则有可能导致误伤。}
 
 \subsection{工具栏}
-时间轴编辑器的工具栏可以为场景提供查找、编辑、操作和执行功能。
+
+\begin{itemize}
+	\item 进入空场景时，时间轴编辑器的工具栏为编辑模式，为场景提供查找、编辑、操作和执行功能。
+\item 进入已添加动作块的场景时，时间轴编辑器的工具栏为只读模式，提供查看、循环、运行功能。
+\end{itemize}
+
+用户可以点击只读和编辑按钮进行工具栏模式的切换。
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{screen/3-14.png}
+	\includegraphics[width=\textwidth]{image/07/图3.14 工具栏只读模式.png}
+
+	\includegraphics[width=\textwidth]{image/07/图3.14 工具栏编辑模式.png}
 	\caption{时间轴编辑器工具栏}
 	\label{fig:时间轴编辑器工具栏}
 \end{figure}
+
+\subsubsection{场景时光机}
+场景时光机实时保存用户在场景中修改的数据信息。当用户在场景编辑时做出修改，系统将自动保存修改的数据信息，并以场景名称及存储时间命名。
+
+点击工具栏标题文字后面的时钟图标，进入场景时光机，点击时光机列表中的某一个存储数据，即可进入相应的场景中。
+
 
 \subsubsection{修改场景名称}
 点击工具栏标题文字后面的\icn{image/ic_toolbar_edit.pdf}修改按钮，在弹出的场景修改对话框中修改场景名称。
@@ -339,7 +357,7 @@
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{screen/3-15.png}
+	\includegraphics[width=\textwidth]{image/07/图3.15 展开的动作块搜索框.png}
 	\caption{展开的动作块搜索框}
 	\label{fig:展开的动作块搜索框}
 \end{figure}
@@ -348,14 +366,16 @@
 
 % \vfill
 
-\subsubsection{信号量}
+% \subsubsection{信号量}
 % 信号量在\LM~v2.1 中暂无有效使用。
 
 % \vfill
 
-\subsubsection{速度和加速时间}
-\label{sec:速度和加速时间}
-工具栏上的速度和加速时间为当前场景全局的速度和加速时间配置入口，当未使用\prettyref{sec:编辑位置}提到的单个位置动作块的速度和加速时间调整操作时，所有该场景下的位置动作块使用全局的速度和加速时间配置。
+\subsubsection{速度控件}
+\label{sec:速度控件}
+工具栏上的速度控件为当前场景全局的速度控件配置入口。
+
+当未使用\prettyref{sec:编辑位置}提到的单个位置动作块的速度控件调整操作时，所有该场景下的位置动作块使用全局的速度控件配置。
 
 % \vfill
 
@@ -406,7 +426,7 @@
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{shots/position_check.pdf}
+	\includegraphics[width=\textwidth]{image/07/图3.17 恢复位置窗口.png}
 	\caption{恢复位置窗口}
 	\label{fig:位置安全检查页}
 \end{figure}
@@ -419,64 +439,66 @@
 
 点击右上角\btn{完成}按钮，场景开始运行。在场景运行时，长按肩部按钮可以暂停或恢复任务。
 
-\info{机器人当前位置与待执行场景的第一个待运行位置存在差异时，运行场景前会进行机器人位置安全检查。}
+\info{当操作模式为新手模式，机器人位置安全校验始终保持开启状态，且不可修改。
+当在专家模式下且使用时间轴编辑器时，用户可以选择开启/关闭机器人位置安全校验功能。
+}
 
-\danger[警告]{在使用末端平按钮移动到第一个待运行位置后，请与机器人保持一定安全距离，点击\btn{完成}按钮去运行场景，否则可能会造成误伤。}
+\danger[警告]{在使用末端平按钮移动到第一个待运行位置后，请与机器人保持一定安全距离，点击 完成 按钮去运行场景，否则可能会造成误伤。 }
 
-\subsection{操作技巧}
-\subsubsection{快速搜索动作块}
-右键单击某个动作块，在弹出的右键菜单中选择\mnu{查找相似块}，可快速搜索出相同动作块类型且包含当前选中的动作块标题作为关键字的动作块。
-\subsubsection{批量编辑动作块}
-% \def\ttt{通过搜索框或快速搜索动作块等操作或者手动选中}
-\def\ttt{通过选中}
-\ttt 2个或以上的同类型或子类型（如果该类型动作块存在子类型的话）相同的动作块。
+% \subsection{操作技巧}
+% \subsubsection{快速搜索动作块}
+% 右键单击某个动作块，在弹出的右键菜单中选择\mnu{查找相似块}，可快速搜索出相同动作块类型且包含当前选中的动作块标题作为关键字的动作块。
+% \subsubsection{批量编辑动作块}
+% % \def\ttt{通过搜索框或快速搜索动作块等操作或者手动选中}
+% \def\ttt{通过选中}
+% \ttt 2个或以上的同类型或子类型（如果该类型动作块存在子类型的话）相同的动作块。
 
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=\textwidth]{shots/batch_edit.pdf}
-	\caption{批量编辑动作块}
-	\label{fig:批量编辑动作块}
-\end{figure}
+% \begin{figure}[htb]
+% 	\centering
+% 	\includegraphics[width=\textwidth]{image/07/图3.18 批量编辑动作块.png}
+% 	\caption{批量编辑动作块}
+% 	\label{fig:批量编辑动作块}
+% \end{figure}
 
-点击场景编辑器功能区的\btn[Info]{批量修改…}按钮，或者用鼠标右键点击动作块选择\mnu{批量修改…}，可对动作块以下内容进行批量编辑。
+% 点击场景编辑器功能区的\btn[Info]{批量修改…}按钮，或者用鼠标右键点击动作块选择\mnu{批量修改…}，可对动作块以下内容进行批量编辑。
 
-\begin{itemize}[leftmargin=7.5em]
-\item [位置动作块] 统一修改位置名称、切换关节空间的运动(movej)和笛卡尔空间的直线运动(movel)，速度及加速时间以及启用和禁用平滑功能，且批量修改确认后每个位置块的位置数据将应用机器人当前状态下的位置数据。
-\item [手爪动作块] 可以修改手爪动作描述、力度以及幅度。
-\item [等待动作块] 等待秒数以及等待的目的/作用描述。
-\item [消息提示动作块] 灯板提示和弹窗提示是不同子类型的动作块，不同子类型的动作块不可批量修改。
-\item [数字I/O动作块] 读取、等待或设置的批量修改。
-\item [模拟I/O动作块] 读取、等待或设置的批量修改。
-\item [负载配置动作块] 支持同子类型的负载质量或质心的批量修改。
-\end{itemize}
+% \begin{itemize}[leftmargin=7.5em]
+% \item [位置动作块] 统一修改位置名称、切换关节空间的运动(movej)和笛卡尔空间的直线运动(movel)，速度及加速时间以及启用和禁用平滑功能，且批量修改确认后每个位置块的位置数据将应用机器人当前状态下的位置数据。
+% \item [手爪动作块] 可以修改手爪动作描述、力度以及幅度。
+% \item [等待动作块] 等待秒数以及等待的目的/作用描述。
+% \item [消息提示动作块] 灯板提示和弹窗提示是不同子类型的动作块，不同子类型的动作块不可批量修改。
+% \item [数字I/O动作块] 读取、等待或设置的批量修改。
+% \item [模拟I/O动作块] 读取、等待或设置的批量修改。
+% \item [负载配置动作块] 支持同子类型的负载质量或质心的批量修改。
+% \end{itemize}
 
-点击对话框右下角的\btn{修改}按钮可应用批量编辑操作，点击右上角的\kbd{$\times$}按钮可取消批量编辑操作。
+% 点击对话框右下角的\btn{修改}按钮可应用批量编辑操作，点击右上角的\kbd{$\times$}按钮可取消批量编辑操作。
 
-\info{动作块批量编辑，动作块类型和子类型（如果该类型动作块存在子类型的话）必须一致。}
+% \info{动作块批量编辑，动作块类型和子类型（如果该类型动作块存在子类型的话）必须一致。}
 
-% \clearpage
+% % \clearpage
 
-\subsubsection{批量微调位置块}
-选中2个或以上的位置动作块，点击时间轴编辑器功能区的\btn[Info]{批量微调位置…}，或者将光标放在选中的位置动作块上使当前位置动作块处于焦点状态，在右键单击弹出的右键菜单中，选择 \mnu{批量微调位置…}，进入\mnu{调整位置}页面\footnote{详见\prettyref{sec:微调}。}。
+% \subsubsection{批量微调位置块}
+% 选中2个或以上的位置动作块，点击时间轴编辑器功能区的\btn[Info]{批量微调位置…}，或者将光标放在选中的位置动作块上使当前位置动作块处于焦点状态，在右键单击弹出的右键菜单中，选择 \mnu{批量微调位置…}，进入\mnu{调整位置}页面\footnote{详见\prettyref{sec:微调}。}。
 
-\begin{figure}[hb]
-	\centering
-	\includegraphics[width=\textwidth]{shots/batch_adjust_positions.pdf}
-	\caption{批量微调位置块}
-	\label{fig:批量微调位置块}
-\end{figure}
+% \begin{figure}[hb]
+% 	\centering
+% 	\includegraphics[width=\textwidth]{image/07/图3.19 批量微调位置块.png}
+% 	\caption{批量微调位置块}
+% 	\label{fig:批量微调位置块}
+% \end{figure}
 
-微调移动至目标位置后，点击页面右上角的\btn{更新}按钮，完成批量微调；点击\btn[Info]{取消}可放弃批量微调操作。其中，\btn{更新}按钮右侧数字表示当前选中的位置块总数。
+% 微调移动至目标位置后，点击页面右上角的\btn{更新}按钮，完成批量微调；点击\btn[Info]{取消}可放弃批量微调操作。其中，\btn{更新}按钮右侧数字表示当前选中的位置块总数。
 
 % \clearpage
 
 \subsection{导出场景}
 \label{sec:导出场景}
-在场景列表页面选择需要保存的场景，鼠标移动到场景卡片右上角\icn{image/vdots.pdf}按钮，弹出场景菜单，选择\mnu{导出}，在弹出的保存对话框选择场景文件的保存位置（场景文件后缀名为 \verb|lbd|）。
+在场景列表页面选择需要保存的场景，将鼠标移动到场景卡片右上角\icn{image/vdots.pdf}按钮，弹出场景菜单，选择\mnu{导出}，在弹出的保存对话框选择场景文件的保存位置（场景文件后缀名为 \verb|lbd|）。
 
 \begin{figure}[htb!]
 	\centering
-	\includegraphics[height=3cm]{screen/3-19.png}
+	\includegraphics[height=3cm]{image/07/图3.20 导出场景.png}
 	\caption{导出场景}
 	\label{fig:导出场景}
 \end{figure}
@@ -487,30 +509,32 @@
 
 \begin{figure}[htb!]
 	\centering
-	\includegraphics[height=1.8cm]{screen/3-20.png}
+	\includegraphics[height=1.8cm]{image/07/图3.21 导入场景.png}
 	\caption{导入场景}
 	\label{fig:导入场景}
 \end{figure}
 
-\clearpage
+% \clearpage
 
 \section{控制}
-控制模块主要分为：
-\begin{itemize}
-\item 虚拟控制
-\item 位置库
-\item I/O控制
-\item 手爪控制
-\item 硬件按钮
-\item 灯板控制
-\end{itemize}
+% 控制模块主要分为：
+% \begin{itemize}
+% \item 虚拟控制
+% \item 位置库
+% \item I/O控制
+% \item 手爪控制
+% \item 硬件按钮
+% \item 灯板控制
+% \end{itemize}
 
 \subsection{虚拟控制}
-通过虚拟控制可以调整机器人当前位置与姿态，具体操作方式参考\prettyref{sec:微调}中的微调功能介绍。
+通过虚拟控制可以调整机器人当前位置与姿态。
+
+具体操作方式参考\prettyref{sec:微调}中的微调功能介绍。
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{screen/3-21.png}
+	\includegraphics[width=\textwidth]{image/07/图3.22 虚拟控制.png}
 	\caption{虚拟控制}
 	\label{fig:虚拟控制示意图}
 \end{figure}
@@ -558,6 +582,9 @@
 		\info{启动/停止机器人的按钮组合操作仅在当前机器人未急停或未断电时有效。}
 
 \section{设备}
+\subsection{机器人}
+在使用有线连接的情况下，用户可以通过“机器人”查看同一个局域网内的机器人列表，包含设备昵称、设备名称、设备IP及机器人状态信息。点击指定的机器人IP，可以在浏览器中快速打开新的标签页，即该机器人的系统登录页面。
+
 \subsection{末端设备}
 \label{sec:末端设备}
 如果需要在机器人末端添加末端工具（如：手爪），点击\mnu{设备}，在末端设备点击\btn{添加}，设置相应的辅助工具的质量和质心，点击\mnu{启用}。如果需要卸除末端工具，点击\mnu{禁用}。
@@ -567,7 +594,6 @@
 	\item 更换或卸下末端工具时，一定要相应地修改末端设备的质量和质心或关闭对应末端设备，否则有可能导致误伤。
 \end{itemize}}
 
-\section{设置}
 \subsection{TCP设置}
 \label{sec:TCP设置}
 TCP意为机器人工具中心点(Tool Center Point)。TCP设置页用于设置机器人末端TCP位置和姿态的偏移量/转换量。默认不设置TCP，当机器人装载末端工具时可以根据场景应用需要选择性添加TCP设置。
@@ -593,7 +619,12 @@ TCP可以通过示教的方式进行添加。点击\btn{添加}按钮菜单的\m
 
 用户还可以通过\mnu{手动添加}或者\btn[Card]{编辑}，进入\nameref{fig:编辑TCP设置}，如\prettyref{fig:编辑TCP设置}，手动设置末端工具的位置和姿态。
 
-\vfill
+\section{设置}
+% \vfill
+
+\subsection{系统设置}
+
+用户可以在系统设置修改设备昵称、登录密码、系统语言、时间和显示单位。
 
 \subsection{安全设置}
 \subsubsection{碰撞检测}
@@ -601,15 +632,13 @@ TCP可以通过示教的方式进行添加。点击\btn{添加}按钮菜单的\m
 
 \begin{figure}[htb]
 	\centering
-	\subfigure[急停]{\begin{minipage}[t]{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{screen/3-26-1.png}
-	\end{minipage}}
-	\hfill
-	\subfigure[暂停]{\begin{minipage}[t]{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{screen/3-26-2.png}
-	\end{minipage}}
+	\subfigure[急停]{
+		\includegraphics[width=\linewidth]{image/07/图3.26 （a）急停.png}
+	}
+
+	\subfigure[暂停]{
+		\includegraphics[width=\linewidth]{image/07/图3.26 （b）暂停.png}
+	}
 	\caption{碰撞检测}
 	\label{fig:碰撞检测设置}
 \end{figure}
@@ -620,7 +649,7 @@ TCP可以通过示教的方式进行添加。点击\btn{添加}按钮菜单的\m
 	\item[暂停] 若选择自定义秒数，到达指定暂停时间时，任务会自动恢复运行；若选择永久暂停，需要在首页任务历史列表栏点击恢复任务按钮\icn{image/39.pdf}。
 \end{itemize}
 
-\newpage
+% \newpage
 
 \subsubsection{运行安全}
 \label{sec:运行安全}
@@ -640,7 +669,7 @@ TCP可以通过示教的方式进行添加。点击\btn{添加}按钮菜单的\m
 \begin{figure}[htb!]
 	\centering
 	% \includegraphics[height=7.5cm]{screen/3-27.png}
-	\includegraphics[height=7.5cm]{screen/safe.png}
+	\includegraphics[height=7.5cm]{image/07/图3.27 运行安全.png}
 	\caption{运行安全设置}
 	\label{fig:运行安全设置}
 \end{figure}
@@ -658,7 +687,7 @@ TCP可以通过示教的方式进行添加。点击\btn{添加}按钮菜单的\m
 % \clearpage
 
 \subsection{操作模式}
-操作模式分为如下两种，可根据实际情况选择：
+
 \paragraph{新手模式}
 新手模式使用低门槛时间轴编辑器。在新手模式下，专家模式的部分功能将被隐藏，以减少复杂和高级功能带来的困扰。
 \paragraph{专家模式}
@@ -673,7 +702,10 @@ TCP可以通过示教的方式进行添加。点击\btn{添加}按钮菜单的\m
 
 \info{请务必确保您已足够了解该操作的危险性后再关闭位置安全检查。}
 
-\vfill
+% \vfill
+\paragraph{维护模式}
+维护模式只提供启停按钮、示教按钮、急停按钮、任务面板和消息中心五个基础功能，方便维护人员的日常操作。
+
 
 操作模式的切换：
 \begin{itemize}
@@ -681,9 +713,17 @@ TCP可以通过示教的方式进行添加。点击\btn{添加}按钮菜单的\m
 	\item 场景编辑右上角的切换图标，切换并保存。
 \end{itemize}
 
-\vfill
+\subsection{备份恢复}
 
-\clearpage
+在“备份恢复”点击备份即可将当前场景、控制、设备、设置内的全部数据信息进行备份存储，并以“zip”格式的压缩包形式依次展现，并以“机器人名称+版本+时间”形式命名。数据压缩包可以通过下载保存到本地。
+
+用户可以在备份文件列表中选中需要恢复的备份信息，点击右上角恢复按钮，完成备份恢复；
+也可以将已下载的备份数据文件上传或拖动至页面文件上传区，点击恢复按钮，完成备份恢复。
+
+
+% \vfill
+
+% \clearpage
 
 \subsection{系统更新}
 

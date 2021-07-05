@@ -237,12 +237,12 @@ Speed and acceleration time are modified for the current scene or the speed ($v$
 	\centering
 	\includegraphics[height=4cm]{en/image/3-11.png}
 	\caption{Speed and acceleration time control}
-	\label{fig:速度与加速时间}
+	\label{fig:速度控件}
 \end{figure}
 
 To adjust the speed and acceleration time, the user can do it globally\footnote{See \prettyref{sec:速度和加速时间}.} on the toolbar of the scene editor13, or individually for each pose block.
 
-Click the pose block \icn{image/ic_a_v.pdf} button to pop up the \nameref{fig:速度与加速时间}. The icon \icn{image/lock.pdf} in the upper right corner is the synchronization lock between the current pose block and the information about global speed and acceleration time on the editor toolbar. When a new pose is added to the scene, the global lock of the speed and acceleration time control of the pose block is locked by default, which means it is consistent with the global speed and acceleration time of the current scene. When the user drags a drag point to adjust the horizontal or vertical axis of the control and changes the speed and acceleration time, the global lock will be unlocked, that is, the pose block uses the speed and acceleration time specified by yourself and no longer uses the global speed and acceleration time parameter values. You can click the icon \icn{image/unlock.pdf} again to lock Synchronization lock, then the pose block will keep the parameter value consistent with the global speed and acceleration time.
+Click the pose block \icn{image/ic_a_v.pdf} button to pop up the \nameref{fig:速度控件}. The icon \icn{image/lock.pdf} in the upper right corner is the synchronization lock between the current pose block and the information about global speed and acceleration time on the editor toolbar. When a new pose is added to the scene, the global lock of the speed and acceleration time control of the pose block is locked by default, which means it is consistent with the global speed and acceleration time of the current scene. When the user drags a drag point to adjust the horizontal or vertical axis of the control and changes the speed and acceleration time, the global lock will be unlocked, that is, the pose block uses the speed and acceleration time specified by yourself and no longer uses the global speed and acceleration time parameter values. You can click the icon \icn{image/unlock.pdf} again to lock Synchronization lock, then the pose block will keep the parameter value consistent with the global speed and acceleration time.
 
 The smooth function mainly refers to that the robot control system automatically optimizes the best path and passes through the target pose of the current pose block without stopping, making the action continuity better and the moving time shorter when there are multiple adjacent pose blocks. higher efficiency. When the smoothing function is turned on, there will be no obvious slowdown and stop when the robot moves between the two blocks.
 
