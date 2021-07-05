@@ -9,6 +9,6 @@
 *.idx
 *.ilg
 *~
-*DS_Store
+.DS_*
 release/
 lebai-manual-*.pdf
