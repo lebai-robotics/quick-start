@@ -1,0 +1,33 @@
+\chapter{Guideline \protect\markboth{}{}}
+\label{app:参照标准}
+
+% The LM3 ROBOT has passed the following standards:
+
+\begin{table}[h!]
+    \centering\small
+    \rowcolors{1}{trEven}{trOdd}
+\newcommand{\fenlei}[2][trEven]{\multirow{-2}{6em}{\cellcolor{#1}\minitab[c]{\cellcolor{#1}#2}}}
+\newcommand{\ct}[1]{\rowcolor{th}\multicolumn{2}{c}{\sffamily\color{white} #1}}
+    \caption{Lebai Robot Standard Guideline}
+\begin{tabularx}{\textwidth}{lX}
+% \rowcolor{th} \Th{Category}    & \Th{Standard}    & \Th{Definition}\\
+\ct{Electromagnetic Compatibility} \\
+% \cellcolor{trOdd} &   
+GB/T17799.1-1999    &  EMC general standard, in residential and commercial environments\\
+% \fenlei[trOdd]{Electromagnetic\\\cellcolor{trOdd}Compatibility}       &   
+GB/T17799.4-2001    &  EMC general standard, in industrial environments\\
+% \cellcolor{trEven} &   
+\ct{Performance} \\
+GB/T12642-2013  &  Performance specification and test method of industrial robot\\
+    % \fenlei{Performance}       &   
+GB/T20868-2007  &  Implementation specification for performance test of industrial robot\\
+\ct{Safety} \\
+    % Safety    &   
+GB/T20867-2007  &  Specification of safety implementation of industrial robot\\
+\ct{Acceptance} \\
+% \cellcolor{trEven}  &   
+JB/T8896-1999   &  Acceptance rules of industrial robot\\
+    % \fenlei[trEven]{Acceptance}        &   
+JB/T10825-2008  &	Implementation specification for acceptance of industrial robot\\
+\end{tabularx}
+\end{table}

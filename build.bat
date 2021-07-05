@@ -1,8 +1,6 @@
-@REM xelatex quick-cover
-@REM For /f "tokens=1-3 delims=-/. " %j In ('Date /T') do copy user-manual.pdf 乐白LM3用户手册-内侧-%k%l.pdf
-@REM xelatex quick-start
-@REM xelatex quick-start
-@REM For /f "tokens=1-3 delims=-/. " %j In ('Date /T') do copy user-manual.pdf 乐白LM3用户手册-正文-%k%l.pdf
-xelatex user-manual
-xelatex user-manual
-For /f "tokens=1-3 delims=-/. " %%j In ('Date /T') do copy user-manual.pdf 乐白LM3用户手册-v1.0.3-%%k%%l.pdf
+xelatex lebai-manual-cn
+xelatex lebai-manual-cn
+For /f "tokens=1-3 delims=-/. " %%j In ('Date /T') do copy lebai-manual-cn.pdf 乐白LM3用户手册-v1.1.0-%%k%%l.pdf
+xelatex lebai-manual-en
+xelatex lebai-manual-en
+For /f "tokens=1-3 delims=-/. " %%j In ('Date /T') do copy lebai-manual-en.pdf lebai-user-manual-v1.1.0-%%k%%l.pdf

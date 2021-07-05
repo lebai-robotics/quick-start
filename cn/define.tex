@@ -1,0 +1,35 @@
+
+% \setmainfont[BoldFont={SourceHanSansSC-Medium}]{Source Han Serif SC}
+\setCJKmainfont{Source Han Serif SC}
+% \setsansfont[BoldFont={SourceHanSansSC-Bold}]{Source Han Sans SC}
+\setCJKsansfont{Source Han Sans SC}
+% \setCJKmonofont[BoldFont={Kaiti SC Bold}]{Kaiti SC Regular}
+
+\newrefformat{fig}{{\color{CarminePink}\underline{图\ref{#1}}}}
+\newrefformat{tab}{{\color{CarminePink}\underline{表\ref{#1}}}}
+% \newrefformat{cha}{{\color{CarminePink}\underline{第\ref{#1}章\nameref{#1}}}}
+% \newrefformat{app}{{\color{CarminePink}\underline{附录\ref{#1}\nameref{#1}}}}
+% \newrefformat{sec}{{\color{CarminePink}\underline{第\ref{#1}节\nameref{#1}}}}
+\newrefformat{cha}{{\color{CarminePink}\underline{第\pageref{#1}页第\ref{#1}章\nameref{#1}}}}
+\newrefformat{app}{{\color{CarminePink}\underline{第\pageref{#1}页附录\ref{#1}\nameref{#1}}}}
+\newrefformat{sec}{{\color{CarminePink}\underline{第\pageref{#1}页 \ref{#1} \nameref{#1}}}}
+
+\newcommand{\Info}{注意}
+\newcommand{\Dange}{有电危险}
+\newcommand{\Danger}{危险}
+\newcommand{\Note}{注：}
+
+\newcommand{\ThisBook}{本手册} % {《用户手册》}
+\newcommand{\eBook}{电子版用户手册}
+\newcommand{\ThatBook}{《服务指南》}
+
+\newcommand{\LM}{{\sf L~Master$^\circledR$}}
+\newcommand{\LebaiLM}{乐白\! LM3}
+\newcommand{\TheBook}{用户手册}
+\newcommand{\TitleComment}{适用于 LM3 机器人及\LM~2.3}
+\newcommand{\Company}{上海乐白机器人有限公司}
+\newcommand{\Address}{上海市徐汇区宜山路700号}
+\newcommand{\ScanForMore}{扫~码~解~锁\\更~多~精~彩}
+
+% 行和段落
+\linespread{1.35}

@@ -1,0 +1,35 @@
+% !TEX program = xelatex
+\documentclass[UTF8, 10pt, twoside, sub4section, scheme=plain]{ctexrep}
+\input{style/package}
+\input{en/define}
+\input{style/command}
+% \dottedcontents{chapter}[6em]{\addvspace{0pt}\sffamily}{6em}{1mm}
+% \dottedcontents{subsection}[6em]{\addvspace{-1pt}}{4em}{1mm}
+\begin{document}
+
+% \zihao{6}
+\include{cover/front}
+\include{en/i-copyright}
+\pagenumbering{roman}
+\include{en/0-preface}
+{\small
+\tableofcontents
+\listoffigures
+\listoftables
+}
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\include{en/1-prepare}
+\include{en/2-basic}
+\include{en/3-using}
+\include{en/4-reset}
+\include{en/5-repair}
+\include{en/6-support}
+\appendix
+\include{en/a-standard}
+\include{en/b-online}
+\include{cover/back}
+\end{document}

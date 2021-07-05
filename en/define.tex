@@ -1,0 +1,45 @@
+\setmainfont{Times New Roman}
+% \setCJKmainfont{Source Han Serif SC}
+% \setsansfont[BoldFont={SourceHanSansSC-Bold}]{Source Han Sans SC}
+% \setCJKsansfont{Source Han Sans SC}
+% \setCJKmonofont[BoldFont={Kaiti SC Bold}]{Kaiti SC Regular}
+
+\newrefformat{fig}{{\color{CarminePink}\underline{Figure \ref{#1}}}}
+\newrefformat{tab}{{\color{CarminePink}\underline{Table \ref{#1}}}}
+% \newrefformat{cha}{{\color{CarminePink}\underline{第\ref{#1}章\nameref{#1}}}}
+% \newrefformat{app}{{\color{CarminePink}\underline{附录\ref{#1}\nameref{#1}}}}
+% \newrefformat{sec}{{\color{CarminePink}\underline{第\ref{#1}节\nameref{#1}}}}
+\newrefformat{cha}{{\color{CarminePink}\underline{Chapter \ref{#1} \nameref{#1} ({\itshape page \pageref{#1}})}}}
+\newrefformat{app}{{\color{CarminePink}\underline{Appendix \ref{#1} \nameref{#1} ({\itshape page \pageref{#1}})}}}
+\newrefformat{sec}{{\color{CarminePink}\underline{\ref{#1} \nameref{#1} ({\itshape page \pageref{#1}})}}}
+
+\ctexset{
+    chapter/aftername = \par ,
+}
+
+\newcommand{\Info}{NOTICE}
+\newcommand{\Dange}{DANGER! ELECTRICITY!}
+\newcommand{\Danger}{DANGER}
+\newcommand{\Note}{{\bf NOTE. }}
+
+\newcommand{\ThisBook}{{\itshape this manual}} % {《用户手册》}
+\newcommand{\eBook}{{\itshape Online User Manual}} % the electronic version of
+\newcommand{\ThatBook}{{\itshape Service Guide}}
+
+\newcommand{\LM}{{\sffamily{L~Master$^\circledR$}}}
+\newcommand{\LebaiLM}{Lebai LM3}
+\newcommand{\TheBook}{User Manual}
+\newcommand{\TitleComment}{For LM3 Robot and \LM~v2.2}
+\newcommand{\Company}{Shanghai Lebai Robot Co., Ltd}
+\newcommand{\TheCompany}{{\itshape our company}}
+\newcommand{\Address}{No.700, Yishan Road, Xuhui, Shanghai}
+\newcommand{\ScanForMore}{Scan for More...}
+
+\newcommand{\ControlBox}{Control Box}
+
+\newcommand{\TheSec}{{\itshape Product Warranty}}
+\newcommand{\User}{user (customer)}
+\newcommand{\Users}{users (customers)}
+
+% 行和段落
+\linespread{1.2}
